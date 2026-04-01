@@ -1,0 +1,21 @@
+node_modules/
+dist/
+charts/
+*.js.map
+*.d.ts.map
+.playwright-mcp/
+
+# Iteration screenshots (root level)
+/slide-*.png
+/fix-*.png
+/fix2-*.png
+/final-*.png
+/glass-*.png
+/screenshot-*.png
+/v3-*.png
+/v4-*.png
+/v5-*.png
+/v6-*.png
+/v7-*.png
+/_slide_*.png
+/_export_temp.html

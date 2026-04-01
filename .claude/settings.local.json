@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(sed:*)",
+      "WebSearch",
+      "WebFetch(domain:mariozechner.at)",
+      "WebFetch(domain:ejholmes.github.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.the-ai-corner.com)",
+      "WebFetch(domain:support.claude.com)",
+      "mcp__playwright__browser_press_key"
+    ]
+  }
+}

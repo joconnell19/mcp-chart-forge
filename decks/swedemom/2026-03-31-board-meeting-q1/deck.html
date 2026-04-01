@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swedemom Board Meeting // Q1 2026 Software Update</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/white.css">
+<script>var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href=window.location.search.match(/print-pdf/gi)?'https://cdn.jsdelivr.net/npm/reveal.js@4/dist/print/pdf.css':'https://cdn.jsdelivr.net/npm/reveal.js@4/dist/print/paper.css';document.getElementsByTagName('head')[0].appendChild(link);</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --sm-blue-grey: #5E7F8E;
+  --sm-purple: #8B6BAE;
+  --sm-purple-light: #B89FCC;
+  --sm-purple-soft: rgba(139, 107, 174, 0.08);
+  --sm-lavender: #D4C5E2;
+  --sm-dark: #1a1a1a;
+  --sm-white: #FFFFFF;
+  --sm-text: #2d2d2d;
+  --sm-text-light: #f5f5f7;
+  --sm-text-muted: #86868b;
+  --sm-green-badge: #5B8C3E;
+}
+.reveal, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal p, .reveal li, .reveal span, .reveal td, .reveal th {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.reveal .slides section { padding: 40px 80px 72px; box-sizing: border-box; }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; text-shadow: none; }
+.reveal h1 { font-size: 2.8em; font-weight: 700; }
+.reveal h2 { font-size: 2.4em; font-weight: 600; }
+.reveal h3 { font-size: 1.4em; font-weight: 500; }
+.reveal p, .reveal li { font-size: 0.95em; font-weight: 400; line-height: 1.6; }
+/* Per-slide footers hidden */
+.slide-footer { display: none; }
+/* Global footer */
+.global-footer {
+  position: absolute; bottom: 20px; left: 60px; right: 60px;
+  display: flex; align-items: center; gap: 10px; z-index: 30;
+  pointer-events: none;
+}
+.global-footer img { height: 20px; opacity: 0.5; }
+.global-footer span { font-size: 12px; font-weight: 500; color: var(--sm-text-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.global-footer::before {
+  content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 1.5px;
+  background: var(--sm-purple); opacity: 0.35;
+}
+.glass-card {
+  background: rgba(255,255,255,0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 24px 20px; text-align: center;
+}
+.glass-card-light {
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.6); border-radius: 20px; padding: 24px 24px; text-align: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+.kpi-number { font-size: 2.5em; font-weight: 600; color: var(--sm-purple); }
+.kpi-label { font-size: 0.75em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text); margin-top: 4px; }
+.growth-badge {
+  display: inline-block; background: rgba(91,140,62,0.15); color: var(--sm-green-badge);
+  font-size: 0.7em; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-top: 8px;
+}
+.kpi-compare { font-size: 0.65em; color: var(--sm-text-muted); margin-top: 4px; }
+.gradient-bg { background: linear-gradient(135deg, #C8DAE4 0%, #D4C5E2 50%, #E8D5F0 100%); }
+.arch-card {
+  background: #2d2d2d; color: #f5f5f7; border-radius: 1rem; padding: 20px 24px; text-align: center;
+}
+.arch-card h4 { color: #f5f5f7; font-size: 0.85em; font-weight: 600; margin: 0; }
+.arch-card p { color: var(--sm-text-muted); font-size: 0.65em; margin: 4px 0 0; }
+/* Flow diagram styles */
+.flow-step {
+  border-radius: 12px; padding: 16px 20px; text-align: center; font-size: 0.8em; font-weight: 500;
+}
+.flow-arrow { font-size: 1.4em; color: var(--sm-lavender); display: flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section data-background-color="#0d0d0d">
+  <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:calc(100% - 40px); position:relative;">
+    <div style="position:absolute; inset:0; background-image: linear-gradient(rgba(139,107,174,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(139,107,174,0.06) 1px, transparent 1px); background-size: 60px 60px; z-index:0;"></div>
+    <div style="position:absolute; top:30%; left:50%; transform:translate(-50%,-50%); width:600px; height:600px; background:radial-gradient(circle, rgba(139,107,174,0.15) 0%, transparent 70%); z-index:0;"></div>
+    <div style="position:relative; z-index:1; text-align:center;">
+      <img src="../../../assets/swedemom/logo.png" alt="Swedemom" style="height:80px; margin-bottom:32px; filter: brightness(1.1);">
+      <h1 style="color:#f5f5f7; font-size:2.6em; margin:0; line-height:1.15;">Swedemom Board Meeting</h1>
+      <h3 style="color:var(--sm-purple-light); font-weight:400; font-size:1.2em; margin-top:12px; letter-spacing:0.04em;">Q1 2026 // Software &amp; Technology Update</h3>
+      <div style="width:120px; height:2px; background:linear-gradient(90deg, transparent, var(--sm-purple), transparent); margin:28px auto;"></div>
+      <p style="color:var(--sm-text-muted); font-size:0.8em; font-weight:300; letter-spacing:0.02em;">March 31, 2026 &nbsp;&middot;&nbsp; Prepared by Jamie O&rsquo;Connell</p>
+    </div>
+  </div>
+  <aside class="notes">Welcome everyone. This is our Q1 software and technology update. I want to walk you through what we've built since September, the measurable impact on production, where our revenue stands and where it's headed, how the money flows through our different models, and then our roadmap for the rest of the year.</aside>
+</section>
+
+<!-- ==================== SLIDE 2: AGENDA ==================== -->
+<section>
+  <h2 style="color:var(--sm-blue-grey); text-align:left;">Today&rsquo;s Agenda</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px 60px; margin-top:28px;">
+    <div style="display:flex; align-items:flex-start; gap:16px;">
+      <div style="min-width:48px; height:48px; background:var(--sm-purple-soft); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2em; color:var(--sm-purple); font-weight:600;">01</div>
+      <div><h3 style="color:var(--sm-text); margin:0; font-size:1em;">What We&rsquo;ve Built</h3><p style="color:var(--sm-text-muted); font-size:0.8em; margin:4px 0 0;">Key releases since September 2025</p></div>
+    </div>
+    <div style="display:flex; align-items:flex-start; gap:16px;">
+      <div style="min-width:48px; height:48px; background:var(--sm-purple-soft); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2em; color:var(--sm-purple); font-weight:600;">02</div>
+      <div><h3 style="color:var(--sm-text); margin:0; font-size:1em;">Production Impact</h3><p style="color:var(--sm-text-muted); font-size:0.8em; margin:4px 0 0;">Efficiency gains from new tools</p></div>
+    </div>
+    <div style="display:flex; align-items:flex-start; gap:16px;">
+      <div style="min-width:48px; height:48px; background:var(--sm-purple-soft); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2em; color:var(--sm-purple); font-weight:600;">03</div>
+      <div><h3 style="color:var(--sm-text); margin:0; font-size:1em;">Financial Projections</h3><p style="color:var(--sm-text-muted); font-size:0.8em; margin:4px 0 0;">MacHub gross profit &amp; casual hub opportunity</p></div>
+    </div>
+    <div style="display:flex; align-items:flex-start; gap:16px;">
+      <div style="min-width:48px; height:48px; background:var(--sm-purple-soft); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2em; color:var(--sm-purple); font-weight:600;">04</div>
+      <div><h3 style="color:var(--sm-text); margin:0; font-size:1em;">How the Money Flows</h3><p style="color:var(--sm-text-muted); font-size:0.8em; margin:4px 0 0;">MacHub, external hubs &amp; store</p></div>
+    </div>
+    <div style="display:flex; align-items:flex-start; gap:16px;">
+      <div style="min-width:48px; height:48px; background:var(--sm-purple-soft); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2em; color:var(--sm-purple); font-weight:600;">05</div>
+      <div><h3 style="color:var(--sm-text); margin:0; font-size:1em;">Technology Roadmap</h3><p style="color:var(--sm-text-muted); font-size:0.8em; margin:4px 0 0;">What the software team is building next</p></div>
+    </div>
+    <div style="display:flex; align-items:flex-start; gap:16px;">
+      <div style="min-width:48px; height:48px; background:var(--sm-purple-soft); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2em; color:var(--sm-purple); font-weight:600;">06</div>
+      <div><h3 style="color:var(--sm-text); margin:0; font-size:1em;">The Swedemom Vision</h3><p style="color:var(--sm-text-muted); font-size:0.8em; margin:4px 0 0;">Four phases of growth</p></div>
+    </div>
+  </div>
+  <aside class="notes">Here's what we'll cover today. We'll start with the key software releases since September, then look at how those tools are actually moving the needle on production speed. After that we'll look at our financials -- actual and projected gross profit -- then break down how money flows through MacHub, external hubs, and the store. We'll wrap up with the technology roadmap and the bigger Swedemom vision.</aside>
+</section>
+
+<!-- ==================== SLIDE 3: WHAT WE'VE BUILT ==================== -->
+<section data-background="linear-gradient(135deg, #1a1a1a 0%, #2a1f33 50%, #1a1a2e 100%)">
+  <h2 style="color:var(--sm-purple-light); text-align:center;">Since September: What We&rsquo;ve Built</h2>
+  <p style="color:var(--sm-text-muted); text-align:center; font-size:0.85em; margin-bottom:16px;">Key releases, September 2025 to March 2026</p>
+  <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; max-width:1400px; margin:0 auto; padding:0 20px;">
+    <div style="background:rgba(255,255,255,0.07); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid rgba(255,255,255,0.15); border-radius:1.25rem; padding:20px 24px;">
+      <div style="display:inline-block; background:rgba(94,127,142,0.25); border-radius:8px; padding:4px 12px; font-size:0.65em; font-weight:600; color:var(--sm-blue-grey); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px;">Production</div>
+      <h3 style="color:#f5f5f7; font-size:0.9em; margin:0 0 6px;">New Item Edit Page</h3>
+      <p style="color:var(--sm-text-muted); font-size:0.72em; margin:0; line-height:1.5;">Rebuilt from the ground up. Streamlined workflow for faster item processing</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.07); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid rgba(255,255,255,0.15); border-radius:1.25rem; padding:20px 24px;">
+      <div style="display:inline-block; background:rgba(91,140,62,0.2); border-radius:8px; padding:4px 12px; font-size:0.65em; font-weight:600; color:var(--sm-green-badge); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px;">AI</div>
+      <h3 style="color:#f5f5f7; font-size:0.9em; margin:0 0 6px;">Final Check Agent</h3>
+      <p style="color:var(--sm-text-muted); font-size:0.72em; margin:0; line-height:1.5;">~75% of final check is now fully automated. Was a manual job, now AI handles the bulk of QA</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.07); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid rgba(255,255,255,0.15); border-radius:1.25rem; padding:20px 24px;">
+      <div style="display:inline-block; background:rgba(139,107,174,0.2); border-radius:8px; padding:4px 12px; font-size:0.65em; font-weight:600; color:var(--sm-purple-light); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px;">Platform</div>
+      <h3 style="color:#f5f5f7; font-size:0.9em; margin:0 0 6px;">External API</h3>
+      <p style="color:var(--sm-text-muted); font-size:0.72em; margin:0; line-height:1.5;">Homeventory has access. Opens the door to selling secure, controlled access to our tech</p>
+    </div>
+  </div>
+  <div style="display:flex; justify-content:center; gap:20px; max-width:1400px; margin:20px auto 0; padding:0 20px;">
+    <div style="background:rgba(255,255,255,0.07); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid rgba(255,255,255,0.15); border-radius:1.25rem; padding:20px 24px; flex:0 1 440px; text-align:center;">
+      <div style="display:inline-block; background:rgba(139,107,174,0.2); border-radius:8px; padding:4px 12px; font-size:0.65em; font-weight:600; color:var(--sm-purple-light); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px;">Analytics</div>
+      <h3 style="color:#f5f5f7; font-size:0.9em; margin:0 0 6px;">Sales Dashboard</h3>
+      <p style="color:var(--sm-text-muted); font-size:0.72em; margin:0; line-height:1.5;">Accurate shipping &amp; eBay fee tracking for the first time. Solved accounting issues for our accountant</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.07); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid rgba(255,255,255,0.15); border-radius:1.25rem; padding:20px 24px; flex:0 1 440px; text-align:center;">
+      <div style="display:inline-block; background:rgba(94,127,142,0.25); border-radius:8px; padding:4px 12px; font-size:0.65em; font-weight:600; color:var(--sm-blue-grey); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px;">Production</div>
+      <h3 style="color:#f5f5f7; font-size:0.9em; margin:0 0 6px;">Home &amp; Goals Pages</h3>
+      <p style="color:var(--sm-text-muted); font-size:0.72em; margin:0; line-height:1.5;">Accountability &amp; productivity tools for production workers. Daily goals, progress tracking</p>
+    </div>
+  </div>
+  <aside class="notes">Since the last board meeting in September, we've shipped five major features. The new Item Edit Page completely rebuilt the core production workflow. The Final Check Agent now handles about 75% of quality checks automatically -- that used to be entirely manual. We launched an External API that Homeventory is already using, which opens the door to selling access to our tech. The Sales Dashboard finally gives us accurate shipping cost and eBay fee tracking -- this solved real accounting issues. And the Home and Goals pages give production workers daily targets and progress visibility.</aside>
+</section>
+
+<!-- ==================== SLIDE 4: PRODUCTION IMPACT ==================== -->
+<section class="gradient-bg">
+  <h2 style="color:var(--sm-blue-grey); text-align:center;">Impact on Production</h2>
+  <p style="color:var(--sm-text); text-align:center; font-size:0.85em; margin-bottom:28px;">How the new tools are changing daily operations</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; margin-bottom:20px;">
+    <div class="glass-card-light">
+      <div style="font-size:0.65em; text-transform:uppercase; letter-spacing:0.06em; color:var(--sm-text-muted); margin-bottom:8px;">Avg Intake Time</div>
+      <div class="kpi-number" style="font-size:2.2em;">4:22</div>
+      <div class="kpi-label">Per Item</div>
+      <div class="growth-badge" style="background:rgba(91,140,62,0.15); color:var(--sm-green-badge);">&#x25BC; 26% faster</div>
+      <div class="kpi-compare">was 5:56 in Sept 2025</div>
+    </div>
+    <div class="glass-card-light">
+      <div style="font-size:0.65em; text-transform:uppercase; letter-spacing:0.06em; color:var(--sm-text-muted); margin-bottom:8px;">Avg Description Time</div>
+      <div class="kpi-number" style="font-size:2.2em;">4:07</div>
+      <div class="kpi-label">Per Item</div>
+      <div class="growth-badge" style="background:rgba(91,140,62,0.15); color:var(--sm-green-badge);">&#x25BC; 20% faster</div>
+      <div class="kpi-compare">was 5:08 in Sept 2025</div>
+    </div>
+    <div class="glass-card-light">
+      <div style="font-size:0.65em; text-transform:uppercase; letter-spacing:0.06em; color:var(--sm-text-muted); margin-bottom:8px;">Avg Imaging Time</div>
+      <div class="kpi-number" style="font-size:2.2em;">4:40</div>
+      <div class="kpi-label">Per Item</div>
+      <div class="growth-badge" style="background:rgba(91,140,62,0.15); color:var(--sm-green-badge);">&#x25BC; 22% faster</div>
+      <div class="kpi-compare">was 6:00 in Sept 2025</div>
+    </div>
+  </div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:66%; margin:0 auto;">
+    <div class="glass-card-light">
+      <div style="font-size:0.65em; text-transform:uppercase; letter-spacing:0.06em; color:var(--sm-text-muted); margin-bottom:8px;">Final Check Automation</div>
+      <div class="kpi-number" style="font-size:2.2em;">75%</div>
+      <div class="kpi-label">Automated</div>
+      <p style="font-size:0.7em; color:var(--sm-text-muted); margin-top:8px;">Was a fully manual job. Now AI handles 3 out of 4 checks automatically.</p>
+    </div>
+    <div class="glass-card-light">
+      <div style="font-size:0.65em; text-transform:uppercase; letter-spacing:0.06em; color:var(--sm-text-muted); margin-bottom:8px;">Accurate Financials</div>
+      <div class="kpi-number" style="font-size:2.2em;">&#x2713;</div>
+      <div class="kpi-label">First Time Ever</div>
+      <p style="font-size:0.7em; color:var(--sm-text-muted); margin-top:8px;">Shipping costs &amp; eBay fees tracked accurately. Accounting issues resolved.</p>
+    </div>
+  </div>
+  <aside class="notes">Here's where the rubber meets the road. Compared to September, average intake time is down 26% -- from nearly 6 minutes to 4:22. Description writing dropped 20%, imaging is 22% faster. These aren't projections, these are last month's actual numbers. The Final Check Agent is handling 75% of checks automatically. And for the first time ever, we have accurate financial tracking -- shipping costs and eBay fees are captured correctly, which resolved the issues our accountant was running into.</aside>
+</section>
+
+<!-- ==================== SLIDE 5: MACHUB SALES PROJECTIONS ==================== -->
+<section data-background-color="#1a1a1a">
+  <h2 style="color:var(--sm-purple-light); text-align:center;">Gross Profit: Actual &amp; Projected</h2>
+  <p style="color:var(--sm-text-muted); text-align:center; font-size:0.85em; margin-bottom:12px;">Monthly Gross Profit (MacHub / eBay Only)</p>
+  <div style="display:flex; gap:32px; align-items:stretch;">
+    <div style="flex:1; min-height:480px;">
+      <canvas id="salesChart"></canvas>
+    </div>
+    <div style="width:280px; display:flex; flex-direction:column; justify-content:center; gap:16px;">
+      <div style="background:rgba(255,255,255,0.06); border-radius:12px; padding:16px; border:1px solid rgba(255,255,255,0.08);">
+        <div style="font-size:0.6em; text-transform:uppercase; letter-spacing:0.06em; color:var(--sm-purple-light); margin-bottom:6px; font-weight:600;">Gross Profit =</div>
+        <p style="font-size:0.7em; color:var(--sm-text-light); margin:0; line-height:1.5;">Revenue &minus; Shipping Costs &minus; eBay Fees</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06); border-radius:12px; padding:16px; border:1px solid rgba(255,255,255,0.08);">
+        <div style="font-size:0.6em; text-transform:uppercase; letter-spacing:0.06em; color:var(--sm-purple-light); margin-bottom:6px; font-weight:600;">Projection Basis</div>
+        <ul style="font-size:0.65em; color:var(--sm-text-muted); margin:0; padding-left:16px; line-height:1.7;">
+          <li>Same-size production team</li>
+          <li>Incorporates seasonality &amp; category profile</li>
+          <li>Growth from projected speed improvements at 3, 6, and 9 month thresholds</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">This is our actual gross profit through March, then projected out to August 2027. Important: this is eBay sales only, and gross profit means revenue minus shipping costs minus eBay fees. The projection assumes the same size production team we have today. The growth comes entirely from projected speed improvements as our tools mature -- we model step-ups at 3, 6, and 9 month thresholds. We've also factored in seasonality and our category profile. And this does not include any revenue from additional hubs.</aside>
+</section>
+
+<!-- ==================== SLIDE 5b: CASUAL HUB PROJECTION ==================== -->
+<section data-background-color="#1a1a1a">
+  <h2 style="color:var(--sm-purple-light); text-align:center;">Casual Hub Opportunity</h2>
+  <p style="color:var(--sm-text-muted); text-align:center; font-size:0.85em; margin-bottom:12px;">Projected Monthly Hub Profit (Limited Casual Hub / 2 FTEs)</p>
+  <div style="display:flex; gap:32px; align-items:stretch;">
+    <div style="flex:1; min-height:480px;">
+      <canvas id="hubChart"></canvas>
+    </div>
+    <div style="width:280px; display:flex; flex-direction:column; justify-content:center; gap:16px;">
+      <div style="background:rgba(255,255,255,0.06); border-radius:12px; padding:16px; border:1px solid rgba(255,255,255,0.08);">
+        <div style="font-size:0.6em; text-transform:uppercase; letter-spacing:0.06em; color:#5bb8d4; margin-bottom:6px; font-weight:600;">Hub Model</div>
+        <ul style="font-size:0.65em; color:var(--sm-text-muted); margin:0; padding-left:16px; line-height:1.7;">
+          <li>Limited casual hub</li>
+          <li>2 full-time employees</li>
+          <li>SCOG retains 70% of GP</li>
+        </ul>
+      </div>
+      <div style="background:rgba(255,255,255,0.06); border-radius:12px; padding:16px; border:1px solid rgba(255,255,255,0.08);">
+        <div style="font-size:0.6em; text-transform:uppercase; letter-spacing:0.06em; color:#5bb8d4; margin-bottom:6px; font-weight:600;">What This Shows</div>
+        <p style="font-size:0.65em; color:var(--sm-text-muted); margin:0; line-height:1.7;">What a single additional hub can generate as workers ramp up using our tooling and processes.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">Now here's what gets exciting. This shows what a single limited casual hub can generate with just 2 full-time employees. Starting small at under $2k a month, but ramping to over $10k within 18 months as workers get proficient with our tooling. Remember, SCOG retains 70% of this. And this is per hub -- every additional hub we bring on adds another one of these curves on top of our existing MacHub revenue.</aside>
+</section>
+
+<!-- ==================== SLIDE 6: FUNDS FLOW - MACHUB ==================== -->
+<section>
+  <h2 style="color:var(--sm-blue-grey); text-align:center; margin-bottom:4px;">How the Money Flows: MacHub</h2>
+  <p style="color:var(--sm-text-muted); text-align:center; font-size:0.85em; margin-bottom:8px;">Internal hub. All production handled by Swedemom</p>
+  <div style="position:relative; width:1500px; height:680px; margin:0 auto;">
+    <!-- SVG arrows layer -->
+    <svg style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;" viewBox="0 0 1500 680">
+      <defs>
+        <marker id="mh-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#D4C5E2" stroke-width="1.5"/></marker>
+      </defs>
+      <!-- Sale -> SCOG -->
+      <line x1="210" y1="250" x2="310" y2="250" stroke="#D4C5E2" stroke-width="2" marker-end="url(#mh-arrow)"/>
+      <!-- SCOG -> fork split -->
+      <line x1="500" y1="250" x2="570" y2="250" stroke="#D4C5E2" stroke-width="2"/>
+      <!-- fork up to MacHub -->
+      <path d="M570,250 L570,80 L630,80" fill="none" stroke="#D4C5E2" stroke-width="2" marker-end="url(#mh-arrow)"/>
+      <!-- fork down to SCOG Retains -->
+      <path d="M570,250 L570,400 L630,400" fill="none" stroke="#D4C5E2" stroke-width="2" marker-end="url(#mh-arrow)"/>
+      <!-- SCOG Retains -> fork split -->
+      <line x1="860" y1="400" x2="930" y2="400" stroke="#D4C5E2" stroke-width="2"/>
+      <!-- fork up to Swedemom LLC -->
+      <path d="M930,400 L930,250 L980,250" fill="none" stroke="#D4C5E2" stroke-width="2" marker-end="url(#mh-arrow)"/>
+      <!-- fork down to SCOG Net -->
+      <path d="M930,400 L930,510 L980,510" fill="none" stroke="#D4C5E2" stroke-width="2" marker-end="url(#mh-arrow)"/>
+    </svg>
+    <!-- Boxes -->
+    <div class="flow-step" style="position:absolute; left:50px; top:210px; width:155px; background:#f0edf5; color:var(--sm-purple); font-weight:600;">Sale<br><span style="font-size:1.3em;">$100</span><br><span style="font-size:0.7em; font-weight:400; color:var(--sm-text-muted);">Gross Profit</span></div>
+    <div class="flow-step" style="position:absolute; left:315px; top:190px; width:180px; background:var(--sm-purple); color:#fff;">SCOG<br><span style="font-size:0.85em;">Receives 100%</span><br><span style="font-size:1.2em; font-weight:600;">$100</span></div>
+    <div class="flow-step" style="position:absolute; left:635px; top:30px; width:220px; background:var(--sm-blue-grey); color:#fff;">MacHub (70%)<br><span style="font-size:1.2em; font-weight:600;">$70</span><br><span style="font-size:0.75em;">Operations &amp; production</span></div>
+    <div class="flow-step" style="position:absolute; left:635px; top:360px; width:220px; background:#f0edf5; color:var(--sm-text);">SCOG Retains (30%)<br><span style="font-size:1.2em; font-weight:600;">$30</span></div>
+    <div class="flow-step" style="position:absolute; left:985px; top:200px; width:220px; background:var(--sm-lavender); color:var(--sm-text);">Swedemom LLC (6%)<br><span style="font-size:1.2em; font-weight:600;">$1.80</span><br><span style="font-size:0.75em;">6% of SCOG&rsquo;s $30</span></div>
+    <div class="flow-step" style="position:absolute; left:985px; top:440px; width:220px; background:rgba(91,140,62,0.1); color:var(--sm-green-badge); border:1px solid rgba(91,140,62,0.3);">SCOG Net (94%)<br><span style="font-size:1.2em; font-weight:600;">$28.20</span><br><span style="font-size:0.75em;">Mission funds</span></div>
+  </div>
+  <aside class="notes">Let me walk through how the money actually flows for MacHub. Every dollar of gross profit goes to SCOG. 70% funds MacHub operations -- that's labor, supplies, everything it takes to run production. SCOG retains the remaining 30%. Out of that 30%, Swedemom LLC takes a 6% management fee -- so $1.80 on every $100. The remaining 94%, or $28.20, stays with SCOG for the mission.</aside>
+</section>
+
+<!-- ==================== SLIDE 7: FUNDS FLOW - EXTERNAL HUB ==================== -->
+<section>
+  <h2 style="color:var(--sm-blue-grey); text-align:center; margin-bottom:4px;">How the Money Flows: External Hub</h2>
+  <p style="color:var(--sm-text-muted); text-align:center; font-size:0.85em; margin-bottom:8px;">Example: Blanchet House (BCH): 30% hub partner share</p>
+  <div style="position:relative; width:1500px; height:680px; margin:0 auto;">
+    <svg style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;" viewBox="0 0 1500 680">
+      <defs>
+        <marker id="eh-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#D4C5E2" stroke-width="1.5"/></marker>
+      </defs>
+      <!-- Sale -> SCOG -->
+      <line x1="210" y1="250" x2="310" y2="250" stroke="#D4C5E2" stroke-width="2" marker-end="url(#eh-arrow)"/>
+      <!-- SCOG -> fork -->
+      <line x1="500" y1="250" x2="570" y2="250" stroke="#D4C5E2" stroke-width="2"/>
+      <!-- fork up to BCH Partner -->
+      <path d="M570,250 L570,80 L630,80" fill="none" stroke="#D4C5E2" stroke-width="2" marker-end="url(#eh-arrow)"/>
+      <!-- fork down to SCOG Retains -->
+      <path d="M570,250 L570,400 L630,400" fill="none" stroke="#D4C5E2" stroke-width="2" marker-end="url(#eh-arrow)"/>
+      <!-- SCOG Retains -> fork -->
+      <line x1="860" y1="400" x2="930" y2="400" stroke="#D4C5E2" stroke-width="2"/>
+      <!-- fork up to Swedemom LLC -->
+      <path d="M930,400 L930,250 L980,250" fill="none" stroke="#D4C5E2" stroke-width="2" marker-end="url(#eh-arrow)"/>
+      <!-- fork down to SCOG Net -->
+      <path d="M930,400 L930,510 L980,510" fill="none" stroke="#D4C5E2" stroke-width="2" marker-end="url(#eh-arrow)"/>
+    </svg>
+    <div class="flow-step" style="position:absolute; left:50px; top:210px; width:155px; background:#f0edf5; color:var(--sm-purple); font-weight:600;">Sale<br><span style="font-size:1.3em;">$100</span><br><span style="font-size:0.7em; font-weight:400; color:var(--sm-text-muted);">Gross Profit</span></div>
+    <div class="flow-step" style="position:absolute; left:315px; top:190px; width:180px; background:var(--sm-purple); color:#fff;">SCOG<br><span style="font-size:0.85em;">Receives 100%</span><br><span style="font-size:1.2em; font-weight:600;">$100</span></div>
+    <div class="flow-step" style="position:absolute; left:635px; top:30px; width:220px; background:var(--sm-green-badge); color:#fff;">BCH Partner (30%)<br><span style="font-size:1.2em; font-weight:600;">$30</span><br><span style="font-size:0.75em;">Hub partner share</span></div>
+    <div class="flow-step" style="position:absolute; left:635px; top:360px; width:220px; background:#f0edf5; color:var(--sm-text);">SCOG Retains (70%)<br><span style="font-size:1.2em; font-weight:600;">$70</span></div>
+    <div class="flow-step" style="position:absolute; left:985px; top:200px; width:220px; background:var(--sm-lavender); color:var(--sm-text);">Swedemom LLC (6%)<br><span style="font-size:1.2em; font-weight:600;">$4.20</span><br><span style="font-size:0.75em;">6% of SCOG&rsquo;s $70</span></div>
+    <div class="flow-step" style="position:absolute; left:985px; top:470px; width:220px; background:rgba(91,140,62,0.1); color:var(--sm-green-badge); border:1px solid rgba(91,140,62,0.3);">SCOG Net (94%)<br><span style="font-size:1.2em; font-weight:600;">$65.80</span><br><span style="font-size:0.75em;">Mission funds</span></div>
+  </div>
+  <aside class="notes">External hubs flip the split. Using Blanchet House as an example with a 30% partner share -- SCOG keeps 70% instead of 30%. The same 6% LLC fee applies to SCOG's portion, so Swedemom LLC gets $4.20 and SCOG nets $65.80 on every $100. That's more than double what SCOG nets per sale from MacHub. This is why scaling through external hubs is so attractive for the mission.</aside>
+</section>
+
+<!-- ==================== SLIDE 8: FUNDS FLOW - STORE ==================== -->
+<section>
+  <h2 style="color:var(--sm-blue-grey); text-align:center; margin-bottom:4px;">How the Money Flows: Store</h2>
+  <p style="color:var(--sm-text-muted); text-align:center; font-size:0.85em; margin-bottom:8px;">Physical retail store. Not yet integrated with hub software</p>
+  <div style="position:relative; width:1400px; height:400px; margin:40px auto 0;">
+    <svg style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;" viewBox="0 0 1400 400">
+      <defs>
+        <marker id="st-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#D4C5E2" stroke-width="1.5"/></marker>
+      </defs>
+      <line x1="230" y1="200" x2="320" y2="200" stroke="#D4C5E2" stroke-width="2" marker-end="url(#st-arrow)"/>
+      <line x1="560" y1="200" x2="650" y2="200" stroke="#D4C5E2" stroke-width="2" marker-end="url(#st-arrow)"/>
+      <line x1="890" y1="200" x2="980" y2="200" stroke="#D4C5E2" stroke-width="2" marker-end="url(#st-arrow)"/>
+    </svg>
+    <div class="flow-step" style="position:absolute; left:50px; top:155px; width:175px; background:#f0edf5; color:var(--sm-purple); font-weight:600;">Store Sale<br><span style="font-size:1.3em;">$100</span></div>
+    <div class="flow-step" style="position:absolute; left:325px; top:140px; width:230px; background:var(--sm-purple); color:#fff;">SCOG<br><span style="font-size:0.85em;">Receives all funds</span><br><span style="font-size:1.3em; font-weight:600;">$100</span></div>
+    <div class="flow-step" style="position:absolute; left:655px; top:150px; width:230px; background:var(--sm-blue-grey); color:#fff;">Store Operations<br><span style="font-size:0.85em;">Rent, staff, supplies</span></div>
+    <div class="flow-step" style="position:absolute; left:985px; top:140px; width:230px; background:rgba(91,140,62,0.1); color:var(--sm-green-badge); border:2px solid rgba(91,140,62,0.3);">Net Profit<br><span style="font-size:0.85em; font-weight:600;">Supports MacHub Mission</span></div>
+  </div>
+  <p style="text-align:center; font-size:0.8em; color:var(--sm-text-muted); margin-top:16px;">All store revenue goes directly to SCOG. After operating costs, net profit funds the MacHub mission.</p>
+  <aside class="notes">The store is the simplest model. All revenue goes directly to SCOG, covers operating costs -- rent, staff, supplies -- and whatever's left is net profit that supports the MacHub mission. The store isn't integrated with our hub software yet, but that's on the roadmap.</aside>
+</section>
+
+
+<!-- ==================== SLIDE 10: TECH ROADMAP ==================== -->
+<section data-background-color="#1a1a1a">
+  <h2 style="color:var(--sm-purple-light); text-align:center; margin-bottom:4px;">Technology Roadmap</h2>
+  <p style="color:var(--sm-text-muted); text-align:center; font-size:0.85em; margin-bottom:20px;">What the software team is building next</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:0 40px;">
+    <div class="glass-card" style="text-align:left;">
+      <h3 style="color:var(--sm-purple-light); font-size:0.95em; margin:0 0 12px;">Q2 2026</h3>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; Pack Station (packing &amp; shipping in-hub)</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; Camera-enabled AI sorting &amp; intake</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; New Manage Listings tool &amp; relisting agent</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; Improved pricing agents</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; Enhanced Final Check agent (75% &rarr; 95%)</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; Cost reduction (AWS optimization)</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; New SCOG site (Google Ads Grant)</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; Swedemom.com overhaul</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0;">&#x2726; Customer support in hub</li>
+      </ul>
+    </div>
+    <div class="glass-card" style="text-align:left;">
+      <h3 style="color:var(--sm-purple-light); font-size:0.95em; margin:0 0 12px;">Q3&ndash;Q4 2026</h3>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; Multi-marketplace support</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; Payment processing overhaul</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; AI sorting, intake &amp; description improvements</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; Full casual hub support</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; External API enhancements</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.08);">&#x2726; Customer service AI agents</li>
+        <li style="color:var(--sm-text-light); font-size:0.78em; padding:5px 0;">&#x2726; Legacy hub &amp; intranet pages fully retired</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">Looking ahead. Q2 is packed. The Pack Station brings packing and shipping directly into the hub workflow -- this should cut fulfillment labor costs and potentially free up resources we can shift toward production. Camera-enabled AI sorting will use computer vision to speed up intake categorization significantly. The new Manage Listings tool with a relisting agent will automate work that Annika and Cami currently do manually. We're also improving our pricing agents, pushing the Final Check agent from 75% to 95% coverage, reducing AWS costs, building a new SCOG site to better leverage our Google Ads Grant, overhauling swedemom.com for more traffic, and adding customer support tooling into the hub. In Q3 and Q4, we expand to additional marketplaces beyond eBay, overhaul payment processing, continue improving our AI tools, build full casual hub support for non-local partners, enhance our external API, add AI customer service agents, and fully retire all legacy hub and intranet pages.</aside>
+</section>
+
+<!-- ==================== SLIDE 11: VISION ==================== -->
+<section>
+  <h2 style="color:var(--sm-blue-grey); text-align:center;">The Swedemom Vision</h2>
+  <div style="display:flex; flex-direction:column; align-items:center; margin-top:32px;">
+    <!-- Progress bar -->
+    <div style="width:80%; height:14px; border-radius:7px; background:#e5e5e5; position:relative;">
+      <div style="position:absolute; left:0; top:0; bottom:0; width:25%; border-radius:7px; background:linear-gradient(90deg, var(--sm-blue-grey), var(--sm-purple-light));"></div>
+    </div>
+    <div style="width:80%; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; margin-top:16px; gap:16px;">
+      <div style="text-align:center;">
+        <h3 style="color:var(--sm-blue-grey); font-size:0.95em; margin:0;">Phase 1</h3>
+        <p style="color:var(--sm-text); font-size:0.8em; margin:4px 0 0; font-weight:500;">Single Hub</p>
+        <p style="color:var(--sm-green-badge); font-size:0.7em; font-weight:600; margin:2px 0 0;">COMPLETE</p>
+        <p style="color:var(--sm-text-muted); font-size:0.7em; margin:4px 0 0;">MacHub proving the model</p>
+      </div>
+      <div style="text-align:center;">
+        <h3 style="color:var(--sm-purple); font-size:0.95em; margin:0;">Phase 2</h3>
+        <p style="color:var(--sm-text); font-size:0.8em; margin:4px 0 0; font-weight:500;">Local Hub Partners</p>
+        <p style="color:var(--sm-purple); font-size:0.7em; font-weight:600; margin:2px 0 0;">BEGUN</p>
+        <p style="color:var(--sm-text-muted); font-size:0.7em; margin:4px 0 0;">Blanchet House first, then more</p>
+      </div>
+      <div style="text-align:center;">
+        <h3 style="color:var(--sm-text-muted); font-size:0.95em; margin:0;">Phase 3</h3>
+        <p style="color:var(--sm-text); font-size:0.8em; margin:4px 0 0; font-weight:500;">Full Causal Hubs</p>
+        <p style="color:var(--sm-text-muted); font-size:0.7em; margin:4px 0 0;">Non-local hubs using our platform remotely</p>
+      </div>
+      <div style="text-align:center;">
+        <h3 style="color:var(--sm-text-muted); font-size:0.95em; margin:0;">Phase 4</h3>
+        <p style="color:var(--sm-text); font-size:0.8em; margin:4px 0 0; font-weight:500;">Platform &amp; API</p>
+        <p style="color:var(--sm-text-muted); font-size:0.7em; margin:4px 0 0;">Sell tech access to other resellers &amp; nonprofits</p>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex; justify-content:center; gap:40px; margin-top:28px;">
+    <div style="text-align:center;">
+      <div style="font-size:0.65em; text-transform:uppercase; color:var(--sm-text-muted); letter-spacing:0.04em;">Revenue Streams Today</div>
+      <div style="font-size:0.85em; color:var(--sm-text); margin-top:4px;">MacHub sales &bull; Store</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:0.65em; text-transform:uppercase; color:var(--sm-text-muted); letter-spacing:0.04em;">Revenue Streams Ahead</div>
+      <div style="font-size:0.85em; color:var(--sm-text); margin-top:4px;">Hub partner revenue &bull; Multi-marketplace &bull; API licensing</div>
+    </div>
+  </div>
+  <aside class="notes">Zooming out to the bigger picture. Phase 1 -- proving the model with a single hub -- is complete. That's MacHub. Phase 2 has begun: onboarding local hub partners, starting with Blanchet House. Phase 3 is where we go beyond local -- full casual hubs operating remotely using our platform. And Phase 4 is the long play: selling our technology as a platform and API to other resellers and nonprofits. The revenue streams today are MacHub sales and the store. Ahead, we add hub partner revenue, multi-marketplace sales, and eventually API licensing.</aside>
+</section>
+
+<!-- ==================== SLIDE 12: CLOSING ==================== -->
+<section>
+  <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:calc(100% - 40px);">
+    <h2 style="color:var(--sm-blue-grey); font-size:2.8em;">Questions?</h2>
+    <img src="../../../assets/swedemom/logo.png" alt="Swedemom" style="height:70px; margin:32px 0;">
+    <p style="color:var(--sm-purple); font-style:italic; font-size:1.1em;">Changing the world by redeeming people, places, &amp; things!</p>
+  </div>
+  <aside class="notes">That's the update. Happy to answer any questions about the technology, the financials, the hub model, or the roadmap.</aside>
+</section>
+
+</div>
+<div class="global-footer"><img src="../../../assets/swedemom/butterfly.png" alt=""><span>Swedemom Board Meeting // Q1 2026</span></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/search/search.js"></script>
+<script>
+Reveal.initialize({
+  hash: true, transition: 'fade', transitionSpeed: 'default',
+  width: 1920, height: 1080, margin: 0,
+  plugins: [RevealNotes, RevealZoom, RevealSearch],
+  // PDF export: append ?print-pdf to URL, then Ctrl+P / Save as PDF
+  pdfSeparateFragments: false,
+  pdfMaxPagesPerSlide: 1,
+});
+// Sales chart - TODAY line plugin
+var todayLinePlugin = {
+  id: 'todayLine',
+  afterDraw: function(chart) {
+    var xScale = chart.scales.x;
+    var yScale = chart.scales.y;
+    // Draw between Mar 26 (index 3) and Apr 26 (index 4)
+    var x = (xScale.getPixelForValue(3) + xScale.getPixelForValue(4)) / 2;
+    var ctx = chart.ctx;
+    ctx.save();
+    ctx.beginPath();
+    ctx.setLineDash([6, 4]);
+    ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+    ctx.lineWidth = 1.5;
+    ctx.moveTo(x, yScale.top);
+    ctx.lineTo(x, yScale.bottom);
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.font = '500 11px Outfit';
+    ctx.textAlign = 'center';
+    ctx.fillText('TODAY', x, yScale.top - 6);
+    ctx.restore();
+  }
+};
+// Sales chart
+Reveal.on('slidechanged', function(event) {
+  if (event.currentSlide.querySelector('#salesChart') && !window._chartDrawn) {
+    window._chartDrawn = true;
+    var labels = ['Dec 25','Jan 26','Feb 26','Mar 26','Apr 26','May 26','Jun 26','Jul 26','Aug 26','Sep 26','Oct 26','Nov 26','Dec 26','Jan 27','Feb 27','Mar 27','Apr 27','May 27','Jun 27','Jul 27','Aug 27'];
+    var actual =  [34.2,32.8,29.4,31.2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
+    var projected=[null,null,null,null,26.5,25.0,27,28,30,33,47,48,70,75,80,80,95,90,90,108,112];
+    var ctx = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          { label: 'Actual GP', data: actual, backgroundColor: 'rgba(200,200,200,0.6)', borderRadius: 4, order: 2 },
+          { label: 'Projected', data: projected, backgroundColor: '#8B6BAE', borderRadius: 4, order: 1 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.06)' }, ticks: { color: '#86868b', font: { family: 'Outfit', size: 10 }, maxRotation: 45, minRotation: 45 } },
+          y: { grid: { color: 'rgba(255,255,255,0.06)' }, ticks: { color: '#86868b', font: { family: 'Outfit', size: 11 }, callback: function(v){ return '$'+v+'k'; } }, beginAtZero: true, max: 120 }
+        },
+        plugins: {
+          legend: { labels: { color: '#86868b', font: { family: 'Outfit', size: 12 }, usePointStyle: true, pointStyle: 'rect', padding: 20 } },
+          title: { display: false }
+        }
+      },
+      plugins: [todayLinePlugin]
+    });
+  }
+});
+// Hub projection chart
+Reveal.on('slidechanged', function(event) {
+  if (event.currentSlide.querySelector('#hubChart') && !window._hubChartDrawn) {
+    window._hubChartDrawn = true;
+    var ctx = document.getElementById('hubChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Mar 26','Apr 26','May 26','Jun 26','Jul 26','Aug 26','Sep 26','Oct 26','Nov 26','Dec 26','Jan 27','Feb 27','Mar 27','Apr 27','May 27','Jun 27','Jul 27','Aug 27'],
+        datasets: [{
+          label: 'Projected (mo)',
+          data: [1.8,2.3,3.0,4.3,4.8,5.5,7.3,7.8,9.2,8.5,9.0,9.0,10.5,9.8,9.8,9.8,11.8,11.5],
+          backgroundColor: 'rgba(91,184,212,0.7)',
+          borderColor: '#5bb8d4',
+          borderWidth: 1,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.06)' }, ticks: { color: '#86868b', font: { family: 'Outfit', size: 10 }, maxRotation: 45, minRotation: 45 } },
+          y: { grid: { color: 'rgba(255,255,255,0.06)' }, ticks: { color: '#86868b', font: { family: 'Outfit', size: 11 }, callback: function(v){ return '$'+v+'k'; } }, beginAtZero: true, max: 14 }
+        },
+        plugins: {
+          legend: { labels: { color: '#86868b', font: { family: 'Outfit', size: 12 }, usePointStyle: true, pointStyle: 'rect', padding: 20 } }
+        }
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

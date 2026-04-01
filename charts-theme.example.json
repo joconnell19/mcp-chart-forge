@@ -1,0 +1,49 @@
+{
+  "_comment": "Copy this file to your project root as charts-theme.json. chart-forge will find it automatically by walking up the directory tree from wherever Claude Code is running.",
+
+  "palette": [
+    "#1B4F8A",
+    "#E8A020",
+    "#4CAF8A",
+    "#C94040",
+    "#7B5EA7"
+  ],
+
+  "background": "#FFFFFF",
+
+  "fontFamily": "sans-serif",
+
+  "fontSize": {
+    "title":      20,
+    "subtitle":   14,
+    "axis":       12,
+    "legend":     12,
+    "annotation": 11
+  },
+
+  "fontWeight": {
+    "title":    "bold",
+    "subtitle": "normal"
+  },
+
+  "textColor":  "#1A1A1A",
+  "axisColor":  "#CCCCCC",
+  "gridColor":  "#F0F0F0",
+
+  "padding": {
+    "top":    48,
+    "right":  40,
+    "bottom": 56,
+    "left":   64
+  },
+
+  "outputSize": {
+    "width":  1920,
+    "height": 1080,
+    "scale":  1
+  },
+
+  "outputDir": "./charts",
+
+  "logoPath": null
+}
