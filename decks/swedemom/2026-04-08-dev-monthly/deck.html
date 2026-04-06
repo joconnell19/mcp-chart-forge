@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swedemom Dev Monthly // April 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/white.css">
+<script>var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href=window.location.search.match(/print-pdf/gi)?'https://cdn.jsdelivr.net/npm/reveal.js@4/dist/print/pdf.css':'https://cdn.jsdelivr.net/npm/reveal.js@4/dist/print/paper.css';document.getElementsByTagName('head')[0].appendChild(link);</script>
+<style>
+:root {
+  --sm-blue-grey: #5E7F8E;
+  --sm-purple: #8B6BAE;
+  --sm-purple-light: #B89FCC;
+  --sm-purple-soft: rgba(139, 107, 174, 0.08);
+  --sm-lavender: #D4C5E2;
+  --sm-dark: #1a1a1a;
+  --sm-white: #FFFFFF;
+  --sm-text: #2d2d2d;
+  --sm-text-light: #f5f5f7;
+  --sm-text-muted: #86868b;
+  --sm-green-badge: #5B8C3E;
+}
+.reveal, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal p, .reveal li, .reveal span, .reveal td, .reveal th {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.reveal .slides section { padding: 40px 80px 90px; box-sizing: border-box; }
+.reveal .controls { bottom: 54px; }  /* sit above the global footer */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; text-shadow: none; }
+.reveal h1 { font-size: 2.8em; font-weight: 700; }
+.reveal h2 { font-size: 2.4em; font-weight: 600; }
+.reveal h3 { font-size: 1.4em; font-weight: 500; }
+.reveal p, .reveal li { font-size: 0.95em; font-weight: 400; line-height: 1.6; }
+.slide-footer { display: none; }
+.global-footer {
+  position: absolute; bottom: 20px; left: 60px; right: 60px;
+  display: flex; align-items: center; gap: 10px; z-index: 30;
+  pointer-events: none;
+}
+.global-footer img { height: 20px; opacity: 0.5; }
+.global-footer span { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 500; color: var(--sm-text-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.global-footer::before {
+  content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 1.5px;
+  background: var(--sm-purple); opacity: 0.35;
+}
+.glass-card {
+  background: rgba(255,255,255,0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 40px 32px; text-align: center;
+}
+.glass-card-light {
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.6); border-radius: 20px; padding: 32px 28px; text-align: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+.reveal .progress { height: 4px; }
+.reveal .progress span { background: var(--sm-purple); }
+.gradient-bg { background: linear-gradient(135deg, #C8DAE4 0%, #D4C5E2 50%, #E8D5F0 100%); }
+
+/* ── Title slide ── */
+.title-hero {
+  background: none;
+  position: relative;
+}
+.title-hero::before {
+  content: '';
+  position: absolute;
+  top: 5%; right: 5%;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,107,174,0.22) 0%, rgba(139,107,174,0) 65%);
+  pointer-events: none;
+}
+.title-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 10%; left: 5%;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(94,127,142,0.18) 0%, rgba(94,127,142,0) 65%);
+  pointer-events: none;
+}
+.title-content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  height: 100%;
+}
+.title-date {
+  font-size: 0.85em; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--sm-purple-light); margin-bottom: 20px;
+}
+.title-main {
+  font-size: 3.6em; font-weight: 700; color: var(--sm-text-light);
+  margin: 0; line-height: 1.1;
+}
+.title-main span { color: var(--sm-purple); }
+.title-sub {
+  font-size: 1.15em; font-weight: 300; color: var(--sm-text-muted);
+  margin-top: 24px; letter-spacing: 0.04em;
+}
+.title-rule {
+  width: 120px; height: 3px; border: none; margin: 32px auto;
+  background: linear-gradient(90deg, var(--sm-blue-grey), var(--sm-purple), var(--sm-purple-light));
+  border-radius: 2px;
+}
+.title-logo { height: 48px; margin-top: 8px; opacity: 0.9; }
+
+/* ── Section divider ── */
+.section-divider {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  height: 100%;
+}
+.section-number {
+  font-size: 1em; font-weight: 600; color: var(--sm-purple);
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;
+}
+.section-title {
+  font-size: 2.6em; font-weight: 600; color: var(--sm-text-light);
+  margin: 0; text-align: center; max-width: 80%;
+}
+.section-accent {
+  width: 80px; height: 3px; border: none; margin: 28px auto 0;
+  background: var(--sm-purple); border-radius: 2px;
+}
+
+/* ── Placeholder content card ── */
+.placeholder-card {
+  background: rgba(255,255,255,0.06);
+  border: 2px dashed rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 48px 40px;
+  text-align: center;
+  color: var(--sm-text-muted);
+  font-size: 0.9em;
+  font-weight: 400;
+}
+.placeholder-card.light {
+  background: var(--sm-purple-soft);
+  border-color: rgba(139,107,174,0.2);
+  color: var(--sm-text-muted);
+}
+.placeholder-label {
+  font-size: 0.75em; font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--sm-purple-light); margin-bottom: 8px;
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 1 — TITLE
+     ═══════════════════════════════════════════════════ -->
+<section class="title-hero" data-background-color="#1a1a1a">
+  <div class="title-content">
+    <p class="title-date">April 8, 2026</p>
+    <h1 class="title-main">Monthly <span>Dev Meeting</span></h1>
+    <hr class="title-rule">
+    <p class="title-sub">Engineering sync &bull; what's new &bull; what's next</p>
+    <img src="../../../assets/swedemom/logo.png" alt="Swedemom" class="title-logo">
+  </div>
+  <aside class="notes">Welcome everyone to the April dev monthly. Agenda: industry news, Swedemom business updates, then our software updates.</aside>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 1 — THE WORLD OF AI & SOFTWARE
+     ═══════════════════════════════════════════════════ -->
+<section data-background-color="#1a1a1a">
+  <div class="section-divider">
+    <p class="section-number">Section 01</p>
+    <h2 class="section-title">What's Happening in the World of AI & Software?</h2>
+    <hr class="section-accent">
+  </div>
+  <aside class="notes">Birds-eye view of the industry. What's moving in AI and software that matters to us.</aside>
+</section>
+
+<section data-background-color="#1a1a1a">
+  <h2 style="color: var(--sm-blue-grey); font-size: 2em; margin-bottom: 40px;">Industry Highlights</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1400px; margin: 0 auto;">
+    <div class="placeholder-card">
+      <p class="placeholder-label">Topic 1</p>
+      <p>Add an industry trend, release, or news item here</p>
+    </div>
+    <div class="placeholder-card">
+      <p class="placeholder-label">Topic 2</p>
+      <p>Add an industry trend, release, or news item here</p>
+    </div>
+    <div class="placeholder-card">
+      <p class="placeholder-label">Topic 3</p>
+      <p>Add an industry trend, release, or news item here</p>
+    </div>
+    <div class="placeholder-card">
+      <p class="placeholder-label">Topic 4</p>
+      <p>Add an industry trend, release, or news item here</p>
+    </div>
+  </div>
+  <aside class="notes">Fill in with the latest AI/software news relevant to the team.</aside>
+</section>
+
+<section class="gradient-bg">
+  <h2 style="color: var(--sm-text); font-size: 2em; margin-bottom: 40px;">Why It Matters for Us</h2>
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="glass-card-light" style="padding: 48px 40px;">
+      <p class="placeholder-label" style="color: var(--sm-purple);">Key Takeaways</p>
+      <p style="color: var(--sm-text-muted);">Connect the industry news back to Swedemom. What should we be paying attention to? What opportunities or risks do these trends create?</p>
+    </div>
+  </div>
+  <aside class="notes">Bridge from "the world" to "us" -- why these trends matter for our stack and business.</aside>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 2 — WHAT'S HAPPENING IN SWEDEMOM
+     ═══════════════════════════════════════════════════ -->
+<section data-background-color="#1a1a1a">
+  <div class="section-divider">
+    <p class="section-number">Section 02</p>
+    <h2 class="section-title">What's Happening in Swedemom?</h2>
+    <hr class="section-accent">
+  </div>
+  <aside class="notes">Scoping in from the industry to our business. What's going on across Swedemom as a whole.</aside>
+</section>
+
+<section>
+  <h2 style="color: var(--sm-blue-grey); font-size: 2em; margin-bottom: 40px;">Business Updates</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; max-width: 1500px; margin: 0 auto;">
+    <div class="placeholder-card light">
+      <p class="placeholder-label" style="color: var(--sm-purple);">Operations</p>
+      <p style="color: var(--sm-text-muted);">Warehouse, shipping, inventory updates</p>
+    </div>
+    <div class="placeholder-card light">
+      <p class="placeholder-label" style="color: var(--sm-purple);">Sales & Growth</p>
+      <p style="color: var(--sm-text-muted);">eBay metrics, revenue, listings</p>
+    </div>
+    <div class="placeholder-card light">
+      <p class="placeholder-label" style="color: var(--sm-purple);">Team & Culture</p>
+      <p style="color: var(--sm-text-muted);">People updates, SCOG, events</p>
+    </div>
+  </div>
+  <aside class="notes">Cover the business side -- what's happening across the company that the dev team should know about.</aside>
+</section>
+
+<section data-background-color="#1a1a1a">
+  <h2 style="color: var(--sm-blue-grey); font-size: 2em; margin-bottom: 40px;">Key Numbers</h2>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1200px; margin: 0 auto;">
+    <div class="glass-card">
+      <div style="font-size: 2.5em; font-weight: 600; color: var(--sm-purple);">--</div>
+      <div style="font-size: 0.75em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 8px;">Metric 1</div>
+    </div>
+    <div class="glass-card">
+      <div style="font-size: 2.5em; font-weight: 600; color: var(--sm-purple);">--</div>
+      <div style="font-size: 0.75em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 8px;">Metric 2</div>
+    </div>
+    <div class="glass-card">
+      <div style="font-size: 2.5em; font-weight: 600; color: var(--sm-purple);">--</div>
+      <div style="font-size: 0.75em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 8px;">Metric 3</div>
+    </div>
+  </div>
+  <aside class="notes">Replace with real KPIs -- items listed, sold, revenue, whatever is relevant this month.</aside>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 3 — SWEDEMOM SOFTWARE
+     ═══════════════════════════════════════════════════ -->
+<section data-background-color="#1a1a1a">
+  <div class="section-divider">
+    <p class="section-number">Section 03</p>
+    <h2 class="section-title">What's Happening in Swedemom Software?</h2>
+    <hr class="section-accent">
+  </div>
+  <aside class="notes">Now zooming all the way in to what the dev team has been working on.</aside>
+</section>
+
+<section>
+  <h2 style="color: var(--sm-blue-grey); font-size: 2em; margin-bottom: 40px;">Shipped This Month</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1400px; margin: 0 auto;">
+    <div class="placeholder-card light">
+      <p class="placeholder-label" style="color: var(--sm-purple);">Feature / Fix 1</p>
+      <p style="color: var(--sm-text-muted);">What shipped, who worked on it, impact</p>
+    </div>
+    <div class="placeholder-card light">
+      <p class="placeholder-label" style="color: var(--sm-purple);">Feature / Fix 2</p>
+      <p style="color: var(--sm-text-muted);">What shipped, who worked on it, impact</p>
+    </div>
+  </div>
+  <aside class="notes">Highlight the main things that went live since last month's meeting.</aside>
+</section>
+
+<section data-background-color="#1a1a1a">
+  <h2 style="color: var(--sm-blue-grey); font-size: 2em; margin-bottom: 40px;">In Progress</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1400px; margin: 0 auto;">
+    <div class="placeholder-card">
+      <p class="placeholder-label">Work Item 1</p>
+      <p>What's actively being built, current status</p>
+    </div>
+    <div class="placeholder-card">
+      <p class="placeholder-label">Work Item 2</p>
+      <p>What's actively being built, current status</p>
+    </div>
+  </div>
+  <aside class="notes">What the team is actively building right now.</aside>
+</section>
+
+<section class="gradient-bg">
+  <h2 style="color: var(--sm-text); font-size: 2em; margin-bottom: 40px;">Up Next</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; max-width: 1500px; margin: 0 auto;">
+    <div class="glass-card-light" style="padding: 36px 28px;">
+      <p class="placeholder-label" style="color: var(--sm-purple);">Priority 1</p>
+      <p style="color: var(--sm-text-muted);">What's coming next</p>
+    </div>
+    <div class="glass-card-light" style="padding: 36px 28px;">
+      <p class="placeholder-label" style="color: var(--sm-purple);">Priority 2</p>
+      <p style="color: var(--sm-text-muted);">What's coming next</p>
+    </div>
+    <div class="glass-card-light" style="padding: 36px 28px;">
+      <p class="placeholder-label" style="color: var(--sm-purple);">Priority 3</p>
+      <p style="color: var(--sm-text-muted);">What's coming next</p>
+    </div>
+  </div>
+  <aside class="notes">Roadmap items and priorities for the coming month.</aside>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CLOSING
+     ═══════════════════════════════════════════════════ -->
+<section>
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+    <img src="../../../assets/swedemom/butterfly.png" alt="" style="height: 80px; margin-bottom: 24px; opacity: 0.7;">
+    <h2 style="color: var(--sm-blue-grey); font-size: 2.4em; margin: 0;">Questions & Discussion</h2>
+    <p style="color: var(--sm-text-muted); font-size: 1em; font-weight: 300; margin-top: 16px; font-style: italic;">Changing the world by redeeming people, places, & things!</p>
+  </div>
+  <aside class="notes">Open floor for questions, discussion, and anything else.</aside>
+</section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<!-- Global footer -->
+<div class="global-footer">
+  <img src="../../../assets/swedemom/butterfly.png" alt="">
+  <span>Dev Monthly &bull; April 2026</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/notes/notes.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  transition: 'fade',
+  transitionSpeed: 'default',
+  progress: true,
+  width: 1920,
+  height: 1080,
+  margin: 0,
+  plugins: [RevealNotes],
+});
+</script>
+</body>
+</html>

@@ -80,6 +80,10 @@ Decks live at `decks/{brand}/YYYY-MM-DD-topic/deck.html`, so the relative path t
 
 **Footer on every slide:** Small butterfly icon (24px height) + deck label text, positioned bottom-left. Thin coloured rule across the bottom of the slide (purple for Swedemom, green for SCOG).
 
+**Footer / controls overlap prevention:** The global footer is `position: absolute` so it sits outside the slide flow. To prevent overlap:
+- Set `.reveal .controls { bottom: 54px; }` so Reveal's nav arrows sit above the footer
+- Set slide bottom padding to at least `90px` (`.reveal .slides section { padding: 40px 80px 90px; }`) so content clears the footer
+
 ---
 
 ## Slide Types & Layout Patterns
