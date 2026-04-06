@@ -158,7 +158,7 @@
     <p class="title-date">April 8, 2026</p>
     <h1 class="title-main">Monthly <span>Dev Meeting</span></h1>
     <hr class="title-rule">
-    <p class="title-sub">Engineering sync &bull; what's new &bull; what's next</p>
+    <p class="title-sub">The World of AI & Software &bull; Swedemom &bull; Swedemom Software</p>
     <img src="../../../assets/swedemom/logo.png" alt="Swedemom" class="title-logo">
   </div>
   <aside class="notes">Welcome everyone to the April dev monthly. Agenda: industry news, Swedemom business updates, then our software updates.</aside>
@@ -177,26 +177,57 @@
 </section>
 
 <section data-background-color="#1a1a1a">
-  <h2 style="color: var(--sm-blue-grey); font-size: 2em; margin-bottom: 40px;">Industry Highlights</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1400px; margin: 0 auto;">
-    <div class="placeholder-card">
-      <p class="placeholder-label">Topic 1</p>
-      <p>Add an industry trend, release, or news item here</p>
-    </div>
-    <div class="placeholder-card">
-      <p class="placeholder-label">Topic 2</p>
-      <p>Add an industry trend, release, or news item here</p>
-    </div>
-    <div class="placeholder-card">
-      <p class="placeholder-label">Topic 3</p>
-      <p>Add an industry trend, release, or news item here</p>
-    </div>
-    <div class="placeholder-card">
-      <p class="placeholder-label">Topic 4</p>
-      <p>Add an industry trend, release, or news item here</p>
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 12px;">Claude Code Usage Limit Crisis</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.8em; margin-bottom: 36px;">March 23 onwards | multiple factors stacked up simultaneously</p>
+
+  <!-- Timeline visual -->
+  <div style="max-width: 1400px; margin: 0 auto; position: relative;">
+    <!-- Timeline bar -->
+    <div style="position: absolute; top: 28px; left: 80px; right: 80px; height: 3px; background: linear-gradient(90deg, var(--sm-purple), rgba(139,107,174,0.2)); border-radius: 2px;"></div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative;">
+      <!-- Event 1 -->
+      <div style="text-align: center;">
+        <div style="width: 14px; height: 14px; background: var(--sm-purple); border-radius: 50%; margin: 22px auto 16px; border: 3px solid #2a2a2a; position: relative; z-index: 2;"></div>
+        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px;">
+          <p style="color: var(--sm-purple-light); font-size: 0.65em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 8px;">Mar 23</p>
+          <p style="color: var(--sm-text-light); font-size: 0.85em; font-weight: 500; margin: 0 0 6px;">Caching Bugs</p>
+          <p style="color: var(--sm-text-muted); font-size: 0.7em; margin: 0;">Token costs silently inflated 10-20x</p>
+        </div>
+      </div>
+      <!-- Event 2 -->
+      <div style="text-align: center;">
+        <div style="width: 14px; height: 14px; background: var(--sm-purple); border-radius: 50%; margin: 22px auto 16px; border: 3px solid #2a2a2a; position: relative; z-index: 2;"></div>
+        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px;">
+          <p style="color: var(--sm-purple-light); font-size: 0.65em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 8px;">Mar 26</p>
+          <p style="color: var(--sm-text-light); font-size: 0.85em; font-weight: 500; margin: 0 0 6px;">Peak Throttling</p>
+          <p style="color: var(--sm-text-muted); font-size: 0.7em; margin: 0;">5-hour limits tightened during 5-11am PT</p>
+        </div>
+      </div>
+      <!-- Event 3 -->
+      <div style="text-align: center;">
+        <div style="width: 14px; height: 14px; background: var(--sm-purple); border-radius: 50%; margin: 22px auto 16px; border: 3px solid #2a2a2a; position: relative; z-index: 2;"></div>
+        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px;">
+          <p style="color: var(--sm-purple-light); font-size: 0.65em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 8px;">Mar 28</p>
+          <p style="color: var(--sm-text-light); font-size: 0.85em; font-weight: 500; margin: 0 0 6px;">2x Promo Ended</p>
+          <p style="color: var(--sm-text-muted); font-size: 0.7em; margin: 0;">Off-peak double usage expired overnight</p>
+        </div>
+      </div>
+      <!-- Event 4 -->
+      <div style="text-align: center;">
+        <div style="width: 14px; height: 14px; background: var(--sm-purple); border-radius: 50%; margin: 22px auto 16px; border: 3px solid #2a2a2a; position: relative; z-index: 2;"></div>
+        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px;">
+          <p style="color: var(--sm-purple-light); font-size: 0.65em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 8px;">Apr 1</p>
+          <p style="color: var(--sm-text-light); font-size: 0.85em; font-weight: 500; margin: 0 0 6px;">Anthropic Responds</p>
+          <p style="color: var(--sm-text-muted); font-size: 0.7em; margin: 0;">"Top priority" - bugs fixed, community frustrated</p>
+        </div>
+      </div>
     </div>
   </div>
-  <aside class="notes">Fill in with the latest AI/software news relevant to the team.</aside>
+
+  <p style="color: var(--sm-text-muted); font-size: 0.75em; font-style: italic; margin-top: 32px; text-align: center;">Weekly limits unchanged, but Max users burning 5-hour sessions in under 20 minutes</p>
+
+  <aside class="notes">Big story in the Claude Code world. No actual limit reductions -- weekly quotas stayed the same. But four things hit at once: two prompt caching bugs silently inflated token usage 10-20x, Anthropic intentionally throttled during peak hours (5-11am PT), the off-peak double-usage promotion expired March 28, and Opus 4.6's 1M context window makes sessions inherently more expensive with a 5-minute cache lifetime. Max subscribers were burning 5-hour limits in under 20 minutes. Anthropic acknowledged April 1 that it's their top priority, fixed some bugs, added cache miss warnings. Community response to their explanation was pretty negative -- many felt they were shifting blame to users. Also on April 4 they blocked Pro/Max subscriptions from working inside third-party tools. For us: be aware of peak hours, avoid --resume/--continue flags, and consider shorter focused sessions.</aside>
 </section>
 
 <section class="gradient-bg">
@@ -339,7 +370,7 @@
 <!-- Global footer -->
 <div class="global-footer">
   <img src="../../../assets/swedemom/butterfly.png" alt="">
-  <span>Dev Monthly &bull; April 2026</span>
+  <span>Monthly Dev Meeting &bull; April 2026</span>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>

@@ -84,6 +84,12 @@ Decks live at `decks/{brand}/YYYY-MM-DD-topic/deck.html`, so the relative path t
 - Set `.reveal .controls { bottom: 54px; }` so Reveal's nav arrows sit above the footer
 - Set slide bottom padding to at least `90px` (`.reveal .slides section { padding: 40px 80px 90px; }`) so content clears the footer
 
+**Progress bar:** Always enable and style purple:
+```css
+.reveal .progress { height: 4px; }
+.reveal .progress span { background: var(--sm-purple); }
+```
+
 ---
 
 ## Slide Types & Layout Patterns
