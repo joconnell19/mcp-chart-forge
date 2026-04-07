@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/white.css">
 <script>var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href=window.location.search.match(/print-pdf/gi)?'https://cdn.jsdelivr.net/npm/reveal.js@4/dist/print/pdf.css':'https://cdn.jsdelivr.net/npm/reveal.js@4/dist/print/paper.css';document.getElementsByTagName('head')[0].appendChild(link);</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 :root {
   --sm-blue-grey: #5E7F8E;
@@ -176,6 +177,86 @@
   <aside class="notes">Birds-eye view of the industry. What's moving in AI and software that matters to us.</aside>
 </section>
 
+<!-- ── 1M Context GA ── -->
+<section data-background-color="#1a1a1a">
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 12px;">1M Context Window is Here</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.8em; margin-bottom: 40px;">March 13 | Opus 4.6 & Sonnet 4.6, standard pricing, no beta header</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; max-width: 1400px; margin: 0 auto;">
+    <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 16px; padding: 32px 24px; text-align: center;">
+      <div style="font-size: 2.5em; font-weight: 600; color: var(--sm-purple);">1M</div>
+      <div style="font-size: 0.75em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 8px;">Token Context</div>
+      <p style="color: var(--sm-text-muted); font-size: 0.7em; margin-top: 12px;">Full codebases, long agent traces, thousands of doc pages in a single request</p>
+    </div>
+    <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 16px; padding: 32px 24px; text-align: center;">
+      <div style="font-size: 2.5em; font-weight: 600; color: var(--sm-purple);">600</div>
+      <div style="font-size: 0.75em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 8px;">Images / PDF Pages</div>
+      <p style="color: var(--sm-text-muted); font-size: 0.7em; margin-top: 12px;">Up from 100, multimodal at scale</p>
+    </div>
+    <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 16px; padding: 32px 24px; text-align: center;">
+      <div style="font-size: 2.5em; font-weight: 600; color: var(--sm-purple);">78.3%</div>
+      <div style="font-size: 0.75em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 8px;">MRCR v2 Score</div>
+      <p style="color: var(--sm-text-muted); font-size: 0.7em; margin-top: 12px;">Highest among frontier models at this context length</p>
+    </div>
+  </div>
+
+  <p style="color: var(--sm-text-muted); font-size: 0.75em; font-style: italic; margin-top: 32px; text-align: center;">Available for Max, Team, and Enterprise users in Claude Code</p>
+
+  <aside class="notes">1M context launched March 13 for Opus and Sonnet 4.6. Standard pricing, no beta header. You can load full codebases into a single session now. Image/PDF limit bumped from 100 to 600. Tradeoff: bigger context = more expensive sessions, which ties into the usage limits story coming up.</aside>
+</section>
+
+<!-- ── Claude Buddy ── -->
+<section class="gradient-bg">
+  <h2 style="color: var(--sm-text); font-size: 1.8em; margin-bottom: 12px;">Claude Code /buddy</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.8em; margin-bottom: 28px;">April 1 | your terminal gets a Tamagotchi</p>
+
+  <div style="display: grid; grid-template-columns: auto 1fr; gap: 40px; max-width: 1400px; margin: 0 auto; align-items: center;">
+    <!-- Buddy screenshot -->
+    <div>
+      <img src="buddy-welp.png" alt="Welp the Goose - Claude Code buddy" style="height: 440px; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.25);">
+    </div>
+    <!-- Info -->
+    <div class="glass-card-light" style="padding: 36px 40px; text-align: left;">
+      <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 16px;">Meet Welp, our team goose</p>
+      <p style="color: var(--sm-text); font-size: 0.85em; margin: 0 0 12px;">Run <code style="background: rgba(139,107,174,0.12); padding: 2px 8px; border-radius: 4px; font-size: 0.9em;">/buddy</code> to hatch a persistent companion</p>
+      <p style="color: var(--sm-text); font-size: 0.85em; margin: 0 0 12px;">Species and rarity assigned randomly, lives across sessions</p>
+      <p style="color: var(--sm-text); font-size: 0.85em; margin: 0 0 20px;"><strong>18 species</strong> &bull; <strong>5 rarity tiers</strong> &bull; purely cosmetic</p>
+      <div style="border-top: 1px solid rgba(139,107,174,0.15); padding-top: 16px;">
+        <p style="color: var(--sm-text-muted); font-size: 0.8em; font-style: italic; margin: 0;">Actually leaked early via the source code leak - people found the src/buddy/ directory before the feature officially dropped</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">April Fools feature. Run /buddy, get a random terminal pet. This is ours - Welp the sarcastic goose. Purely cosmetic. Was actually leaked early via the source code leak before it officially shipped.</aside>
+</section>
+
+<!-- ── Source Code Leak ── -->
+<section data-background-color="#1a1a1a">
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 12px;">Claude Code Source Code Leak</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.8em; margin-bottom: 36px;">March 31 | a missing .npmignore, 512,000 lines exposed</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1400px; margin: 0 auto;">
+    <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 16px; padding: 28px 24px;">
+      <p style="color: var(--sm-purple-light); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px;">What was revealed</p>
+      <p style="color: var(--sm-text-light); font-size: 0.85em; margin: 0 0 10px;"><strong style="color: var(--sm-purple-light);">KAIROS</strong> - autonomous background agent with "autoDream" memory consolidation while idle</p>
+      <p style="color: var(--sm-text-light); font-size: 0.85em; margin: 0 0 10px;"><strong style="color: var(--sm-purple-light);">Undercover Mode</strong> - stealth contributions to open-source repos, hides AI identity</p>
+      <p style="color: var(--sm-text-light); font-size: 0.85em; margin: 0;"><strong style="color: var(--sm-purple-light);">Model codenames</strong> - Fennec (Opus 4.6), Capybara (4.6 variant), Numbat (unreleased)</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 16px; padding: 28px 24px; flex: 1;">
+        <p style="color: var(--sm-purple-light); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px;">How it happened</p>
+        <p style="color: var(--sm-text-light); font-size: 0.85em; margin: 0;">59.8 MB source map accidentally shipped in npm v2.1.88. Mirrored to GitHub within hours.</p>
+      </div>
+      <div style="background: rgba(91,140,62,0.12); border: 1px solid rgba(91,140,62,0.25); border-radius: 16px; padding: 28px 24px; flex: 1;">
+        <p style="color: var(--sm-green-badge); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px;">Supply chain risk</p>
+        <p style="color: var(--sm-text-light); font-size: 0.85em; margin: 0;">Brief attack window (00:21-03:29 UTC Mar 31) with a trojanized axios. Rotate secrets if you installed during that window.</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">Missing .npmignore shipped the full source to npm. Archived to GitHub within hours. Interesting finds: KAIROS is an always-on background agent, Undercover Mode hides AI identity for open-source contributions, and internal model codenames were exposed. Also a brief supply chain attack window with a trojanized axios - rotate secrets if you installed during that window.</aside>
+</section>
+
 <section data-background-color="#1a1a1a">
   <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 12px;">Claude Code Usage Limit Crisis</h2>
   <p style="color: var(--sm-text-muted); font-size: 0.8em; margin-bottom: 36px;">March 23 onwards | multiple factors stacked up simultaneously</p>
@@ -187,36 +268,36 @@
 
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative;">
       <!-- Event 1 -->
-      <div style="text-align: center;">
+      <div style="text-align: center; display: flex; flex-direction: column;">
         <div style="width: 14px; height: 14px; background: var(--sm-purple); border-radius: 50%; margin: 22px auto 16px; border: 3px solid #2a2a2a; position: relative; z-index: 2;"></div>
-        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px;">
+        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px; flex: 1;">
           <p style="color: var(--sm-purple-light); font-size: 0.65em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 8px;">Mar 23</p>
           <p style="color: var(--sm-text-light); font-size: 0.85em; font-weight: 500; margin: 0 0 6px;">Caching Bugs</p>
           <p style="color: var(--sm-text-muted); font-size: 0.7em; margin: 0;">Token costs silently inflated 10-20x</p>
         </div>
       </div>
       <!-- Event 2 -->
-      <div style="text-align: center;">
+      <div style="text-align: center; display: flex; flex-direction: column;">
         <div style="width: 14px; height: 14px; background: var(--sm-purple); border-radius: 50%; margin: 22px auto 16px; border: 3px solid #2a2a2a; position: relative; z-index: 2;"></div>
-        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px;">
+        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px; flex: 1;">
           <p style="color: var(--sm-purple-light); font-size: 0.65em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 8px;">Mar 26</p>
           <p style="color: var(--sm-text-light); font-size: 0.85em; font-weight: 500; margin: 0 0 6px;">Peak Throttling</p>
           <p style="color: var(--sm-text-muted); font-size: 0.7em; margin: 0;">5-hour limits tightened during 5-11am PT</p>
         </div>
       </div>
       <!-- Event 3 -->
-      <div style="text-align: center;">
+      <div style="text-align: center; display: flex; flex-direction: column;">
         <div style="width: 14px; height: 14px; background: var(--sm-purple); border-radius: 50%; margin: 22px auto 16px; border: 3px solid #2a2a2a; position: relative; z-index: 2;"></div>
-        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px;">
+        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px; flex: 1;">
           <p style="color: var(--sm-purple-light); font-size: 0.65em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 8px;">Mar 28</p>
           <p style="color: var(--sm-text-light); font-size: 0.85em; font-weight: 500; margin: 0 0 6px;">2x Promo Ended</p>
           <p style="color: var(--sm-text-muted); font-size: 0.7em; margin: 0;">Off-peak double usage expired overnight</p>
         </div>
       </div>
       <!-- Event 4 -->
-      <div style="text-align: center;">
+      <div style="text-align: center; display: flex; flex-direction: column;">
         <div style="width: 14px; height: 14px; background: var(--sm-purple); border-radius: 50%; margin: 22px auto 16px; border: 3px solid #2a2a2a; position: relative; z-index: 2;"></div>
-        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px;">
+        <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 12px; padding: 20px 16px; flex: 1;">
           <p style="color: var(--sm-purple-light); font-size: 0.65em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 8px;">Apr 1</p>
           <p style="color: var(--sm-text-light); font-size: 0.85em; font-weight: 500; margin: 0 0 6px;">Anthropic Responds</p>
           <p style="color: var(--sm-text-muted); font-size: 0.7em; margin: 0;">"Top priority" - bugs fixed, community frustrated</p>
@@ -227,18 +308,40 @@
 
   <p style="color: var(--sm-text-muted); font-size: 0.75em; font-style: italic; margin-top: 32px; text-align: center;">Weekly limits unchanged, but Max users burning 5-hour sessions in under 20 minutes</p>
 
-  <aside class="notes">Big story in the Claude Code world. No actual limit reductions -- weekly quotas stayed the same. But four things hit at once: two prompt caching bugs silently inflated token usage 10-20x, Anthropic intentionally throttled during peak hours (5-11am PT), the off-peak double-usage promotion expired March 28, and Opus 4.6's 1M context window makes sessions inherently more expensive with a 5-minute cache lifetime. Max subscribers were burning 5-hour limits in under 20 minutes. Anthropic acknowledged April 1 that it's their top priority, fixed some bugs, added cache miss warnings. Community response to their explanation was pretty negative -- many felt they were shifting blame to users. Also on April 4 they blocked Pro/Max subscriptions from working inside third-party tools. For us: be aware of peak hours, avoid --resume/--continue flags, and consider shorter focused sessions.</aside>
+  <aside class="notes">No actual limit reductions, but four things hit at once: caching bugs inflating costs 10-20x, peak hour throttling, the 2x off-peak promo ending, and 1M context being expensive. Max users burning 5-hour limits in under 20 minutes. Anthropic says it's their top priority. For us: watch peak hours and keep sessions focused.</aside>
 </section>
 
-<section class="gradient-bg">
-  <h2 style="color: var(--sm-text); font-size: 2em; margin-bottom: 40px;">Why It Matters for Us</h2>
-  <div style="max-width: 1100px; margin: 0 auto;">
-    <div class="glass-card-light" style="padding: 48px 40px;">
-      <p class="placeholder-label" style="color: var(--sm-purple);">Key Takeaways</p>
-      <p style="color: var(--sm-text-muted);">Connect the industry news back to Swedemom. What should we be paying attention to? What opportunities or risks do these trends create?</p>
+<!-- ── Other AI News ── -->
+<section>
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 36px;">Other AI News</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1400px; margin: 0 auto;">
+    <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 16px; padding: 28px 24px;">
+      <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px;">OpenAI</p>
+      <p style="color: var(--sm-text); font-size: 0.85em; margin: 0 0 8px;"><strong>GPT-5.4</strong> launched Mar 5 with 1M context window</p>
+      <p style="color: var(--sm-text); font-size: 0.85em; margin: 0 0 8px;"><strong>GPT-5.5 "Spud"</strong> finished pretraining, release expected soon</p>
+      <p style="color: var(--sm-text); font-size: 0.85em; margin: 0;"><strong>$122B raised</strong> on April 2</p>
+    </div>
+    <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 16px; padding: 28px 24px;">
+      <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px;">Industry</p>
+      <p style="color: var(--sm-text); font-size: 0.85em; margin: 0 0 8px;"><strong>MCP</strong> hit 97M installs, now under Linux Foundation governance</p>
+      <p style="color: var(--sm-text); font-size: 0.85em; margin: 0 0 8px;"><strong>Google Gemma 4</strong> launched open-weight (Apache 2.0)</p>
+      <p style="color: var(--sm-text); font-size: 0.85em; margin: 0;"><strong>GitHub Copilot</strong> shipped agentic code review</p>
     </div>
   </div>
-  <aside class="notes">Bridge from "the world" to "us" -- why these trends matter for our stack and business.</aside>
+  <aside class="notes">Quick roundup. GPT-5.4 also has 1M context now - the race is on. GPT-5.5 is around the corner. OpenAI raised 122 billion dollars. MCP is becoming the standard for agent tooling - 97M installs and now under the Linux Foundation. Gemma 4 is open-weight which is interesting for self-hosted use cases. Copilot doing agentic code review is worth watching.</aside>
+</section>
+
+<!-- ── Discussion ── -->
+<section data-background-color="#1a1a1a">
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+    <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 24px;">Discussion</p>
+    <div style="max-width: 1000px; background: rgba(139,107,174,0.10); border: 1px solid rgba(139,107,174,0.2); border-radius: 20px; padding: 48px 56px; text-align: center;">
+      <p style="color: var(--sm-text-light); font-size: 1.3em; font-weight: 400; line-height: 1.5; margin: 0;">Anthropic found that AI models have emotion-like patterns that shape their output. "Desperation" leads to cutting corners, and "happiness" leads to agreeing with you even when you're wrong.</p>
+      <hr style="border: none; height: 1px; background: rgba(139,107,174,0.25); margin: 32px auto; width: 120px;">
+      <p style="color: var(--sm-text-light); font-size: 1.4em; font-weight: 500; margin: 0;">How should that change the way we prompt, pressure, and trust our AI tools?</p>
+    </div>
+  </div>
+  <aside class="notes">We shared this Anthropic video with the team earlier. Open discussion - let people share their thoughts. No right answer here, just want to hear perspectives from the people actually using these tools daily.</aside>
 </section>
 
 <!-- ═══════════════════════════════════════════════════
@@ -253,42 +356,108 @@
   <aside class="notes">Scoping in from the industry to our business. What's going on across Swedemom as a whole.</aside>
 </section>
 
-<section>
-  <h2 style="color: var(--sm-blue-grey); font-size: 2em; margin-bottom: 40px;">Business Updates</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; max-width: 1500px; margin: 0 auto;">
-    <div class="placeholder-card light">
-      <p class="placeholder-label" style="color: var(--sm-purple);">Operations</p>
-      <p style="color: var(--sm-text-muted);">Warehouse, shipping, inventory updates</p>
+<!-- ── Sales ── -->
+<section data-background-color="#1a1a1a">
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 8px;">March Sales</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.8em; margin-bottom: 24px;">12-month revenue trend</p>
+
+  <!-- KPI row -->
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1400px; margin: 0 auto 24px;">
+    <div style="background: rgba(139,107,174,0.10); border: 1px solid rgba(139,107,174,0.2); border-radius: 14px; padding: 20px 20px; text-align: center;">
+      <div style="font-size: 2em; font-weight: 600; color: var(--sm-purple);">$64,357</div>
+      <div style="font-size: 0.7em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 4px;">Revenue</div>
+      <div style="display: inline-block; background: rgba(91,140,62,0.15); color: var(--sm-green-badge); font-size: 0.65em; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-top: 8px;">&#9650; 40.9% YoY</div>
     </div>
-    <div class="placeholder-card light">
-      <p class="placeholder-label" style="color: var(--sm-purple);">Sales & Growth</p>
-      <p style="color: var(--sm-text-muted);">eBay metrics, revenue, listings</p>
+    <div style="background: rgba(139,107,174,0.10); border: 1px solid rgba(139,107,174,0.2); border-radius: 14px; padding: 20px 20px; text-align: center;">
+      <div style="font-size: 2em; font-weight: 600; color: var(--sm-purple);">$26,483</div>
+      <div style="font-size: 0.7em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 4px;">Gross Profit</div>
+      <div style="display: inline-block; background: rgba(91,140,62,0.15); color: var(--sm-green-badge); font-size: 0.65em; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-top: 8px;">&#9650; 40% YoY</div>
     </div>
-    <div class="placeholder-card light">
-      <p class="placeholder-label" style="color: var(--sm-purple);">Team & Culture</p>
-      <p style="color: var(--sm-text-muted);">People updates, SCOG, events</p>
+    <div style="background: rgba(139,107,174,0.10); border: 1px solid rgba(139,107,174,0.2); border-radius: 14px; padding: 20px 20px; text-align: center;">
+      <div style="font-size: 2em; font-weight: 600; color: var(--sm-purple);">3,271</div>
+      <div style="font-size: 0.7em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 4px;">Items Sold</div>
     </div>
   </div>
-  <aside class="notes">Cover the business side -- what's happening across the company that the dev team should know about.</aside>
+
+  <!-- Chart -->
+  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 24px 28px; max-width: 1400px; margin: 0 auto; height: 380px;">
+    <canvas id="revenueChart"></canvas>
+  </div>
+  <aside class="notes">March was a strong month. Revenue up 40.9% year over year, gross profit up 40%. Solid growth trajectory since the dip in Aug/Sep 2025.</aside>
 </section>
 
-<section data-background-color="#1a1a1a">
-  <h2 style="color: var(--sm-blue-grey); font-size: 2em; margin-bottom: 40px;">Key Numbers</h2>
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1200px; margin: 0 auto;">
-    <div class="glass-card">
-      <div style="font-size: 2.5em; font-weight: 600; color: var(--sm-purple);">--</div>
-      <div style="font-size: 0.75em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 8px;">Metric 1</div>
+<!-- ── Production ── -->
+<section class="gradient-bg">
+  <h2 style="color: var(--sm-text); font-size: 1.8em; margin-bottom: 36px;">Production Update</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1300px; margin: 0 auto;">
+    <div class="glass-card-light" style="padding: 32px 28px;">
+      <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 16px;">Imaging vs Intake</p>
+      <p style="color: var(--sm-text); font-size: 0.95em; margin: 0;">Last week we finally imaged more than intake, helping us chip away at the imaging backlog.</p>
     </div>
-    <div class="glass-card">
-      <div style="font-size: 2.5em; font-weight: 600; color: var(--sm-purple);">--</div>
-      <div style="font-size: 0.75em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 8px;">Metric 2</div>
-    </div>
-    <div class="glass-card">
-      <div style="font-size: 2.5em; font-weight: 600; color: var(--sm-purple);">--</div>
-      <div style="font-size: 0.75em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted); margin-top: 8px;">Metric 3</div>
+    <div class="glass-card-light" style="padding: 32px 28px; text-align: center;">
+      <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 16px;">Intake Speed</p>
+      <div style="display: flex; align-items: baseline; justify-content: center; gap: 20px; margin-bottom: 14px;">
+        <div>
+          <div style="font-size: 2.2em; font-weight: 600; color: var(--sm-purple); line-height: 1;">4:43</div>
+          <div style="font-size: 0.65em; color: var(--sm-text-muted); margin-top: 4px;">Mar 2026</div>
+        </div>
+        <div style="font-size: 1.2em; color: var(--sm-text-muted);">vs</div>
+        <div>
+          <div style="font-size: 2.2em; font-weight: 600; color: var(--sm-text-muted); line-height: 1;">6:15</div>
+          <div style="font-size: 0.65em; color: var(--sm-text-muted); margin-top: 4px;">Mar 2025</div>
+        </div>
+      </div>
+      <div style="display: inline-block; background: rgba(91,140,62,0.15); color: #5B8C3E; font-size: 0.7em; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px;">&#9660; 24.5% faster</div>
+      <p style="color: var(--sm-text-muted); font-size: 0.8em; font-style: italic; margin: 0;">Jodi currently operating at 2:43 per item</p>
     </div>
   </div>
-  <aside class="notes">Replace with real KPIs -- items listed, sold, revenue, whatever is relevant this month.</aside>
+  <aside class="notes">Two big production wins. First, imaging finally outpaced intake last week - important because we've had a backlog there. Second, intake speed improved significantly - 4:43 per item in March vs 6:15 same month last year. Jodi is our benchmark at 2:43.</aside>
+</section>
+
+<!-- ── Impact Foundation ── -->
+<section>
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+    <img src="impact-foundation-logo.webp" alt="Impact Foundation" style="height: 100px; margin-bottom: 32px;">
+    <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin: 0 0 12px;">Applying for Investment</h2>
+    <p style="color: var(--sm-text-muted); font-size: 0.85em; margin: 0 0 36px;">Swedemom is pursuing investment from Impact Foundation</p>
+    <div style="max-width: 900px; background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 16px; padding: 32px 36px; text-align: left;">
+      <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 14px;">How it works</p>
+      <p style="color: var(--sm-text); font-size: 0.9em; margin: 0 0 10px;">Impact Foundation would hold <strong>non-voting or limited voting</strong> membership units</p>
+      <p style="color: var(--sm-text); font-size: 0.9em; margin: 0 0 10px;">Founding member <strong>retains voting rights</strong> on day-to-day operations and management</p>
+      <p style="color: var(--sm-text); font-size: 0.9em; margin: 0;">Impact Foundation gets <strong>approval rights only</strong> on major structural decisions (dissolution, merger, or sale of substantially all assets)</p>
+    </div>
+  </div>
+  <aside class="notes">We're applying for investment from Impact Foundation. Key thing to understand - they'd hold non-voting units. We keep full control of operations. They only get a say on big structural stuff like selling the company or dissolving.</aside>
+</section>
+
+<!-- ── Pack Station Rollout ── -->
+<section data-background-color="#1a1a1a">
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 12px;">Pack Station Rollout</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.8em; margin-bottom: 36px;">Warehouse team ramping up this week</p>
+
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <!-- Progress bar -->
+    <div style="background: rgba(255,255,255,0.06); border-radius: 12px; height: 28px; margin-bottom: 12px; position: relative; overflow: hidden;">
+      <div style="background: linear-gradient(90deg, var(--sm-purple), var(--sm-purple-light)); height: 100%; width: 40%; border-radius: 12px;"></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 40px;">
+      <span style="color: var(--sm-text-muted); font-size: 0.7em;">This week</span>
+      <span style="color: var(--sm-purple-light); font-size: 0.7em; font-weight: 600;">100% by Friday</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+      <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 16px; padding: 28px 24px; text-align: center;">
+        <p style="color: var(--sm-purple-light); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px;">Current Status</p>
+        <p style="color: var(--sm-text-light); font-size: 0.95em; margin: 0;">Warehouse team has started using the new pack station and is ramping up usage as the week progresses</p>
+      </div>
+      <div style="background: rgba(91,140,62,0.12); border: 1px solid rgba(91,140,62,0.25); border-radius: 16px; padding: 28px 24px; text-align: center;">
+        <p style="color: var(--sm-green-badge); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px;">Early Results</p>
+        <p style="color: var(--sm-text-light); font-size: 0.95em; margin: 0;">Things are looking really well so far. Targeting 100% of fulfillment running through pack station by Friday.</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">Pack station is live and the warehouse team is using it. Ramping up through the week, aiming for all fulfillment going through it by Friday. Early feedback is positive.</aside>
 </section>
 
 <!-- ═══════════════════════════════════════════════════
@@ -304,52 +473,138 @@
 </section>
 
 <section>
-  <h2 style="color: var(--sm-blue-grey); font-size: 2em; margin-bottom: 40px;">Shipped This Month</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1400px; margin: 0 auto;">
-    <div class="placeholder-card light">
-      <p class="placeholder-label" style="color: var(--sm-purple);">Feature / Fix 1</p>
-      <p style="color: var(--sm-text-muted);">What shipped, who worked on it, impact</p>
-    </div>
-    <div class="placeholder-card light">
-      <p class="placeholder-label" style="color: var(--sm-purple);">Feature / Fix 2</p>
-      <p style="color: var(--sm-text-muted);">What shipped, who worked on it, impact</p>
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 8px;">Released Since Last Meeting</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.8em; margin-bottom: 32px;">Since March 5</p>
+
+  <div style="display: flex; justify-content: center; margin-bottom: 32px;">
+    <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.2); border-radius: 16px; padding: 20px 48px; text-align: center;">
+      <div style="font-size: 2.8em; font-weight: 600; color: var(--sm-purple);">29</div>
+      <div style="font-size: 0.75em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sm-text-muted);">Features & Bug Fixes</div>
     </div>
   </div>
-  <aside class="notes">Highlight the main things that went live since last month's meeting.</aside>
+
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1500px; margin: 0 auto;">
+    <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 14px; padding: 24px 20px;">
+      <p style="color: var(--sm-purple); font-size: 0.7em; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 10px;">Hub 3.1.0</p>
+      <p style="color: var(--sm-text); font-size: 0.8em; margin: 0;">Navbar Organization, Goals Page Improvements & More</p>
+    </div>
+    <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 14px; padding: 24px 20px;">
+      <p style="color: var(--sm-purple); font-size: 0.7em; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 10px;">Hub 3.1.1</p>
+      <p style="color: var(--sm-text); font-size: 0.8em; margin: 0;">Item Edit Description Bug Fix, Faster Price Estimator & More</p>
+    </div>
+    <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 14px; padding: 24px 20px;">
+      <p style="color: var(--sm-purple); font-size: 0.7em; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 10px;">Hub 3.2.0</p>
+      <p style="color: var(--sm-text); font-size: 0.8em; margin: 0;">Warehouse Tracking Log Page & More</p>
+    </div>
+    <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 14px; padding: 24px 20px;">
+      <p style="color: var(--sm-purple); font-size: 0.7em; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 10px;">Hub 3.3.0</p>
+      <p style="color: var(--sm-text); font-size: 0.8em; margin: 0;">Pack Station & More</p>
+    </div>
+  </div>
+  <aside class="notes">29 features and bug fixes across 4 releases since our last meeting on March 5. Quick overview of each release before we dive into the pack station demo.</aside>
 </section>
 
 <section data-background-color="#1a1a1a">
-  <h2 style="color: var(--sm-blue-grey); font-size: 2em; margin-bottom: 40px;">In Progress</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1400px; margin: 0 auto;">
-    <div class="placeholder-card">
-      <p class="placeholder-label">Work Item 1</p>
-      <p>What's actively being built, current status</p>
-    </div>
-    <div class="placeholder-card">
-      <p class="placeholder-label">Work Item 2</p>
-      <p>What's actively being built, current status</p>
-    </div>
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 8px;">New Pack Station</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.8em; margin-bottom: 24px;">Demo walkthrough</p>
+  <div style="display: flex; justify-content: center;">
+    <iframe src="https://www.loom.com/embed/1f0d4354ec894273ab13a6f2bab8cdc2" width="820" height="620" frameborder="0" allowfullscreen style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);"></iframe>
   </div>
-  <aside class="notes">What the team is actively building right now.</aside>
+  <aside class="notes">Play the Loom walkthrough of the new pack station. Pause for questions after.</aside>
 </section>
 
+<!-- ── Matt ── -->
 <section class="gradient-bg">
-  <h2 style="color: var(--sm-text); font-size: 2em; margin-bottom: 40px;">Up Next</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; max-width: 1500px; margin: 0 auto;">
-    <div class="glass-card-light" style="padding: 36px 28px;">
-      <p class="placeholder-label" style="color: var(--sm-purple);">Priority 1</p>
-      <p style="color: var(--sm-text-muted);">What's coming next</p>
-    </div>
-    <div class="glass-card-light" style="padding: 36px 28px;">
-      <p class="placeholder-label" style="color: var(--sm-purple);">Priority 2</p>
-      <p style="color: var(--sm-text-muted);">What's coming next</p>
-    </div>
-    <div class="glass-card-light" style="padding: 36px 28px;">
-      <p class="placeholder-label" style="color: var(--sm-purple);">Priority 3</p>
-      <p style="color: var(--sm-text-muted);">What's coming next</p>
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 8px;">Developer Spotlight</p>
+    <h2 style="color: var(--sm-text); font-size: 2.2em; margin: 0 0 32px;">Matt</h2>
+    <div class="glass-card-light" style="padding: 36px 40px; text-align: left;">
+      <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 16px;">Pack Station Development</p>
+      <p style="color: var(--sm-text); font-size: 0.95em; margin: 0 0 12px;">Built the new pack station from the ground up</p>
+      <p style="color: var(--sm-text); font-size: 0.95em; margin: 0;">Share what he learned through the process</p>
     </div>
   </div>
-  <aside class="notes">Roadmap items and priorities for the coming month.</aside>
+  <aside class="notes">Hand off to Matt. Let him walk through his experience building the pack station, challenges he ran into, what he learned.</aside>
+</section>
+
+<!-- ── Devri ── -->
+<section data-background-color="#1a1a1a">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p style="color: var(--sm-purple-light); font-size: 0.75em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 8px;">Developer Spotlight</p>
+    <h2 style="color: var(--sm-text-light); font-size: 2.2em; margin: 0 0 32px;">Devri</h2>
+    <div style="background: rgba(139,107,174,0.10); border: 1px solid rgba(139,107,174,0.2); border-radius: 20px; padding: 36px 40px; text-align: left;">
+      <p style="color: var(--sm-purple-light); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 16px;">What she's been working on</p>
+      <p style="color: var(--sm-text-light); font-size: 0.95em; margin: 0 0 12px;">Share what she's been building recently</p>
+      <p style="color: var(--sm-text-light); font-size: 0.95em; margin: 0;"><strong style="color: var(--sm-purple-light);">Live demo:</strong> Notifications and High Value Item Tracking</p>
+    </div>
+  </div>
+  <aside class="notes">Hand off to Devri. She'll share what she's been working on and do a live demo of notifications and high value item tracking.</aside>
+</section>
+
+<!-- ── Jamie ── -->
+<section>
+  <div style="max-width: 1300px; margin: 0 auto;">
+    <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 8px;">Developer Spotlight</p>
+    <h2 style="color: var(--sm-blue-grey); font-size: 2.2em; margin: 0 0 32px;">Jamie</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+      <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 14px; padding: 20px 18px; text-align: center;">
+        <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; margin: 0 0 6px;">Home Page</p>
+        <p style="color: var(--sm-text-muted); font-size: 0.75em; margin: 0;">New implementation</p>
+      </div>
+      <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 14px; padding: 20px 18px; text-align: center;">
+        <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; margin: 0 0 6px;">Goals Page</p>
+        <p style="color: var(--sm-text-muted); font-size: 0.75em; margin: 0;">New implementation</p>
+      </div>
+      <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 14px; padding: 20px 18px; text-align: center;">
+        <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; margin: 0 0 6px;">Production Metrics</p>
+        <p style="color: var(--sm-text-muted); font-size: 0.75em; margin: 0;">Improvements</p>
+      </div>
+      <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 14px; padding: 20px 18px; text-align: center;">
+        <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; margin: 0 0 6px;">Navbar</p>
+        <p style="color: var(--sm-text-muted); font-size: 0.75em; margin: 0;">Reorganization</p>
+      </div>
+      <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 14px; padding: 20px 18px; text-align: center;">
+        <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; margin: 0 0 6px;">eBay Media</p>
+        <p style="color: var(--sm-text-muted); font-size: 0.75em; margin: 0;">All images & videos posted</p>
+      </div>
+      <div style="background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.15); border-radius: 14px; padding: 20px 18px; text-align: center;">
+        <p style="color: var(--sm-purple); font-size: 0.75em; font-weight: 600; margin: 0 0 6px;">Pack Station</p>
+        <p style="color: var(--sm-text-muted); font-size: 0.75em; margin: 0;">Final touches</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">Jamie's turn. Walk through the major items: new home page, goals page, production metrics improvements, navbar reorg, ensuring all images and videos get posted to eBay, and final pack station polish.</aside>
+</section>
+
+<!-- ── What's Coming Up ── -->
+<section data-background-color="#1a1a1a">
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 32px;">What's Coming Up</h2>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1400px; margin: 0 auto;">
+    <div style="background: rgba(139,107,174,0.10); border: 1px solid rgba(139,107,174,0.2); border-radius: 16px; padding: 28px 24px;">
+      <p style="color: var(--sm-purple-light); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px;">Devri</p>
+      <p style="color: var(--sm-text-light); font-size: 0.9em; font-weight: 500; margin: 0 0 8px;">New Customer Service Tool</p>
+      <p style="color: var(--sm-text-muted); font-size: 0.8em; margin: 0;">Building a new customer service tool in the Hub</p>
+    </div>
+    <div style="background: rgba(139,107,174,0.10); border: 1px solid rgba(139,107,174,0.2); border-radius: 16px; padding: 28px 24px;">
+      <p style="color: var(--sm-purple-light); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px;">Matt</p>
+      <p style="color: var(--sm-text-light); font-size: 0.9em; font-weight: 500; margin: 0 0 8px;">Pack Station Enhancements</p>
+      <p style="color: var(--sm-text-muted); font-size: 0.8em; margin: 0;">Additional features and improvements to pack station</p>
+    </div>
+    <div style="background: rgba(139,107,174,0.10); border: 1px solid rgba(139,107,174,0.2); border-radius: 16px; padding: 28px 24px;">
+      <p style="color: var(--sm-purple-light); font-size: 0.75em; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px;">Jamie</p>
+      <p style="color: var(--sm-text-light); font-size: 0.9em; font-weight: 500; margin: 0 0 8px;">Manage Listings, Relisting Agent & More</p>
+      <p style="color: var(--sm-text-muted); font-size: 0.8em; margin: 0;">New manage listings page, relisting agent, new pricing estimator, and more</p>
+    </div>
+  </div>
+  <aside class="notes">Quick overview of what each dev is focused on next. Devri will share a little about the customer service tool she's starting. Matt is continuing with pack station improvements. Jamie is building manage listings, relisting agent, and a new pricing estimator.</aside>
+</section>
+
+<!-- ── Roadmap ── -->
+<section data-background-color="#1a1a1a">
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 24px;">Roadmap</h2>
+  <div style="display: flex; justify-content: center;">
+    <img src="jira-roadmap.png" alt="Jira roadmap" style="max-width: 1400px; width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════
@@ -386,6 +641,65 @@ Reveal.initialize({
   margin: 0,
   plugins: [RevealNotes],
 });
+
+// Revenue chart
+const ctx = document.getElementById('revenueChart');
+if (ctx) {
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Mar 25','Apr 25','May 25','Jun 25','Jul 25','Aug 25','Sep 25','Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26'],
+      datasets: [
+        {
+          label: 'Revenue',
+          data: [45686,42885,51850,47746,61440,48968,51105,52525,65117,68869,66444,60679,64357],
+          borderColor: '#8B6BAE',
+          backgroundColor: 'rgba(139,107,174,0.1)',
+          fill: true,
+          tension: 0.4,
+          pointRadius: 4,
+          pointBackgroundColor: '#8B6BAE',
+          borderWidth: 2.5,
+        },
+        {
+          label: 'Gross Margin',
+          data: [21838,18317,24934,22914,34115,22875,27567,23029,31498,34790,32260,31319,32901],
+          borderColor: '#5B8C3E',
+          backgroundColor: 'rgba(91,140,62,0.08)',
+          fill: true,
+          tension: 0.4,
+          pointRadius: 4,
+          pointBackgroundColor: '#5B8C3E',
+          borderWidth: 2.5,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { color: '#86868b', font: { family: 'Outfit', size: 12 }, boxWidth: 12, padding: 16 }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: '#86868b', font: { family: 'Outfit', size: 11 } },
+          grid: { color: 'rgba(255,255,255,0.06)' }
+        },
+        y: {
+          ticks: {
+            color: '#86868b',
+            font: { family: 'Outfit', size: 11 },
+            callback: function(v) { return '$' + (v/1000).toFixed(0) + 'k'; }
+          },
+          grid: { color: 'rgba(255,255,255,0.06)' }
+        }
+      }
+    }
+  });
+}
 </script>
 </body>
 </html>
