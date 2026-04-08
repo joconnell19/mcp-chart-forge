@@ -311,6 +311,52 @@
   <aside class="notes">No actual limit reductions, but four things hit at once: caching bugs inflating costs 10-20x, peak hour throttling, the 2x off-peak promo ending, and 1M context being expensive. Max users burning 5-hour limits in under 20 minutes. Anthropic says it's their top priority. For us: watch peak hours and keep sessions focused.</aside>
 </section>
 
+<!-- ── OpenClaw Blocked ── -->
+<section data-background-color="#1a1a1a">
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 12px;">OpenClaw Blocked</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.8em; margin-bottom: 28px;">April 4 | Anthropic cuts off third-party tool access from subscriptions</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1400px; margin: 0 auto; align-items: center;">
+    <div>
+      <img src="steipete-tweet.png" alt="Peter Steinberger tweet about OpenClaw blocking" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 14px; padding: 24px 20px;">
+        <p style="color: var(--sm-purple-light); font-size: 0.7em; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 8px;">What happened</p>
+        <p style="color: var(--sm-text-light); font-size: 0.85em; margin: 0;">Pro/Max subscriptions no longer work with third-party tools. Even mentioning "OpenClaw" in a system prompt triggers a 400 error.</p>
+      </div>
+      <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 14px; padding: 24px 20px;">
+        <p style="color: var(--sm-purple-light); font-size: 0.7em; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 8px;">Why</p>
+        <p style="color: var(--sm-text-light); font-size: 0.85em; margin: 0;">Third-party tools bypass prompt caching, consuming significantly more compute. ~135k OpenClaw instances affected, some facing up to 50x cost increases.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">Anthropic blocked all third-party tool access from subscriptions on April 4. But this week it went further - even using the official Claude Code CLI with "OpenClaw" mentioned in your system prompt returns a 400 error. They're scanning prompt content now, not just blocking OAuth. OpenClaw creator Steinberger, who left for OpenAI in February, said "funny how timings match up, first they copy features into their closed harness, then they lock out open source."</aside>
+</section>
+
+<!-- ── Mythos + Glasswing ── -->
+<section data-background-color="#1a1a1a">
+  <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 12px;">Claude Mythos + Project Glasswing</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.8em; margin-bottom: 28px;">Announced April 7 | Anthropic's most powerful model, restricted for security</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1400px; margin: 0 auto; align-items: center;">
+    <div>
+      <img src="glasswing-banner.jpg" alt="Project Glasswing" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 14px; padding: 24px 20px;">
+        <p style="color: var(--sm-purple-light); font-size: 0.7em; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 8px;">Claude Mythos</p>
+        <p style="color: var(--sm-text-light); font-size: 0.85em; margin: 0;">Anthropic's most capable model ever. Found thousands of zero-days across every major OS and browser, including a 27-year-old OpenBSD vulnerability. Too powerful to release publicly.</p>
+      </div>
+      <div style="background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 14px; padding: 24px 20px;">
+        <p style="color: var(--sm-purple-light); font-size: 0.7em; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 8px;">Project Glasswing</p>
+        <p style="color: var(--sm-text-light); font-size: 0.85em; margin: 0;">Gives defenders early access to Mythos. Launch partners include AWS, Apple, Google, Microsoft, Nvidia, CrowdStrike, and more.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">Announced yesterday. Mythos is Anthropic's most powerful model - it was leaked in the source code incident and they've now officially acknowledged it. It's exceptionally good at finding security vulnerabilities - thousands of zero-days including a 27-year-old bug in OpenBSD. They consider it too dangerous to release publicly, so Project Glasswing gives major tech companies early access for defensive security work. The idea is to give the good guys a head start before these capabilities become widely available.</aside>
+</section>
+
 <!-- ── Other AI News ── -->
 <section>
   <h2 style="color: var(--sm-blue-grey); font-size: 1.8em; margin-bottom: 36px;">Other AI News</h2>
