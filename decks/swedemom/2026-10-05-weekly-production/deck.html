@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Production Week in Review // Sep 27 &ndash; Oct 3, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/white.css">
+<script>var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href=window.location.search.match(/print-pdf/gi)?'https://cdn.jsdelivr.net/npm/reveal.js@4/dist/print/pdf.css':'https://cdn.jsdelivr.net/npm/reveal.js@4/dist/print/paper.css';document.getElementsByTagName('head')[0].appendChild(link);</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --sm-blue-grey: #5E7F8E;
+  --sm-purple: #8B6BAE;
+  --sm-purple-light: #B89FCC;
+  --sm-purple-soft: rgba(139, 107, 174, 0.08);
+  --sm-lavender: #D4C5E2;
+  --sm-dark: #1a1a1a;
+  --sm-white: #FFFFFF;
+  --sm-text: #2d2d2d;
+  --sm-text-light: #f5f5f7;
+  --sm-text-muted: #86868b;
+  --sm-green-badge: #5B8C3E;
+  --sm-amber: #C98A20;
+  --sm-red: #C94040;
+}
+.reveal, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal p, .reveal li, .reveal span, .reveal td, .reveal th {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.reveal .slides section { padding: 30px 70px 84px; box-sizing: border-box; }
+.reveal .controls { bottom: 54px; }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; text-shadow: none; }
+.reveal h1 { font-size: 2.8em; font-weight: 700; }
+.reveal h2 { font-size: 2.4em; font-weight: 600; }
+.reveal h3 { font-size: 1.4em; font-weight: 500; }
+.reveal p, .reveal li { font-size: 0.82em; font-weight: 400; line-height: 1.5; }
+.global-footer {
+  position: absolute; bottom: 18px; left: 60px; right: 60px;
+  display: flex; align-items: center; gap: 10px; z-index: 30; pointer-events: none;
+}
+.global-footer img { height: 24px; opacity: 0.9; }
+.global-footer span { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 500; color: var(--sm-text-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.global-footer::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 1px; background: #86868b; opacity: 0.35; }
+.reveal .progress { height: 4px; }
+.reveal .progress span { background: var(--sm-purple); }
+.gradient-bg { background: linear-gradient(135deg, #C8DAE4 0%, #D4C5E2 50%, #E8D5F0 100%); }
+
+.chart-box { position: relative; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.chart-box > canvas { display: block; max-width: 100%; }
+.panel-dark { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 16px 18px; }
+.panel-light { background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 16px 18px; box-shadow: 0 4px 18px rgba(0,0,0,0.05); }
+
+.kpi-dark { background: rgba(139,107,174,0.10); border: 1px solid rgba(139,107,174,0.2); border-radius: 14px; padding: 12px 12px; text-align: center; }
+.kpi-num { font-size: 1.5em; font-weight: 600; color: var(--sm-purple); line-height: 1; }
+.kpi-sub { font-size: 0.5em; font-weight: 400; color: var(--sm-text-muted); margin-top: 4px; }
+.kpi-label { font-size: 0.54em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--sm-text-muted); margin-top: 5px; }
+
+.info-card { background: rgba(139,107,174,0.12); border: 1px solid rgba(139,107,174,0.25); border-radius: 16px; padding: 12px 17px; }
+.info-card p:last-child { font-size: 0.68em !important; line-height: 1.45; }
+.info-label { color: var(--sm-purple-light); font-size: 0.62em; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; margin: 0 0 7px; }
+.caption { color: var(--sm-text-muted); font-size: 0.58em; font-style: italic; margin-top: 10px; text-align: center; }
+.reveal h2.slide-h2-dark, .reveal h2.slide-h2-light { color: var(--sm-blue-grey); font-size: 1.5em; margin-bottom: 4px; }
+.slide-kicker { color: var(--sm-text-muted); font-size: 0.66em; margin-bottom: 12px; }
+
+/* Chips: LIGHT variants for light/gradient slides */
+.chip { border-radius: 13px; padding: 12px 15px; }
+.chip h4 { font-size: 0.58em; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 5px; color: var(--sm-text); }
+.chip p { font-size: 0.62em !important; margin: 0; color: var(--sm-text); line-height: 1.4; }
+.chip-top { background: rgba(201,138,32,0.12); border: 1px solid rgba(201,138,32,0.3); }
+.chip-mid { background: var(--sm-purple-soft); border: 1px solid rgba(139,107,174,0.2); }
+.chip-low { background: rgba(94,127,142,0.10); border: 1px solid rgba(94,127,142,0.25); }
+.chip-bad { background: rgba(201,64,64,0.10); border: 1px solid rgba(201,64,64,0.28); }
+.chip-good { background: rgba(91,140,62,0.10); border: 1px solid rgba(91,140,62,0.28); }
+
+/* Chips on DARK slides: light text, stronger fills */
+.chip.on-dark h4 { color: #f0f0f2; }
+.chip.on-dark p { color: #d2d2d7; }
+.chip.on-dark.chip-good { background: rgba(91,140,62,0.18); border-color: rgba(127,179,92,0.45); }
+.chip.on-dark.chip-good h4 { color: #9FD47C; }
+.chip.on-dark.chip-bad { background: rgba(201,64,64,0.18); border-color: rgba(224,122,122,0.45); }
+.chip.on-dark.chip-bad h4 { color: #F09B9B; }
+.chip.on-dark.chip-top { background: rgba(201,138,32,0.18); border-color: rgba(224,175,80,0.45); }
+.chip.on-dark.chip-top h4 { color: #EFC067; }
+.chip.on-dark.chip-mid { background: rgba(139,107,174,0.20); border-color: rgba(184,159,204,0.45); }
+.chip.on-dark.chip-mid h4 { color: #CDB5E0; }
+.chip.on-dark.chip-low { background: rgba(94,127,142,0.20); border-color: rgba(139,169,182,0.45); }
+.chip.on-dark.chip-low h4 { color: #A9C6D2; }
+
+.agenda-row { display: flex; align-items: center; gap: 22px; padding: 16px 22px; border-radius: 14px; background: rgba(139,107,174,0.10); border: 1px solid rgba(139,107,174,0.22); text-align: left; }
+.agenda-num { font-size: 1.35em; font-weight: 700; color: var(--sm-purple-light); line-height: 1; min-width: 44px; text-align: center; }
+.agenda-row h4 { font-size: 0.74em; font-weight: 600; margin: 0 0 4px; color: #f0f0f2; text-align: left; }
+.agenda-row p { font-size: 0.62em !important; margin: 0; color: #c2c2c8; line-height: 1.42; text-align: left; }
+
+.formula { background: rgba(139,107,174,0.14); border: 1px solid rgba(139,107,174,0.3); border-radius: 14px; padding: 18px 24px; text-align: center; }
+.formula .eq { font-size: 0.88em; font-weight: 600; color: #f0f0f2; line-height: 1.6; }
+.formula .eq b { color: var(--sm-purple-light); }
+.worked-col { border-radius: 14px; padding: 14px 18px; }
+.worked-col h4 { font-size: 0.62em; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 8px; text-align: center; }
+.worked-col .line { font-size: 0.58em; color: #d2d2d7; line-height: 1.7; text-align: center; }
+.worked-col .res { font-size: 0.8em; font-weight: 700; margin-top: 8px; text-align: center; }
+
+.title-hero { position: relative; }
+.title-hero::before { content: ''; position: absolute; top: 5%; right: 6%; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(139,107,174,0.22) 0%, rgba(139,107,174,0) 65%); pointer-events: none; }
+.title-hero::after { content: ''; position: absolute; bottom: 8%; left: 6%; width: 460px; height: 460px; border-radius: 50%; background: radial-gradient(circle, rgba(94,127,142,0.18) 0%, rgba(94,127,142,0) 65%); pointer-events: none; }
+.title-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; }
+.title-butterfly { height: 78px; margin-bottom: 22px; }
+.title-date { font-size: 0.85em; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sm-purple-light); margin-bottom: 16px; }
+.title-main { font-size: 3.4em; font-weight: 700; color: var(--sm-text-light); margin: 0; line-height: 1.1; }
+.title-main span { color: var(--sm-purple); }
+.title-rule { width: 120px; height: 3px; border: none; margin: 30px auto; background: linear-gradient(90deg, var(--sm-blue-grey), var(--sm-purple), var(--sm-purple-light)); border-radius: 2px; }
+.title-sub { font-size: 1.05em; font-weight: 300; color: var(--sm-text-muted); letter-spacing: 0.04em; margin: 0; }
+.title-logo { height: 40px; margin-top: 26px; opacity: 0.85; }
+
+.photo-card { border-radius: 14px; overflow: hidden; background: #fff; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 4px 14px rgba(0,0,0,0.06); display: flex; flex-direction: column; }
+.photo-card img { width: 100%; height: 300px; object-fit: cover; display: block; }
+.photo-card .pc-body { padding: 10px 14px 12px; }
+.photo-card .pc-title { font-size: 0.56em; font-weight: 600; color: var(--sm-text); margin: 0 0 5px; line-height: 1.3; }
+.photo-card .pc-verdict { display: inline-block; font-size: 0.5em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; margin-bottom: 5px; }
+.pc-produce { background: rgba(91,140,62,0.15); color: #3d6b24; border: 1px solid rgba(91,140,62,0.4); }
+.pc-prioritize { background: rgba(201,138,32,0.15); color: #8a5c10; border: 1px solid rgba(201,138,32,0.45); }
+.pc-maybe { background: rgba(94,127,142,0.15); color: #405d6b; border: 1px solid rgba(94,127,142,0.4); }
+.photo-card .pc-line { font-size: 0.5em; color: #5b5b60; margin: 0; line-height: 1.4; }
+
+/* ===== Incentive section: display ramp vs small ramp (no middle sizes) ===== */
+.inc-stage { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; height: 100%; max-width: 1640px; margin: 0 auto; text-align: left; }
+.reveal .inc-display { font-size: 190px; font-weight: 700; line-height: 0.9; letter-spacing: -0.045em; color: #f5f5f7; margin: 0; text-align: left; }
+.reveal .inc-display.ink { color: #1d1d1f; }
+.reveal .inc-quote { font-size: 104px; font-weight: 600; line-height: 1.0; letter-spacing: -0.035em; color: #f5f5f7; margin: 0; text-align: left; }
+.reveal .inc-label { font-size: 21px !important; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9a9aa0; margin: 0 0 22px; line-height: 1.3; text-align: left; }
+.reveal .inc-label.ink { color: #55555c; }
+.reveal .inc-small { font-size: 27px !important; font-weight: 400; line-height: 1.45; color: #c8c8cd; margin: 0; text-align: left; }
+.reveal .inc-small.ink { color: #2d2d2d; }
+.reveal .inc-tiny { font-size: 21px !important; line-height: 1.35; color: #4a4a50; margin: 0; text-align: left; }
+.reveal .inc-cite { font-size: 19px !important; font-style: italic; color: #8a8a90; margin: 14px 0 0; text-align: left; }
+.inc-glass .inc-cite { margin-top: 10px; }
+.reveal .sig { color: var(--sm-purple-light); }
+.reveal .sig-l { color: var(--sm-purple); }
+.inc-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; width: 100%; }
+.inc-cols.four { grid-template-columns: repeat(4, 1fr); }
+.inc-glass { background: rgba(255,255,255,0.62); border: 1px solid rgba(255,255,255,0.9); border-radius: 18px; padding: 22px 26px; backdrop-filter: blur(14px); }
+.inc-glass .inc-label { margin-bottom: 10px; }
+.inc-glass.dark { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.10); }
+.inc-chartwrap { width: 100%; box-sizing: border-box; }
+.inc-steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; width: 100%; margin-top: 60px; position: relative; }
+.inc-steps::before { content: ''; position: absolute; top: 34px; left: 34px; right: 34px; height: 2px; background: rgba(29,29,31,0.18); }
+.inc-step { position: relative; }
+.inc-step .inc-label { margin: 18px 0 6px; }
+.inc-step-n { width: 68px; height: 68px; border-radius: 50%; background: rgba(255,255,255,0.8); border: 1px solid rgba(29,29,31,0.15); display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 600; color: #1d1d1f; position: relative; }
+.inc-step.on .inc-step-n { background: var(--sm-purple); color: #fff; border-color: var(--sm-purple); }
+
+/* pipeline flow diagram */
+.pf-row { display: flex; align-items: flex-start; justify-content: center; gap: 0; max-width: 1700px; margin: 56px auto 0; }
+.pf-node { display: flex; flex-direction: column; align-items: center; width: 124px; flex: 0 0 124px; }
+.pf-dot { width: 112px; height: 112px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 26px; font-weight: 700; }
+.pf-lbl { margin-top: 18px; font-size: 18px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #d2d2d7; text-align: center; }
+.pf-q { flex: 1 1 0; display: flex; flex-direction: column; align-items: center; padding-top: 30px; position: relative; min-width: 0; }
+.pf-arrow { position: absolute; top: 56px; left: 6px; right: 6px; height: 2px; background: rgba(255,255,255,0.22); }
+.pf-arrow::after { content: ''; position: absolute; right: -2px; top: -6px; border-left: 12px solid rgba(255,255,255,0.35); border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+.pf-pill { position: relative; z-index: 2; border-radius: 22px; padding: 6px 12px; max-width: 92%; text-align: center; display: flex; flex-direction: column; align-items: center; background: #1a1a1a; }
+.pf-pill b { font-size: 26px; font-weight: 700; line-height: 1.1; }
+.pf-pill span { font-size: 13px; color: #b4b4b9; line-height: 1.2; }
+.pf-ok { border: 2px solid rgba(127,179,92,0.7); } .pf-ok b { color: #9FD47C; }
+.pf-warn { border: 2px solid rgba(224,175,80,0.8); } .pf-warn b { color: #EFC067; }
+.pf-bad { border: 3px solid rgba(224,122,122,0.9); box-shadow: 0 0 30px rgba(201,64,64,0.35); } .pf-bad b { color: #F09B9B; font-size: 36px; }
+
+/* John Doe pay stubs */
+.jd-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; width: 100%; }
+.jd-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 22px 22px 18px; display: flex; flex-direction: column; }
+.jd-card.jd-base { background: rgba(255,255,255,0.025); }
+.jd-card.jd-best { border: 2px solid #5B8C3E; background: rgba(91,140,62,0.12); }
+.jd-card.jd-bad { border: 2px solid rgba(201,64,64,0.7); background: rgba(201,64,64,0.08); }
+.reveal .jd-t { font-size: 26px !important; font-weight: 700; color: #f5f5f7; margin: 0; text-align: left; }
+.reveal .jd-s { font-size: 18px !important; color: #a8a8ae; margin: 6px 0 16px; line-height: 1.35; min-height: 50px; text-align: left; }
+.jd-line { display: flex; justify-content: space-between; font-size: 21px; color: #d2d2d7; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.jd-line b { font-weight: 600; }
+.jd-line.dim { color: #6e6e75; }
+.jd-line.ind b { color: #B89FCC; }
+.jd-line.team b { color: #8CC56A; }
+.jd-line.bad, .jd-line.bad b { color: #F09B9B; }
+.jd-total { margin-top: auto; padding-top: 14px; display: flex; flex-direction: column; }
+.jd-total b { font-size: 58px; font-weight: 700; color: #f5f5f7; line-height: 1; letter-spacing: -0.03em; }
+.jd-total span { font-size: 19px; color: #a8a8ae; margin-top: 6px; }
+.jd-best .jd-total span { color: #9FD47C; font-weight: 600; }
+.jd-bad .jd-total span { color: #F09B9B; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- 1 : TITLE -->
+<section class="title-hero" data-background-color="#1a1a1a">
+  <div class="title-content">
+    <p class="title-date">Week of Sep 27 &ndash; Oct 3, 2026 &bull; with four-week lookback</p>
+    <h1 class="title-main">Production <span>Week</span> in Review</h1>
+    <hr class="title-rule">
+    <p class="title-sub">Intake &rarr; Description &rarr; Imaging &rarr; Final Check &rarr; Put Away &rarr; Posting</p>
+    <img src="../../../assets/swedemom/logo.png" alt="Swedemom" class="title-logo">
+  </div>
+  <aside class="notes">Weekly production review, Sunday September twenty-seventh through Saturday October third, built from live Hub data. Short version of last week: intake and description came within about ten items of the fifteen hundred goal. Imaging missed by a hundred seventy-four, and the cause is hours, not speed: about twenty-seven hands-on imaging hours left the bench, while the people who were there worked faster. Posting had its biggest week of the five, put-away ran well ahead of final check, and the month-old pile of items with no bin shrank by a third. The cart was the most valuable in a month, mostly thanks to jewelry. We close with a placeholder for the production incentives discussion.</aside>
+</section>
+
+<!-- 2 : SCOREBOARD -->
+<section class="gradient-bg">
+  <h2 style="color: var(--sm-text); font-size: 1.5em; margin-bottom: 4px;">Last Week at a Glance</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.66em; margin-bottom: 12px;">Items completing each stage against the weekly goals</p>
+  <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; max-width: 1560px; margin: 0 auto;">
+    <div class="kpi-dark" style="background: rgba(255,255,255,0.75);"><div class="kpi-num" style="color:#3FA7D6;">1,489</div><div class="kpi-label">Intake</div><div class="kpi-sub">11 short of 1,500</div></div>
+    <div class="kpi-dark" style="background: rgba(255,255,255,0.75);"><div class="kpi-num" style="color:#0077B6;">1,493</div><div class="kpi-label">Description</div><div class="kpi-sub">7 short of 1,500</div></div>
+    <div class="kpi-dark" style="background: rgba(255,255,255,0.75);"><div class="kpi-num" style="color:#6A0DAD;">1,326</div><div class="kpi-label">Imaging</div><div class="kpi-sub">174 short of 1,500</div></div>
+    <div class="kpi-dark" style="background: rgba(255,255,255,0.75);"><div class="kpi-num" style="color:#E83E8C;">1,340</div><div class="kpi-label">Final Check</div><div class="kpi-sub">&minus;219, no goal</div></div>
+    <div class="kpi-dark" style="background: rgba(255,255,255,0.75);"><div class="kpi-num" style="color:#23A332;">1,489</div><div class="kpi-label">Put Away</div><div class="kpi-sub">149 ahead of final check</div></div>
+    <div class="kpi-dark" style="background: rgba(255,255,255,0.75);"><div class="kpi-num" style="color:#FF0000;">1,746</div><div class="kpi-label">Posted</div><div class="kpi-sub">+63, no goal</div></div>
+  </div>
+  <div class="panel-light" style="max-width: 1500px; margin: 26px auto 0;">
+    <div class="chart-box" style="height: 358px;"><canvas id="chartTrend" width="1440" height="338"></canvas></div>
+  </div>
+  <p class="caption">Intake and description finished within 11 items of the 1,500 goal; imaging fell 174 short. Posting had its biggest week of the five, and put-away outran final check by 149.</p>
+  <aside class="notes">The scoreboard against the weekly goals of fifteen hundred. Intake fourteen eighty-nine and description fourteen ninety-three, each within about ten items of the goal, and both a little up on the week prior. Imaging thirteen twenty-six, a hundred seventy-four short, down from sixteen oh one the week prior; the next two slides are why. Final check has no goal and followed imaging down to thirteen forty. Put-away was fourteen eighty-nine, a hundred forty-nine more than final check, so the pile of finished items waiting for a bin shrank, from about seven hundred to about five hundred. Posting was seventeen forty-six, the biggest week of the five, because there was a full shelf of binned items to list. Because imaging finished fewer items than description, about four hundred seventy described items are now waiting for imaging. The goal for the current week went up to sixteen twenty-five.</aside>
+</section>
+
+<!-- 2b : PIPELINE FLOW -->
+<section data-background-color="#1a1a1a">
+  <h2 class="slide-h2-dark">Where the Work Is Waiting</h2>
+  <p class="slide-kicker">Circles: items finished at each stage last week &bull; between them: the queue on Monday morning</p>
+  <div class="pf-row"><div class="pf-node"><div class="pf-dot" style="background:#5BC0EB; box-shadow: 0 0 0 8px #5BC0EB22, 0 10px 30px #5BC0EB55;">1,489</div><div class="pf-lbl">Intake</div></div><div class="pf-q"><div class="pf-arrow"></div><div class="pf-pill pf-ok"><b>same day</b><span>by the same person</span></div></div><div class="pf-node"><div class="pf-dot" style="background:#0077B6; box-shadow: 0 0 0 8px #0077B622, 0 10px 30px #0077B655;">1,493</div><div class="pf-lbl">Described</div></div><div class="pf-q"><div class="pf-arrow"></div><div class="pf-pill pf-bad"><b>~470</b><span>waiting to be imaged</span></div></div><div class="pf-node"><div class="pf-dot" style="background:#6A0DAD; box-shadow: 0 0 0 8px #6A0DAD22, 0 10px 30px #6A0DAD55;">1,326</div><div class="pf-lbl">Imaged</div></div><div class="pf-q"><div class="pf-arrow"></div><div class="pf-pill pf-ok"><b>60</b><span>waiting for final check</span></div></div><div class="pf-node"><div class="pf-dot" style="background:#E83E8C; box-shadow: 0 0 0 8px #E83E8C22, 0 10px 30px #E83E8C55;">1,340</div><div class="pf-lbl">Final checked</div></div><div class="pf-q"><div class="pf-arrow"></div><div class="pf-pill pf-warn"><b>~500</b><span>finished, no bin yet</span></div></div><div class="pf-node"><div class="pf-dot" style="background:#2ECC40; box-shadow: 0 0 0 8px #2ECC4022, 0 10px 30px #2ECC4055;">1,489</div><div class="pf-lbl">Put away</div></div><div class="pf-q"><div class="pf-arrow"></div><div class="pf-pill pf-ok"><b>15</b><span>ready to post</span></div></div><div class="pf-node"><div class="pf-dot" style="background:#FF0000; box-shadow: 0 0 0 8px #FF000022, 0 10px 30px #FF000055;">1,746</div><div class="pf-lbl">Posted</div></div></div>
+  <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; max-width: 1560px; margin: 46px auto 0;">
+    <div class="chip on-dark chip-bad"><h4>The bottleneck: imaging</h4><p>About 470 described items wait for a camera, about two days of imaging at last week's pace.</p></div>
+    <div class="chip on-dark chip-top"><h4>The shelf is catching up</h4><p>Unbinned finished items fell from about 700 to about 500 after Tuesday's sweep.</p></div>
+    <div class="chip on-dark chip-good"><h4>Posting is not the limit</h4><p>Only 15 binned items were left waiting to post; listing keeps up with whatever reaches the shelf.</p></div>
+  </div>
+  <aside class="notes">The whole line on one picture. The circles are what each stage finished last week; the pills between them are the queues as of Monday morning. Intake and description happen together, same person, same day, so there's no queue there. The big one is between description and imaging: about four hundred seventy described items waiting for a camera, about two days of imaging at last week's pace. Final check keeps up, with about sixty waiting. After final check, about five hundred finished items still have no bin, down from about seven hundred after Daniel's sweep. And only fifteen binned items were waiting to post, so posting is not the limit. If we want more items live, the lever is imaging hours.</aside>
+</section>
+
+<!-- 3b : PUT-AWAY -->
+<section data-background-color="#1a1a1a">
+  <h2 class="slide-h2-dark">Put-Away Runs Through One Person, and Half Waits Overnight</h2>
+  <p class="slide-kicker">Time from final check to first put-away (left) and who put items away each day (right)</p>
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 1640px; margin: 0 auto;">
+    <div class="panel-dark"><div class="chart-box" style="height: 470px;"><canvas id="chartPutLag" width="780" height="450"></canvas></div></div>
+    <div class="panel-dark"><div class="chart-box" style="height: 470px;"><canvas id="chartPutWho" width="780" height="450"></canvas></div></div>
+  </div>
+  <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; max-width: 1640px; margin: 20px auto 0;">
+    <div class="chip on-dark chip-bad"><h4>Only half same-day</h4><p>Last week 50% of items were shelved within a day of final check. The average item sits on a cart about 2.5 days, which is why ~500 finished items are never live.</p></div>
+    <div class="chip on-dark chip-top"><h4>85% is Daniel S</h4><p>4,718 of 5,551 put-aways in four weeks. When he was out Thu to Sat, Ryan G, Shahriyar and AnnaP covered 567, so others can do it.</p></div>
+    <div class="chip on-dark chip-mid"><h4>Weekends pile up</h4><p>The final check agent clears ~220 items every weekend, but nobody puts away on Sunday, so Monday starts behind.</p></div>
+  </div>
+  <aside class="notes">Put-away needs more attention. Left chart: for every item put away, how long it waited after final check, week by week, green for same-day and red for a week or more. Only about half of items get shelved within a day, and last week was the low end at fifty percent; the average item sits on a cart about two and a half days. That wait is exactly the roughly five hundred finished items with no bin at any moment: about three hundred items a weekday times two and a half days. Those items can't be listed, because posting requires a bin. Right chart: who does it. Daniel S did eighty-five percent of all put-aways over four weeks, four thousand seven hundred eighteen of five thousand five hundred fifty-one, in big afternoon batches. When he was out Thursday through Saturday last week, Ryan G, Shahriyar and AnnaP covered five hundred sixty-seven, so the skill exists on the floor. And the final check agent works weekends, about two hundred twenty items every Saturday and Sunday, but nobody puts away on Sunday, so Monday always starts behind. Suggestions: a second trained put-away person every day, a cart-zero rule where anything final checked before two is shelved the same day, a short Monday-morning put-away block, and a put-away goal next to the other stage goals.</aside>
+</section>
+
+<!-- 3 : IMAGING HOURS -->
+<section class="gradient-bg">
+  <h2 style="color: var(--sm-text); font-size: 1.5em; margin-bottom: 4px;">Imaging Missed on Hours, Not Speed</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.66em; margin-bottom: 12px;">Imaging: hands-on hours per week (bars) and minutes per item (line), est.</p>
+  <div class="panel-light" style="max-width: 1400px; margin: 0 auto;">
+    <div class="chart-box" style="height: 560px;"><canvas id="chartImgHours" width="1320" height="540"></canvas></div>
+  </div>
+  <p class="caption" style="font-size: 0.64em; max-width: 1300px; margin: 14px auto 0;">90 hands-on hours, down from 117, at 4.11 minutes per item, faster than the week prior. At that pace, 1,500 takes about 103 hours, and this week's 1,625 goal takes about 111.</p>
+  <aside class="notes">This is the one fact that explains the imaging miss. Hands-on imaging hours fell from about a hundred seventeen to about ninety, the lowest since the Labor Day week. The people who were imaging actually worked faster: four point one one minutes per item against four point four six the week prior. So the miss is hours, not speed. The arithmetic: at four point one minutes per item, fifteen hundred items takes about a hundred three hours, so the bench was about thirteen hours short, which lines up with the hundred seventy-four item miss. The goal went up to sixteen twenty-five this week, which takes about a hundred eleven hours at last week's pace, so we need roughly twenty more imaging hours than last week, before counting the queue of about four hundred seventy described items now waiting for imaging. These hours are measured active time, breaks and other duties excluded, not payroll hours. JoeC and Rylan are left out of the pace because they mark completions in bulk.</aside>
+</section>
+
+<!-- 4 : WHERE THE HOURS WENT -->
+<section data-background-color="#1a1a1a">
+  <h2 class="slide-h2-dark">Hanna Had a Record Week While the Bench Thinned</h2>
+  <p class="slide-kicker">Items imaged per person, the week prior vs last week</p>
+  <div class="panel-dark" style="max-width: 1440px; margin: 0 auto;">
+    <div class="chart-box" style="height: 560px;"><canvas id="chartImgShift" width="1360" height="540"></canvas></div>
+  </div>
+  <p class="caption" style="color:#b4b4b9; font-size: 0.64em; max-width: 1350px; margin: 14px auto 0;">Hanna imaged 537, her most in any week since at least 2024. Ramon spent his mornings packing (253 packed), SavM moved to intake, and part-timers AngieY, Rylan, Ryan G and Shahriyar imaged 14 between them, down from 214.</p>
+  <aside class="notes">Where the imaging hours went. Hanna imaged five hundred thirty-seven items, up from four oh three, the most she has done in any single week in the data back to the start of twenty twenty-four. SeanD and JoeC each added about forty. The losses: Ramon went from two forty-seven to a hundred six because his mornings went to packing; he packed two hundred fifty-three orders last week, up from a hundred fifty-eight, while JoeC packed less. Packing volume overall was flat at about seven fifty, so this was a reshuffle of who packs, not more orders. SavM, who imaged about a hundred a week, spent her day on intake instead, her first real intake day. The four people who image part-time, AngieY, Rylan, Ryan G and Shahriyar, did a combined fourteen items against two hundred fourteen the week prior: AngieY seventy-two to zero, Rylan seventy to five, Ryan G forty-five to zero, Shahriyar twenty-seven to nine. Kimberly did two days. Together that is about five hundred items of imaging lost, and Hanna, SeanD, JoeC and NickK made back about two hundred thirty of it. Question for the room: was moving Ramon's mornings to packing the plan, and who covers imaging if it stays that way?</aside>
+</section>
+
+<!-- 5 : IMAGING SPEED -->
+<section data-background-color="#1a1a1a">
+  <h2 class="slide-h2-dark">The Imagers Who Were There Were Fast</h2>
+  <p class="slide-kicker">Imaging minutes per item, batch method, est., everyone with 20+ items &bull; dot color: green = fastest, red = slowest</p>
+  <div class="panel-dark" style="max-width: 1400px; margin: 0 auto;">
+    <div class="chart-box" style="height: 560px;"><canvas id="chartImagers" width="1320" height="540"></canvas></div>
+  </div>
+  <p class="caption" style="color:#b4b4b9; font-size: 0.64em; max-width: 1350px; margin: 14px auto 0;">SeanD (3.74) and Max (4.31) had their fastest weeks of the five, and Hanna held 3.64 on her biggest volume. Kimberly improved, 8.0 to 7.2.</p>
+  <aside class="notes">The imaging bench, fastest at the top. Hanna held three point six four minutes per item while doing more than ever, which is remarkable. SeanD was at three point seven four on a hundred seventy-seven items, his fastest and biggest week of the five. Max did two forty-five at four point three one, his best of the five as well. NickK did twenty-one items over two days at three point nine. Ramon read four point eight eight, slower than his usual three point six, but he only imaged in the afternoons after packing, and short split shifts read slower. Kimberly improved from eight point oh to seven point two in her third week; still worth time alongside Hanna or Ramon. Melinda did one day at eight point two. JoeC and Rylan are excluded because they mark completions in bulk.</aside>
+</section>
+
+<!-- 6 : INTAKE PEOPLE -->
+<section data-background-color="#1a1a1a">
+  <h2 class="slide-h2-dark">Intake Held Steady, and Rina Took the Jewelry</h2>
+  <p class="slide-kicker">Minutes per item, intake + description combined, est., everyone with 20+ items &bull; dot color: green = fastest, red = slowest</p>
+  <div class="panel-dark" style="max-width: 1400px; margin: 0 auto;">
+    <div class="chart-box" style="height: 560px;"><canvas id="chartIntakePeople" width="1320" height="540"></canvas></div>
+  </div>
+  <p class="caption" style="color:#b4b4b9; font-size: 0.64em; max-width: 1350px; margin: 14px auto 0;">The floor put in 209 hands-on hours at 8.47 minutes per item, level with the week prior. Rina's clothing ran 5.6, her best of the five, and she took in 67 jewelry pieces.</p>
+  <aside class="notes">Intake overall was steady: two hundred nine hands-on hours, the same as the week prior, at eight point four seven minutes per item against eight point five five. On a fixed category mix it read a little slower, so there was no real speed change either way. Rina did three hundred items at six point three five; her clothing ran five point six, back to her best after a slow week, and she took two jewelry lots, sixty-seven pieces, which is the main reason the cart was so valuable. Jodi did three thirty-five at six point three three, her slowest of the five, but a quarter of her cart was home decor, which runs slower for her; her kitchen was in her normal range. Michael held seven point oh seven on his two days, both of them mostly coin lots. SavM's first real intake day was forty-two items at seven point nine. Janet had her fastest week of the five at eleven point oh. Martha read thirteen point five, slower on books than her recent weeks, plus a run of ornaments. cami is off the chart because most of her week was the sort station.</aside>
+</section>
+
+<!-- 7 : CART -->
+<section class="gradient-bg">
+  <h2 style="color: var(--sm-text); font-size: 1.5em; margin-bottom: 4px;">The Cart: Jewelry Nearly Tripled, and Coins Held at 76</h2>
+  <p style="color: var(--sm-text-muted); font-size: 0.66em; margin-bottom: 12px;">Items taken in per category vs the prior 4-week average &bull; $ = expected gross profit per item taken in, counting the ~65% that never sell</p>
+  <div class="panel-light" style="max-width: 1440px; margin: 0 auto;">
+    <div class="chart-box" style="height: 530px;"><canvas id="chartMixShift" width="1360" height="510"></canvas></div>
+  </div>
+  <p class="caption" style="font-size: 0.64em; max-width: 1380px; margin: 14px auto 0;">$2.55 expected per item vs the $2.50 business average, the best in a month. Jewelry was 74 against a 28 average; home decor, ornaments and seasonal all ran heavy for fall.</p>
+  <aside class="notes">What we took in. Jewelry is the headline: seventy-four pieces against an average of twenty-eight, mostly from Rina's two lots, and at about nine forty-six per item taken in it is by far our most valuable category. Home decor was a hundred sixty-five against about a hundred, ornaments sixty-nine against twenty-three, and seasonal eighty-two against forty-six, the fall and holiday ramp starting. Books and media came back down to two fourteen after the magazine wave. Coins stayed high at seventy-six, about forty cents per item taken in, the least valuable thing we carry; all of them came from Michael's two days. Overall the cart came to two fifty-five per item against the two fifty business average, the best of the last four weeks. Questions for the room: keep the jewelry coming when it is there, and were those coin lots worth the time?</aside>
+</section>
+
+<!-- 8 : TAKEAWAYS -->
+<section data-background-color="#1a1a1a">
+  <h2 class="slide-h2-dark">Takeaways, and What's Next</h2>
+  <p class="slide-kicker">The last review's asks on the left, this week's moves on the right</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 26px; max-width: 1560px; margin: 0 auto;">
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div class="agenda-row" style="background: rgba(91,140,62,0.18); border-color: rgba(127,179,92,0.45); padding: 13px 18px;">
+        <div class="agenda-num" style="color:#9FD47C; font-size:0.66em; flex: 0 0 130px; white-space: nowrap;">DONE</div>
+        <div><h4>Put a name on the shelf sweep</h4><p>Daniel S swept Tuesday; items over a month with no bin fell 172 to 109.</p></div>
+      </div>
+      <div class="agenda-row" style="background: rgba(201,138,32,0.16); border-color: rgba(224,175,80,0.4); padding: 13px 18px;">
+        <div class="agenda-num" style="color:#EFC067; font-size:0.66em; flex: 0 0 130px; white-space: nowrap;">PARTIAL</div>
+        <div><h4>Kimberly's hour with Ramon or Hanna</h4><p>Her pace improved, 8.0 to 7.2, on two days of imaging.</p></div>
+      </div>
+      <div class="agenda-row" style="background: rgba(201,64,64,0.16); border-color: rgba(224,122,122,0.4); padding: 13px 18px;">
+        <div class="agenda-num" style="color:#F09B9B; font-size:0.66em; flex: 0 0 130px; white-space: nowrap;">NOT YET</div>
+        <div><h4>The weekly goals</h4><p>Intake and description missed by 11 and 7; imaging by 174.</p></div>
+      </div>
+      <div class="agenda-row" style="background: rgba(201,64,64,0.16); border-color: rgba(224,122,122,0.4); padding: 13px 18px;">
+        <div class="agenda-num" style="color:#F09B9B; font-size:0.66em; flex: 0 0 130px; white-space: nowrap;">NOT YET</div>
+        <div><h4>Decide coins at the sort table</h4><p>Coins held at 76, about $0.39 each.</p></div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div class="agenda-row" style="padding: 13px 18px;">
+        <div class="agenda-num" style="color: var(--sm-purple-light);">1</div>
+        <div><h4>Find about 20 more imaging hours</h4><p>The 1,625 goal needs ~111 hours at last week's pace; we had 90.</p></div>
+      </div>
+      <div class="agenda-row" style="padding: 13px 18px;">
+        <div class="agenda-num">2</div>
+        <div><h4>Decide who packs in the mornings</h4><p>If Ramon keeps packing, his imaging hours need a new owner.</p></div>
+      </div>
+      <div class="agenda-row" style="padding: 13px 18px;">
+        <div class="agenda-num">3</div>
+        <div><h4>Same-day put-away, two people deep</h4><p>Train a second put-away person; shelve anything final checked before 2pm the same day.</p></div>
+      </div>
+      <div class="agenda-row" style="padding: 13px 18px;">
+        <div class="agenda-num">4</div>
+        <div><h4>Thank Hanna, and Rina for the jewelry</h4><p>537 imaged, her best week on record; 67 jewelry pieces lifted the cart.</p></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">Closing both loops. From the last review: the shelf sweep happened. Daniel S put away fifty-four older items on Tuesday, seventy-four items over a month old were shelved during the week, and the month-old tail fell from a hundred seventy-two to a hundred nine; the whole no-bin pool fell from about seven hundred to about five hundred. Kimberly's pace improved from eight to seven point two, so partial credit; we should ask whether the pairing hour happened. The goals were missed narrowly upstream and by a hundred seventy-four in imaging. Coins stayed at seventy-six. This week's moves: first, find about twenty more imaging hours, because the goal is now sixteen twenty-five and at last week's pace that takes about a hundred eleven hours against the ninety we had, with about four hundred seventy described items already waiting. Second, decide who packs in the mornings; if Ramon keeps packing, someone else needs his imaging hours. Third, put-away: only half of items are shelved within a day and Daniel S does eighty-five percent of it, so train a second person and aim for same-day put-away on anything final checked before two, plus keep the monthly shelf sweep for the hundred nine items over a month old. Fourth, thank Hanna for her biggest week on record and Rina for the jewelry that lifted the cart.</aside>
+</section>
+
+<!-- ===================== PRODUCTION INCENTIVES ===================== -->
+<!-- Design: one display element per slide; everything else on the small ramp (22-28px at 1920);
+     nothing in the 40-110px middle band. Signal (purple) marks the single focal thing, or nothing. -->
+
+<!-- 9 : DIVIDER -->
+<section class="title-hero" data-background-color="#1a1a1a">
+  <div class="inc-stage">
+    <p class="inc-label">Part two</p>
+    <h1 class="inc-display">Production<br><span class="sig">incentives.</span></h1>
+    <p class="inc-small" style="margin-top: 44px;">The why, one example of how it could work, and what we would do before paying a dollar.</p>
+  </div>
+  <aside class="notes">Switching gears to an idea Devri and I have been working on. Today is not a decision on numbers. It is the why, one example of what it could look like, and the steps we would take before paying anyone a dollar. What I want from this room is your gut reaction and what you think would feel fair to the team.</aside>
+</section>
+
+<!-- 10 : MUNGER QUOTE -->
+<section class="title-hero" data-background-color="#1a1a1a">
+  <div class="inc-stage">
+    <p class="inc-label">Charlie Munger, Warren Buffett's partner (widely attributed)</p>
+    <p class="inc-quote" style="font-size: 132px;">&ldquo;Show me the <span class="sig">incentive</span> and I&rsquo;ll show you the outcome.&rdquo;</p>
+    <p class="inc-small" style="margin-top: 40px; max-width: 1300px;">In his 1995 talk on human misjudgment he put it this way: &ldquo;Never, ever, think about something else when you should be thinking about the power of incentives.&rdquo;</p>
+  </div>
+  <aside class="notes">Charlie Munger, Warren Buffett's partner, spent his life studying why people do what they do. His conclusion was that he had underestimated the power of incentives his whole life, even though he thought he understood them better than almost anyone. Show me the incentive and I'll show you the outcome is the version everyone quotes; it is attributed to him everywhere, though nobody has pinned down exactly when he first said it. The line we can source word for word is from his 1995 talk: never, ever think about something else when you should be thinking about the power of incentives.</aside>
+</section>
+
+<!-- 11 : FEDEX -->
+<section class="gradient-bg">
+  <div class="inc-stage">
+    <p class="inc-label ink">Munger's favorite example: FedEx</p>
+    <h2 class="inc-display ink" style="font-size: 150px;">Paid by the shift,<br>not the hour.</h2>
+    <div class="inc-cols" style="margin-top: 56px;">
+      <div class="inc-glass"><p class="inc-label ink">The problem</p><p class="inc-small ink">The night shift that sorted packages kept running late. Nothing management tried fixed it.</p></div>
+      <div class="inc-glass"><p class="inc-label ink">The change</p><p class="inc-small ink">Pay the shift as a whole. Finish the work, go home early, keep the same pay.</p></div>
+      <div class="inc-glass"><p class="inc-label ink">The result</p><p class="inc-small ink">The delays went away. Same people, same packages, a different deal.</p></div>
+    </div>
+  </div>
+  <aside class="notes">Munger's favorite story. FedEx's night shift sorting packages kept running late, and nothing management tried worked. Then they stopped paying by the hour and paid for the shift: get the work done and go home early with the same pay. The delays disappeared. Same people, same packages. The only thing that changed was the deal.</aside>
+</section>
+
+<!-- 12 : OUR SITUATION -->
+<section class="title-hero" data-background-color="#1a1a1a">
+  <div class="inc-stage">
+    <p class="inc-label">What extra output earns at Swedemom today</p>
+    <h2 class="inc-display" style="font-size: 300px;">$0</h2>
+    <p class="inc-small" style="margin-top: 30px; max-width: 1100px;">Imaging 540 items or 300 in the same hours pays exactly the same. People who go above and beyond do it for us, and all they get back is our thanks.</p>
+  </div>
+  <aside class="notes">Our version of the story. Under hourly pay, someone who images five hundred forty items earns exactly the same as someone who images three hundred in the same hours. Hanna just had the best week on record, and the only reward built into how we pay is our thanks. The people who go above and beyond are doing it for us. The goal is to make extra effort a good deal for them and for Swedemom.</aside>
+</section>
+
+<!-- 13 : SAFELITE -->
+<section class="gradient-bg">
+  <div class="inc-stage">
+    <p class="inc-label ink">Safelite Auto Glass, after switching installers to pay per windshield</p>
+    <div class="panel-light inc-chartwrap"><div class="chart-box" style="height: 470px;"><canvas id="chartSafelite" width="1400" height="450"></canvas></div></div>
+    <p class="inc-small ink" style="margin-top: 26px; max-width: 1350px;">Everyone kept a guaranteed hourly floor. A broken install was redone on the installer's own time, so quality held. Both sides came out ahead.</p>
+    <p class="inc-cite">Lazear, American Economic Review, 2000</p>
+  </div>
+  <aside class="notes">The classic study. Safelite switched windshield installers from hourly pay to pay per windshield, with a guaranteed hourly floor so nobody could earn less than before. Output per worker went up forty-four percent: about half of that from the same people working harder, the rest from attracting and keeping better people. Worker pay went up about eleven percent and the company made more money. And if an install broke, the installer redid it on their own time, which is exactly the kind of quality rule we'd want for re-imaging.</aside>
+</section>
+
+<!-- 14 : FRUIT PICKERS -->
+<section class="title-hero" data-background-color="#1a1a1a">
+  <div class="inc-stage">
+    <p class="inc-label">Fruit pickers, paid against a fixed target instead of ranked against each other</p>
+    <h2 class="inc-display" style="font-size: 300px;">+50%</h2>
+    <p class="inc-small" style="margin-top: 30px; max-width: 1200px;">Ranked against their friends, people held back to protect each other. Against a fixed target, they picked at least half again as much. And in a 2018 factory study, unequal pay hurt morale only when workers could not see who produced more.</p>
+    <p class="inc-cite">Bandiera, Barankay &amp; Rasul, QJE, 2005 &bull; Breza, Kaur &amp; Shamdasani, QJE, 2018</p>
+  </div>
+  <aside class="notes">Second lesson: what you compare people against matters. These fruit pickers were first paid on a curve, graded against each other, and they held back so they wouldn't make their friends look bad. When the farm switched to a fixed rate, productivity went up at least fifty percent. So no leaderboards and no curve. Everyone can win at the same time. A newer study adds a twist: in Indian factories, paying people differently cut output and attendance only when workers couldn't see who was actually producing more. When the differences were visible, there was no morale cost. So the counts should be open and easy to see.</aside>
+</section>
+
+<!-- 14b : TEAM BONUS ROI -->
+<section class="gradient-bg">
+  <div class="inc-stage">
+    <p class="inc-label ink">A bakery chain randomly gave half its 193 shops a team bonus</p>
+    <h2 class="inc-display ink" style="font-size: 260px;">$1 &rarr; $2.10</h2>
+    <p class="inc-small ink" style="margin-top: 30px; max-width: 1200px;">Every dollar paid in team bonus came back as $3.80 in sales and $2.10 in profit. A small shared bonus is not charity; it pays for itself.</p>
+    <p class="inc-cite">Friebel, Heinz, Krueger &amp; Zubanov, American Economic Review, 2017</p>
+  </div>
+  <aside class="notes">This is the modern version of the evidence, and it's a true randomized experiment. A German bakery chain gave a team bonus to a random half of its shops and compared them with the rest. Sales went up about three percent, and every dollar of bonus came back as three dollars eighty in sales and two dollars ten in profit. That's why the plan includes a small team share on top of the individual piece: done right, it pays for itself.</aside>
+</section>
+
+<!-- 18 : TRAP 2 WELLS FARGO -->
+<section class="title-hero" data-background-color="#1a1a1a">
+  <div class="inc-stage">
+    <p class="inc-label">Trap two: pay for count alone and you get count alone</p>
+    <h2 class="inc-display" style="font-size: 280px;">1.5 million</h2>
+    <p class="inc-small" style="margin-top: 30px; max-width: 1250px;">Fake accounts opened by Wells Fargo employees chasing sales targets. In a 2018 factory experiment, a quantity bonus cut quality, but only for workers on hourly pay, like ours. So only good items count.</p>
+    <p class="inc-cite">CFPB, 2016 &bull; Hong, Hossain, List &amp; Tanaka, International Economic Review, 2018 &bull; Cerasoli et al., 2014</p>
+  </div>
+  <aside class="notes">Second trap. Wells Fargo paid for the number of accounts opened, and employees opened about one and a half million accounts customers never asked for. A big review of a hundred eighty-three studies found that pay mostly drives how much people do, while pride drives how well they do it. For us the rule is simple: only items that pass quality count. An item that needs re-imaging doesn't count until it's right.</aside>
+</section>
+
+<!-- 19 : THE RULE -->
+<section class="gradient-bg">
+  <div class="inc-stage">
+    <p class="inc-label ink">One example of how it could work</p>
+    <h2 class="inc-display ink" style="font-size: 170px;">Clear the bar,<br><span class="sig-l">keep half.</span></h2>
+    <div class="inc-cols" style="margin-top: 56px;">
+      <div class="inc-glass"><p class="inc-label ink">Floor</p><p class="inc-small ink">Your hourly wage never changes and can never go down.</p></div>
+      <div class="inc-glass"><p class="inc-label ink">The bar</p><p class="inc-small ink">Set just below what our best people already do. No individual bonus for average work.</p></div>
+      <div class="inc-glass"><p class="inc-label ink">Above it</p><p class="inc-small ink">Every good item above it saves labor. You keep half, about 50 cents per extra item imaged.</p></div>
+    </div>
+  </div>
+  <aside class="notes">Here is one way it could work. Your hourly wage never changes and can never go down. Each stage has a bar, set just below what our best people already do over the last several weeks: for imaging that is around fifteen items an hour, for intake and description around eight and a half. Hitting average does not earn a bonus; we are not paying extra for business as usual. But once you clear the bar, every extra good item saves labor, and you keep half of what it saves: about fifty cents per extra imaged item and about ninety cents per extra intake item at sixteen dollars an hour. Swedemom keeps the other half, on top of the gain from the bar itself. We start at half on purpose: if the pilot shows it is not enough to move people, we raise the share. Raising a bonus feels like a gift; cutting one feels like a loss, so we start where we can only go up. We would cap it at about twenty-five percent of pay, and add a small team share when the whole team hits its weekly goal, so helping each other still pays.</aside>
+</section>
+
+<!-- 19b : WHERE THE BAR WOULD SIT -->
+<section data-background-color="#1a1a1a">
+  <div class="inc-stage">
+    <p class="inc-label">If the bar were set today: last week's pace as a percent of the bar (est., not payroll hours)</p>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px; width: 100%;">
+      <div class="panel-dark"><div class="chart-box" style="height: 560px;"><canvas id="chartBarImg" width="780" height="540"></canvas></div></div>
+      <div class="panel-dark"><div class="chart-box" style="height: 560px;"><canvas id="chartBarIntake" width="780" height="540"></canvas></div></div>
+    </div>
+    <p class="inc-small" style="margin-top: 22px; max-width: 1500px;">Bar = about 90% of our best people's recent average. Five people clear it today and two more are within reach. It would be reset on real Gusto hours before anyone is paid.</p>
+  </div>
+  <aside class="notes">What the bar would look like if we set it today, using last week's estimated paces. Imaging bar: fifteen items an hour, four minutes each, which is about ninety percent of Hanna's recent average. Intake and description bar: about eight and a half an hour, seven minutes each, about ninety percent of Jodi's and Rina's average. Green is over the bar: Hanna, SeanD and NickK in imaging, Jodi and Rina in intake. Amber is within ten percent: Max and Michael. Everyone else is below and would earn their normal wage, exactly like today. Two caveats. These paces come from Hub timestamps, not payroll hours; once real hours are in, everyone's rate drops a bit and we reset the bar on those numbers before anyone is paid. And they are not adjusted for what is on someone's cart, which is why value credit comes later.</aside>
+</section>
+
+<!-- 19c : TEAM GOAL -->
+<section class="gradient-bg">
+  <div class="inc-stage">
+    <p class="inc-label ink">The team layer: one weekly goal for all of Swedemom, items posted</p>
+    <h2 class="inc-display ink" style="font-size: 160px;">When Swedemom wins,<br><span class="sig-l">everyone wins.</span></h2>
+    <div class="inc-steps" style="grid-template-columns: repeat(3, 1fr); margin-top: 60px;">
+      <div class="inc-step"><div class="inc-step-n" style="width:auto; padding: 0 22px; border-radius: 34px;">Miss</div><p class="inc-label ink">Below the goal</p><p class="inc-tiny">Individual bonuses only</p></div>
+      <div class="inc-step"><div class="inc-step-n" style="width:auto; padding: 0 22px; border-radius: 34px;">+$0.50/hr</div><p class="inc-label ink">Hit the goal</p><p class="inc-tiny">For every hour everyone worked that week</p></div>
+      <div class="inc-step on"><div class="inc-step-n" style="width:auto; padding: 0 22px; border-radius: 34px;">+$1/hr</div><p class="inc-label ink">Beat it by 10%</p><p class="inc-tiny">Double the team share</p></div>
+    </div>
+    <p class="inc-small ink" style="margin-top: 40px; max-width: 1400px;">Items posted needs every stage, including put-away, so the fastest imager gains from helping clear a cart, and sorting, packing and put-away share in the win.</p>
+  </div>
+  <aside class="notes">The second layer is a team goal, and this is the part that makes it everyone's program, not just the fastest people's. One weekly goal for all of Swedemom: items posted, the number Daniel already sets. Posting needs every stage to work, including put-away, which right now is our weak spot. If we hit the goal, everyone gets fifty cents for every hour they worked that week. Beat it by ten percent and it doubles to a dollar an hour. That covers people below the individual bar and the roles we can't measure per item, like sorting, packing and put-away. It also changes the math for our fastest people: once they're past their own bar, helping clear the put-away cart or the imaging queue can pay them more than squeezing out a few more items alone. Rough cost: with about twenty people at thirty hours, hitting the goal costs about three hundred dollars a week, beating it about six hundred. The bakery study we saw earlier says a well-designed team bonus pays for itself.</aside>
+</section>
+
+<!-- 20 : JOHN DOE -->
+<section data-background-color="#1a1a1a">
+  <div class="inc-stage">
+    <p class="inc-label">Meet John Doe, a fictional imager: $16/hr, 30 hours a week, so $480. His bar: 15 good items an hour, 450 a week.</p>
+    <div class="jd-row"><div class="jd-card jd-base"><p class="jd-t">Today</p><p class="jd-s">No incentives. 420 items.</p><div class="jd-line "><span>Wage</span><b>$480</b></div><div class="jd-line dim"><span>Bonus</span><b>$0</b></div><div class="jd-line dim"><span>Team</span><b>$0</b></div><div class="jd-total"><b>$480</b><span>what he earns now</span></div></div><div class="jd-card "><p class="jd-t">Clears his bar</p><p class="jd-s">495 good items, 10% over. Team misses.</p><div class="jd-line "><span>Wage</span><b>$480</b></div><div class="jd-line ind"><span>His bonus</span><b>+$24</b></div><div class="jd-line dim"><span>Team</span><b>$0</b></div><div class="jd-total"><b>$504</b><span>+5%</span></div></div><div class="jd-card "><p class="jd-t">Bar + team goal</p><p class="jd-s">Same 495. Swedemom hits its posted goal.</p><div class="jd-line "><span>Wage</span><b>$480</b></div><div class="jd-line ind"><span>His bonus</span><b>+$24</b></div><div class="jd-line team"><span>Team</span><b>+$15</b></div><div class="jd-total"><b>$519</b><span>+8%</span></div></div><div class="jd-card jd-best"><p class="jd-t">Great week</p><p class="jd-s">540 good, 20% over. Team beats goal by 10%.</p><div class="jd-line "><span>Wage</span><b>$480</b></div><div class="jd-line ind"><span>His bonus</span><b>+$48</b></div><div class="jd-line team"><span>Team</span><b>+$30</b></div><div class="jd-total"><b>$558</b><span>+16%</span></div></div><div class="jd-card jd-bad"><p class="jd-t">Rushed</p><p class="jd-s">585 imaged, 60 sent back. Team hits goal.</p><div class="jd-line "><span>Wage</span><b>$480</b></div><div class="jd-line ind"><span>His bonus</span><b>+$40</b></div><div class="jd-line team"><span>Team</span><b>+$15</b></div><div class="jd-line bad"><span>Lost to send-backs</span><b>&minus;$32</b></div><div class="jd-total"><b>$535</b><span>+11%, not +18%</span></div></div></div>
+    <p class="inc-small" style="margin-top: 28px; max-width: 1500px;">Each good item over his bar is worth about $1.07 of labor; John keeps half, about 53 cents. His wage never moves. Rushing still pays a little, but careful work pays more.</p>
+  </div>
+  <aside class="notes">Let's make it concrete with a made-up imager, John Doe. Sixteen dollars an hour, thirty hours, so four eighty a week. His bar is fifteen good items an hour, four fifty for the week. Today John images about four twenty and earns four eighty, and that never changes. If he clears his bar by ten percent, four ninety-five good items, that's forty-five extra items, three hours of labor saved, worth forty-eight dollars, and he keeps half: twenty-four dollars, five percent more. If Swedemom also hits its posted goal that week, everyone gets fifty cents an hour, so John adds fifteen: five nineteen, eight percent more. A great week, five forty good items with the team beating its goal by ten percent: forty-eight from his own work, thirty from the team, five fifty-eight, sixteen percent more. And the rushed week: he images five eighty-five, but sixty need re-imaging, so only five twenty-five count. He still makes five thirty-five, but the send-backs cost him thirty-two dollars he would have earned if the work had been right. Rushing still pays a little, careful work pays more, and his wage never goes down.</aside>
+</section>
+
+<!-- 20b : HOW THE BAR MOVES -->
+<section class="gradient-bg">
+  <div class="inc-stage">
+    <p class="inc-label ink">How the bar changes over time, published up front (without that promise, output ran 20 to 40% lower in ratchet studies)</p>
+    <h2 class="inc-display ink" style="font-size: 140px;">Better tools raise the bar.<br><span class="sig-l">Half the gain is yours.</span></h2>
+    <div class="inc-cols" style="margin-top: 56px;">
+      <div class="inc-glass"><p class="inc-label ink">Proven</p><p class="inc-small ink">The bar moves only when a tool or process change is measured before and after, on our own floor.</p></div>
+      <div class="inc-glass"><p class="inc-label ink">Shared</p><p class="inc-small ink">If a new tool makes imaging 20% faster, the bar rises 10%. The other 10% is easier bonus.</p></div>
+      <div class="inc-glass"><p class="inc-label ink">Announced</p><p class="inc-small ink">Posted two weeks ahead, at most once a quarter. Never just because people got faster.</p></div>
+    </div>
+  </div>
+  <aside class="notes">The bar has to rise over time for Swedemom to become self-sustaining, and that is the part that could feel unfair. So the rule is published before we start. The bar only moves when we change a tool or process and measure the difference before and after on our own floor, like we did with camera intake. When a tool makes the work faster, the bar goes up by half of the measured gain, and the other half becomes easier bonus for the team. Changes are announced two weeks ahead and happen at most once a quarter. And the bar never goes up just because people worked harder; that is the trap that teaches people to slow down. Studies of this ratchet effect found output twenty to forty percent lower when there was no promise about the bar, which is why we write this rule down before we start.</aside>
+</section>
+
+<!-- 21 : VALUE LATER -->
+<section class="gradient-bg">
+  <div class="inc-stage">
+    <p class="inc-label ink">Later: credit for value, not just count</p>
+    <h2 class="inc-display ink" style="font-size: 150px;">A ring is not<br>a paperback.</h2>
+    <p class="inc-small ink" style="margin-top: 44px; max-width: 1250px;">Once value estimates (price times the chance it sells) are consistent, items earn credit by what they are worth. Any edit to the system's estimate is tracked, so nobody can inflate it.</p>
+  </div>
+  <aside class="notes">Phase two. Counting items treats a jewelry piece the same as a paperback, and they are not worth the same to us. Once our value estimates are consistent, price times the chance it actually sells, items would earn credit by their value. We'd track any time someone changes the system's estimate so nobody can inflate their own credit. We start with counts because people don't choose what's on their cart.</aside>
+</section>
+
+<!-- 22 : TIME -->
+<section class="title-hero" data-background-color="#1a1a1a">
+  <div class="inc-stage">
+    <p class="inc-label">Items per hour is only fair if the hours are right</p>
+    <h2 class="inc-display" style="font-size: 160px;">Breaks never<br>cost bonus.</h2>
+    <div class="inc-cols" style="margin-top: 56px;">
+      <div class="inc-glass dark"><p class="inc-label">Breaks</p><p class="inc-small">Paid, as today, and taken out of the math automatically. Nothing to clock.</p></div>
+      <div class="inc-glass dark"><p class="inc-label">Other work</p><p class="inc-small">Truck run, wrapping glass, a meeting: one tap on a Hub timer. Paid, and it doesn't count against your rate.</p></div>
+      <div class="inc-glass dark"><p class="inc-label">Payroll</p><p class="inc-small">Clock in the Hub, hours flow to Gusto, the bonus lands on the normal paycheck.</p></div>
+    </div>
+  </div>
+  <aside class="notes">The measure is items per production hour, so the hours have to be right. Breaks are paid like today and come out of the math automatically, so nobody clocks a normal break and taking it never costs bonus. Other work like the truck run, wrapping glass or a meeting gets a one-tap timer in the Hub; it's paid and doesn't count against your rate. Managers review the log weekly; normal variation is fine, only clear patterns get a conversation. Payroll stays simple: clock in the Hub, hours go to Gusto, and the bonus is paid on the regular paycheck. By law a production bonus counts toward overtime pay for anyone over forty hours, and Gusto's bonus type does that math.</aside>
+</section>
+
+<!-- 23 : ROLLOUT -->
+<section class="gradient-bg">
+  <div class="inc-stage">
+    <p class="inc-label ink">The plan: ask first, build while they answer, practice, then pay</p>
+    <div class="panel-light inc-chartwrap"><div class="chart-box" style="height: 560px;"><canvas id="chartGantt" width="1500" height="540"></canvas></div></div>
+    <p class="inc-small ink" style="margin-top: 22px; max-width: 1450px;">The build covers what any version needs: improved Production Metrics, Hub clock-in and task timer, Gusto hours, re-imaging traced to the original imager. The pay settings stay adjustable until the survey is in.</p>
+  </div>
+  <aside class="notes">Here's the timeline, and it's fast. This week we draft the survey and the managers review it. It goes out Monday the twelfth and stays open a week. We don't wait for answers to start building, because the plumbing is the same whatever people say: improving Production Metrics, Hub clock-in with the task timer, hours flowing to Gusto, and tracing re-imaging back to the original imager. The settings people will have opinions on, like where the bar sits and the split between individual and team, stay adjustable. On Monday the twenty-sixth we share what the team told us and the final design, and practice mode starts: two weeks where everyone sees what they would have earned and nothing is paid. Then a two-week paid pilot from November ninth to the twentieth, and on the twenty-third, before Thanksgiving, we decide to keep it, change it or stop. If anyone asks why we pilot instead of just launching: results from pay programs depend heavily on design, so we measure ours on our own floor before committing.</aside>
+</section>
+
+<!-- 24 : DISCUSSION -->
+<section class="title-hero" data-background-color="#1a1a1a">
+  <div class="inc-stage">
+    <p class="inc-label">For the room</p>
+    <h2 class="inc-display" style="font-size: 170px;">What would make<br>this feel <span class="sig">fair</span>?</h2>
+    <div class="inc-cols four" style="margin-top: 56px;">
+      <div class="inc-glass dark"><p class="inc-label">Gut check</p><p class="inc-small">Would the team welcome it? Who would worry?</p></div>
+      <div class="inc-glass dark"><p class="inc-label">The split</p><p class="inc-small">Individual vs team? Weekly vs per paycheck?</p></div>
+      <div class="inc-glass dark"><p class="inc-label">Uncounted work</p><p class="inc-small">What do people do daily that the numbers miss?</p></div>
+      <div class="inc-glass dark"><p class="inc-label">The survey</p><p class="inc-small">Who reviews it, and how do we introduce it?</p></div>
+    </div>
+  </div>
+  <aside class="notes">Four questions I'd love your take on. Gut check: would the team welcome this, and who would be nervous? The split between individual and team, and weekly versus per paycheck. What work happens every day that our numbers miss, because that's where an unfair system would hurt people. And the survey: who should review it before it goes out, and how we introduce it so it lands as an opportunity, not pressure.</aside>
+</section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<div class="global-footer">
+  <img src="../../../assets/swedemom/butterfly.png" alt="">
+  <span>Production Week in Review &bull; Sep 27 &ndash; Oct 3, 2026</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/notes/notes.js"></script>
+<script>
+Reveal.initialize({ hash: true, transition: 'fade', transitionSpeed: 'default', progress: true, width: 1920, height: 1080, margin: 0, plugins: [RevealNotes] });
+
+// Replay each chart's draw-in animation when its slide is shown
+Reveal.on('slidechanged', e => {
+  allCharts.forEach(c => { if (e.currentSlide.contains(c.canvas)) { c.reset(); c.update(); } });
+});
+Reveal.on('ready', e => {
+  allCharts.forEach(c => { if (e.currentSlide.contains(c.canvas)) { c.reset(); c.update(); } });
+});
+
+const weeks = ['5 wks ago (Aug 30)','4 wks ago (Sep 6)','3 wks ago (Sep 13)','2 wks ago (Sep 20)','Last wk (Sep 27)'];
+const gridDark = 'rgba(255,255,255,0.07)';
+const tickDark = { color: '#b4b4b9', font: { family: 'Outfit', size: 13 } };
+const tickLight = { color: '#5b5b60', font: { family: 'Outfit', size: 13 } };
+const PURPLE = '#8B6BAE', BLUEGREY = '#5E7F8E', PLIGHT = '#B89FCC', AMBER = '#C98A20', RED = '#C94040', GREEN = '#5B8C3E';
+const PM2 = { intake: '#5BC0EB', desc: '#0077B6', imaging: '#6A0DAD', fc: '#E83E8C', posted: '#FF0000' };
+const SPEED = ['#5B8C3E','#8CA53F','#C98A20','#C9642A','#C94040'];
+
+const allCharts = [];
+function mk(id, cfg) { const el = document.getElementById(id); if (el) allCharts.push(new Chart(el, cfg)); }
+
+// 2: five-week stage trend vs the weekly goal
+mk('chartTrend', {
+  type: 'line',
+  data: { labels: weeks, datasets: [
+    { label: 'Intake', data: [1292,1087,1450,1473,1489], borderColor: PM2.intake, backgroundColor: 'transparent', tension: 0.35, borderWidth: 2.5, pointRadius: 4, pointBackgroundColor: PM2.intake },
+    { label: 'Description', data: [1290,1077,1457,1466,1493], borderColor: PM2.desc, backgroundColor: 'transparent', tension: 0.35, borderWidth: 2, borderDash: [6,4], pointRadius: 3, pointBackgroundColor: PM2.desc },
+    { label: 'Imaging', data: [1210,1183,1421,1601,1326], borderColor: PM2.imaging, backgroundColor: 'transparent', tension: 0.35, borderWidth: 5, pointRadius: 7, pointBackgroundColor: PM2.imaging },
+    { label: 'Final Check', data: [1197,1174,1442,1559,1340], borderColor: PM2.fc, backgroundColor: 'transparent', tension: 0.35, borderWidth: 1.6, borderDash: [2,4], pointRadius: 0 },
+    { label: 'Put Away', data: [1236,1046,1529,1508,1489], borderColor: '#2ECC40', backgroundColor: 'transparent', tension: 0.35, borderWidth: 2, borderDash: [4,3], pointRadius: 3, pointBackgroundColor: '#2ECC40' },
+    { label: 'Posted', data: [1215,1045,1493,1683,1746], borderColor: PM2.posted, backgroundColor: 'rgba(255,0,0,0.05)', fill: true, tension: 0.35, borderWidth: 3, pointRadius: 5, pointBackgroundColor: PM2.posted },
+    { label: 'Weekly goal', data: [1250,1250,1500,1500,1500], borderColor: 'rgba(45,45,45,0.5)', borderDash: [8,6], borderWidth: 2, pointRadius: 0 }
+  ]},
+  options: { responsive: false, maintainAspectRatio: false,
+    layout: { padding: { left: 28, right: 10, top: 18 } },
+    plugins: { legend: { position: 'top', labels: { color: '#5b5b60', font: { family: 'Outfit', size: 14 }, boxWidth: 16, padding: 18 } } },
+    scales: { x: { ticks: tickLight, grid: { display: false } }, y: { ticks: tickLight, grid: { color: 'rgba(0,0,0,0.06)' }, suggestedMin: 1000, suggestedMax: 1800 } } }
+});
+
+// 3: imaging hands-on hours (bars) + minutes per item (line)
+mk('chartImgHours', {
+  type: 'bar',
+  data: { labels: weeks, datasets: [
+    { type: 'line', label: 'Minutes per item (right axis)', data: [4.63,3.81,4.22,4.46,4.11], yAxisID: 'y2', borderColor: PM2.imaging, backgroundColor: PM2.imaging, tension: 0.3, borderWidth: 4, pointRadius: 7, pointBackgroundColor: PM2.imaging, order: 0 },
+    { label: 'Hands-on imaging hours', data: [92,74,98,117,90], yAxisID: 'y', backgroundColor: ['rgba(185,137,232,0.40)','rgba(185,137,232,0.40)','rgba(185,137,232,0.40)','rgba(185,137,232,0.40)','rgba(185,137,232,0.95)'], borderColor: '#9B6BD0', borderWidth: 1, borderRadius: 5, barThickness: 110, order: 1 }
+  ]},
+  options: { responsive: false, maintainAspectRatio: false,
+    layout: { padding: { top: 18, left: 10, right: 10 } },
+    plugins: { legend: { position: 'top', labels: { color: '#5b5b60', font: { family: 'Outfit', size: 14 }, boxWidth: 14, padding: 14 } },
+      title: { display: true, text: 'Last week: 27 fewer hours than the week prior, at a faster pace', color: '#2d2d2d', font: { family: 'Outfit', size: 16, weight: '600' } } },
+    scales: { x: { ticks: { ...tickLight, font: { family: 'Outfit', size: 14 } }, grid: { display: false } },
+      y: { min: 0, max: 140, ticks: tickLight, grid: { color: 'rgba(0,0,0,0.06)' },
+        title: { display: true, text: 'hands-on hours', color: '#5b5b60', font: { family: 'Outfit', size: 12 } } },
+      y2: { position: 'right', min: 3.0, max: 5.0, ticks: { ...tickLight, callback: v => v.toFixed(1) + ' min' }, grid: { display: false },
+        title: { display: true, text: 'minutes per item (lower is better)', color: '#5b5b60', font: { family: 'Outfit', size: 12 } } } } }
+});
+
+// 4: items imaged per person, week prior vs last week
+mk('chartImgShift', {
+  type: 'bar',
+  data: { labels: ['Hanna','Max','SeanD','JoeC','Ramon','SavM','Kimberly','Melinda','NickK','AngieY','Rylan','Ryan G','Shahriyar'],
+    datasets: [
+      { label: 'The week prior (Sep 20)', data: [403,247,139,72,247,114,92,53,6,72,70,45,27], backgroundColor: 'rgba(180,180,190,0.45)', borderRadius: 4, barThickness: 28 },
+      { label: 'Last week (Sep 27)', data: [537,245,177,111,106,0,54,45,27,0,5,0,9], backgroundColor: 'rgba(185,137,232,0.95)', borderRadius: 4, barThickness: 28 }
+    ] },
+  options: { responsive: false, maintainAspectRatio: false,
+    layout: { padding: { top: 10 } },
+    plugins: { legend: { position: 'top', labels: { color: '#d2d2d7', font: { family: 'Outfit', size: 14 }, boxWidth: 14, padding: 12 } },
+      title: { display: true, text: 'Hanna +134, JoeC +39, SeanD +38; Ramon -141, SavM -114, AngieY -72, Rylan -65, Ryan G -45, Shahriyar -18', color: '#d2d2d7', font: { family: 'Outfit', size: 16, weight: '600' } } },
+    scales: { x: { ticks: { color: '#d2d2d7', font: { family: 'Outfit', size: 14, weight: '500' }, autoSkip: false }, grid: { display: false } },
+      y: { min: 0, max: 600, ticks: tickDark, grid: { color: gridDark },
+        title: { display: true, text: 'items imaged', color: '#b4b4b9', font: { family: 'Outfit', size: 12 } } } } }
+});
+
+// Range + dot: grey bar = prior 3 weeks' range, dot = last week (green fast -> red slow)
+function rangeDot(id, labels, ranges, last, cols, title, xmax) {
+  mk(id, {
+    type: 'bar',
+    data: { labels, datasets: [
+      { label: 'Range over the 3 weeks before', data: ranges, backgroundColor: 'rgba(255,255,255,0.16)', borderRadius: 10, barThickness: 20, order: 2 },
+      { type: 'line', label: 'Last week', data: last, showLine: false, pointRadius: 13, pointHoverRadius: 13, pointBackgroundColor: cols.map(i => SPEED[i]), pointBorderColor: '#1a1a1a', pointBorderWidth: 2, order: 1 } ] },
+    options: { indexAxis: 'y', responsive: false, maintainAspectRatio: false, layout: { padding: { right: 30, left: 6 } },
+      plugins: { legend: { position: 'top', labels: { color: '#d2d2d7', font: { family: 'Outfit', size: 14 }, boxWidth: 14, padding: 14, usePointStyle: true } },
+        title: { display: true, text: title, color: '#d2d2d7', font: { family: 'Outfit', size: 16, weight: '600' } }, tooltip: { enabled: false } },
+      scales: { x: { min: 2, max: xmax, ticks: { ...tickDark, callback: v => v + ' min' }, grid: { color: gridDark } },
+        y: { afterFit: sc => { sc.width = 110; }, ticks: { color: '#d2d2d7', font: { family: 'Outfit', size: 15, weight: '500' }, autoSkip: false }, grid: { display: false } } } },
+    plugins: [{ afterDatasetsDraw(ch) { const c = ch.ctx; c.save(); c.font = '600 15px Outfit'; c.fillStyle = '#f0f0f2'; c.textBaseline = 'middle';
+      ch.getDatasetMeta(1).data.forEach((pt, i) => c.fillText(last[i].toFixed(2), pt.x + 20, pt.y)); c.restore(); } }]
+  });
+}
+rangeDot('chartImagers',
+  ['Hanna','SeanD','NickK','Max','Ramon','Kimberly','Melinda'],
+  [[3.31,3.72],[3.96,5.99],null,[4.99,5.18],[3.63,4.18],[7.11,8.04],null],
+  [3.64,3.74,3.90,4.31,4.88,7.18,8.24], [0,0,0,1,2,4,4],
+  'Dot = last week; bar = their range the three weeks before. SeanD and Max beat their own ranges.', 9);
+rangeDot('chartIntakePeople',
+  ['Jodi','Rina','Michael','SavM','Elizabeth','Janet','MaryH','Melinda','Vicki','Martha'],
+  [[5.29,5.98],[6.18,7.07],[7.84,10.27],null,[9.67,9.82],[11.91,13.71],[10.11,11.17],[11.39,11.39],[11.14,12.22],[11.44,12.10]],
+  [6.33,6.35,7.07,7.91,9.80,11.05,11.32,11.47,12.27,13.46], [0,0,1,1,2,3,3,3,4,4],
+  'Dot = last week; bar = their range the three weeks before. Janet beat hers; Martha slipped past hers.', 14.5);
+
+// 7: category volume vs four-week average, with GP/item labels
+mk('chartMixShift', {
+  type: 'bar',
+  data: { labels: [['Clothing','$2.60'],['Books/Media','$1.85'],['Kitchen','$2.38'],['Toys','$1.41'],['Home Decor','$2.25'],['Unique & Vint.','$4.75'],['Coins','$0.39'],['Seasonal','$1.51'],['Vinyl','$1.16'],['Jewelry','$9.46'],['Ornaments','$1.84'],['Coll. Brands','$4.13']],
+    datasets: [
+      { label: 'Prior 4-week average', data: [276,243,236,97,96,52,47,46,45,28,23,10], backgroundColor: 'rgba(140,140,148,0.45)', borderRadius: 4, barThickness: 30 },
+      { label: 'Last week', data: [294,214,220,82,165,61,76,82,41,74,69,21], backgroundColor: 'rgba(139,107,174,0.85)', borderRadius: 4, barThickness: 30 }
+    ] },
+  options: { responsive: false, maintainAspectRatio: false,
+    layout: { padding: { top: 10 } },
+    plugins: { legend: { position: 'top', labels: { color: '#5b5b60', font: { family: 'Outfit', size: 14 }, boxWidth: 14, padding: 12 } },
+      title: { display: true, text: 'Jewelry 74 vs a 28 average; Home Decor 165 vs 96; Ornaments 69 vs 23; Coins 76 vs 47', color: '#2d2d2d', font: { family: 'Outfit', size: 16, weight: '600' } } },
+    scales: { x: { ticks: { color: '#2d2d2d', font: { family: 'Outfit', size: 11 }, autoSkip: false }, grid: { display: false } },
+      y: { min: 0, max: 320, ticks: tickLight, grid: { color: 'rgba(0,0,0,0.06)' },
+        title: { display: true, text: 'items taken in per week', color: '#5b5b60', font: { family: 'Outfit', size: 12 } } } } }
+});
+// ===== Incentive section charts =====
+// Safelite: one focal bar (output) in signal purple, the rest ink-grey
+mk('chartSafelite', {
+  type: 'bar',
+  data: { labels: ['Output per worker', 'Of that, the same people working harder', 'Worker pay'],
+    datasets: [{ data: [44, 22, 10.6], backgroundColor: [PURPLE, 'rgba(60,60,67,0.35)', 'rgba(60,60,67,0.35)'], borderRadius: 6, barThickness: 74 }] },
+  options: { indexAxis: 'y', responsive: false, maintainAspectRatio: false, layout: { padding: { right: 90 } },
+    plugins: { legend: { display: false }, tooltip: { enabled: false } },
+        scales: { x: { display: false, min: 0, max: 50 },
+      y: { afterFit: sc => { sc.width = 480; }, ticks: { color: '#2d2d2d', font: { family: 'Outfit', size: 24 } }, grid: { display: false }, border: { display: false } } } },
+  plugins: [{ afterDatasetsDraw(ch) { const c = ch.ctx; c.save(); c.font = '600 30px Outfit'; c.fillStyle = '#1d1d1f'; c.textBaseline = 'middle';
+      ch.getDatasetMeta(0).data.forEach((b, i) => c.fillText('+' + ch.data.datasets[0].data[i] + '%', b.x + 14, b.y)); c.restore(); } }]
+});
+// Gneezy: the token-pay dip is the focal bar
+mk('chartGneezy', {
+  type: 'bar',
+  data: { labels: ['No pay', 'Token pay', 'Real pay'],
+    datasets: [{ data: [28.4, 23.1, 34.7], backgroundColor: ['rgba(60,60,67,0.35)', PURPLE, 'rgba(60,60,67,0.35)'], borderRadius: 6, barThickness: 150 }] },
+  options: { responsive: false, maintainAspectRatio: false, layout: { padding: { top: 46 } },
+    plugins: { legend: { display: false }, tooltip: { enabled: false } },
+        scales: { y: { display: false, min: 0, max: 38 },
+      x: { ticks: { color: '#2d2d2d', font: { family: 'Outfit', size: 24 } }, grid: { display: false }, border: { display: false } } } },
+  plugins: [{ afterDatasetsDraw(ch) { const c = ch.ctx; c.save(); c.font = '600 30px Outfit'; c.fillStyle = '#1d1d1f'; c.textAlign = 'center';
+      ch.getDatasetMeta(0).data.forEach((b, i) => c.fillText(ch.data.datasets[0].data[i] + ' right', b.x, b.y - 14)); c.restore(); } }]
+});
+// Keep half: wage in grey, bonus in signal purple
+// Where the bar would sit: % of bar, green >= 100, amber 90-99, red below
+function barChart(id, title, labels, pct) {
+  const col = v => v >= 100 ? '#5B8C3E' : v >= 90 ? '#C98A20' : '#C94040';
+  mk(id, {
+    type: 'bar',
+    data: { labels, datasets: [{ data: pct, backgroundColor: pct.map(col), borderRadius: 5, barThickness: 30 }] },
+    options: { indexAxis: 'y', responsive: false, maintainAspectRatio: false, layout: { padding: { right: 60, top: 6 } },
+      plugins: { legend: { display: false }, tooltip: { enabled: false },
+        title: { display: true, text: title, color: '#f0f0f2', font: { family: 'Outfit', size: 20, weight: '600' }, padding: { bottom: 26 } } },
+      scales: { x: { min: 0, max: 125, ticks: { ...tickDark, callback: v => v + '%' }, grid: { color: gridDark } },
+        y: { afterFit: sc => { sc.width = 100; }, ticks: { color: '#d2d2d7', font: { family: 'Outfit', size: 16, weight: '500' }, autoSkip: false }, grid: { display: false } } } },
+    plugins: [{ afterDatasetsDraw(ch) {
+      const c = ch.ctx, xs = ch.scales.x, ya = ch.chartArea, x100 = xs.getPixelForValue(100);
+      c.save(); c.strokeStyle = '#f5f5f7'; c.lineWidth = 2; c.setLineDash([6, 5]);
+      c.beginPath(); c.moveTo(x100, ya.top); c.lineTo(x100, ya.bottom); c.stroke(); c.setLineDash([]);
+      c.fillStyle = '#f5f5f7'; c.font = '600 14px Outfit'; c.textAlign = 'center'; c.fillText('THE BAR', x100, ya.top - 4);
+      c.textAlign = 'left'; c.font = '600 15px Outfit';
+      ch.getDatasetMeta(0).data.forEach((b, i) => c.fillText(pct[i] + '%', b.x + 8, b.y + 5)); c.restore(); } }]
+  });
+}
+barChart('chartBarImg', 'Imaging: bar = 15 items/hr (4.0 min)',
+  ['Hanna','SeanD','NickK','Max','Ramon','Kimberly','Melinda'], [110,107,103,93,82,56,49]);
+barChart('chartBarIntake', 'Intake + description: bar = 8.6 items/hr (7.0 min)',
+  ['Jodi','Rina','Michael','SavM','Elizabeth','Janet','MaryH','Melinda','Vicki','Martha'], [111,110,99,89,71,63,62,61,57,52]);
+// Put-away lag distribution: 100% stacked by week, green (fast) -> red (slow)
+(function () {
+  const wks = ['Aug 2','Aug 9','Aug 16','Aug 23','Aug 30','Sep 6','Sep 13','Sep 20','Sep 27'];
+  const raw = {
+    '< 4 hrs':    [465,295,222,198,268,220,353,339,226],
+    '4 to 24 hrs':[709,370,522,633,529,345,488,606,508],
+    '1 to 2 days':[159,294,243,248,229,203,243,323,290],
+    '2 to 3 days':[30,201,164,120,88,97,96,121,174],
+    '3 to 7 days':[41,142,279,142,25,159,205,75,171],
+    '7+ days':    [138,120,116,60,89,12,122,23,106] };
+  const tot = wks.map((_, i) => Object.values(raw).reduce((s, a) => s + a[i], 0));
+  const cols = ['#5B8C3E','#8CA53F','#C9B03F','#C98A20','#C9642A','#C94040'];
+  mk('chartPutLag', { type: 'bar',
+    data: { labels: wks, datasets: Object.keys(raw).map((k, j) => ({ label: k, data: raw[k].map((v, i) => Math.round(1000 * v / tot[i]) / 10), backgroundColor: cols[j], borderWidth: 0, barThickness: 54 })) },
+    options: { responsive: false, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { color: '#d2d2d7', font: { family: 'Outfit', size: 13 }, boxWidth: 12, padding: 10 } },
+        title: { display: true, text: 'Share shelved within a day: 76% early Aug, 64% Sep 20, 50% last week', color: '#f0f0f2', font: { family: 'Outfit', size: 16, weight: '600' } }, tooltip: { enabled: false } },
+      scales: { x: { stacked: true, ticks: tickDark, grid: { display: false } },
+        y: { stacked: true, min: 0, max: 100, ticks: { ...tickDark, callback: v => v + '%' }, grid: { color: gridDark } } } } });
+})();
+// Daily put-away by person
+(function () {
+  const days = ['9/8','9/9','9/10','9/11','9/12','9/14','9/15','9/16','9/17','9/18','9/19','9/21','9/22','9/23','9/24','9/25','9/28','9/29','9/30','10/1','10/2','10/3'];
+  const total = [156,179,400,277,34,120,421,322,211,418,21,333,369,290,297,215,276,343,302,300,230,37];
+  const dan =   [156,178,399,273,0,116,354,322,207,411,0,330,369,287,296,211,243,338,253,0,0,0];
+  mk('chartPutWho', { type: 'bar',
+    data: { labels: days, datasets: [
+      { label: 'Daniel S', data: dan, backgroundColor: '#2ECC40', barThickness: 22 },
+      { label: 'Everyone else', data: total.map((v, i) => v - dan[i]), backgroundColor: 'rgba(255,255,255,0.45)', barThickness: 22 } ] },
+    options: { responsive: false, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { color: '#d2d2d7', font: { family: 'Outfit', size: 13 }, boxWidth: 12, padding: 10 } },
+        title: { display: true, text: 'Items put away per day, Sep 8 to Oct 3 (no Sundays)', color: '#f0f0f2', font: { family: 'Outfit', size: 16, weight: '600' } }, tooltip: { enabled: false } },
+      scales: { x: { stacked: true, ticks: { ...tickDark, font: { family: 'Outfit', size: 11 }, autoSkip: false, maxRotation: 0 }, grid: { display: false } },
+        y: { stacked: true, ticks: tickDark, grid: { color: gridDark } } } } });
+})();
+// Rollout timeline (Gantt): x = days from Mon Oct 5
+(function () {
+  const wk = ['Oct 5','Oct 12','Oct 19','Oct 26','Nov 2','Nov 9','Nov 16','Nov 23'];
+  const rows = ['Survey: draft + manager review', 'Survey open to staff', 'Build: improve metrics, Hub clock + timer, Gusto', 'Share results + final design', 'Practice mode (nothing paid)', 'Pilot (real bonuses)', 'Decide: keep, change or stop'];
+  const spans = [[0,5],[7,12],[7,19],[21,21.8],[21,33],[35,47],[49,49.8]];
+  const cols = ['#B89FCC','#8B6BAE','#5E7F8E','#C98A20','#0077B6','#5B8C3E','#C94040'];
+  mk('chartGantt', { type: 'bar',
+    data: { labels: rows, datasets: [{ data: spans, backgroundColor: cols, borderRadius: 8, barThickness: 40, borderSkipped: false }] },
+    options: { indexAxis: 'y', responsive: false, maintainAspectRatio: false, layout: { padding: { right: 20 } },
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: { x: { min: 0, max: 56, ticks: { stepSize: 7, color: '#2d2d2d', font: { family: 'Outfit', size: 18, weight: '600' }, callback: v => wk[v / 7] || '' }, grid: { color: 'rgba(0,0,0,0.08)' }, position: 'top' },
+        y: { afterFit: sc => { sc.width = 520; }, ticks: { color: '#2d2d2d', font: { family: 'Outfit', size: 20 } }, grid: { display: false } } } },
+    plugins: [{ afterDatasetsDraw(ch) {
+      const c = ch.ctx, xs = ch.scales.x, ya = ch.chartArea, x0 = xs.getPixelForValue(0.5);
+      c.save(); c.strokeStyle = '#C94040'; c.lineWidth = 2; c.setLineDash([5, 4]);
+      c.beginPath(); c.moveTo(x0, ya.top); c.lineTo(x0, ya.bottom); c.stroke(); c.setLineDash([]);
+      c.fillStyle = '#C94040'; c.font = '600 15px Outfit'; c.fillText('Today', x0 + 6, ya.bottom - 8);
+      const lbl = ['Oct 5 to 9', 'Oct 12 to 16', 'Oct 12 to 23', 'Mon Oct 26', 'Oct 26 to Nov 6', 'Nov 9 to 20', 'Mon Nov 23'];
+      c.fillStyle = '#1d1d1f'; c.font = '600 16px Outfit'; c.textBaseline = 'middle';
+      ch.getDatasetMeta(0).data.forEach((b, i) => c.fillText(lbl[i], Math.max(b.x, b.base) + 10, b.y)); c.restore(); } }] });
+})();
+// Charts use fixed canvas dimensions + responsive:false so Reveal's transform
+// scaling cannot mis-size them.
+</script>
+</body>
+</html>
