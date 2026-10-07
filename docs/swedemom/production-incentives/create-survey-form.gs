@@ -39,23 +39,20 @@ function createSurvey() {
   // Section 1
   form.addSectionHeaderItem().setTitle('About your work (optional)');
   choice('Which best describes most of your work?',
-    ['Intake, description or imaging', 'Sorting', 'Final check, put-away or fulfillment', 'A mix of several jobs', 'Prefer not to say']);
+    ['Intake, description or imaging', 'Sorting', 'Put-away or fulfillment', 'A mix of several jobs', 'Prefer not to say']);
 
   // Section 2
   form.addPageBreakItem().setTitle('Overall');
   scale('Overall, how do you feel about a production bonus like the one in the proposal?', 'Very negative', 'Very positive', true);
   scale('How clear was the proposal?', 'Very confusing', 'Very clear', true);
-  para('What do you like most about the idea?');
-  checks('What worries you, if anything?', [
-    'People might rush and quality could drop',
-    'The bar might not be fair',
-    'Some items or bins are harder than others',
-    'Tracking time could feel like being watched',
-    'It could cause tension between coworkers',
-    "Team goals depend on things I can't control",
-    "It's too complicated",
-    'The rules might change later',
-    'Nothing worries me'], true);
+  checks('Which parts of the idea appeal to you most?', [
+    'Earning more when I clear the bar',
+    'The weekly team goal',
+    'My wage never goes down',
+    'Being measured against the bar, not coworkers',
+    'Seeing my progress live in the Hub',
+    'Better tools before anything is paid',
+    'A practice run before real money'], true);
 
   // Section 3
   form.addPageBreakItem().setTitle('How it should work');
@@ -72,7 +69,8 @@ function createSurvey() {
     ['In the Hub, with my production work', 'In Gusto, like now', 'No preference']);
   choice('How would you feel about tapping a timer in the Hub for other work (truck runs, wrapping glass, meetings)?',
     ['Easy, no problem', 'A little annoying', 'Very annoying', 'Not sure']);
-  checks('Which roles not covered in the guide should we find a way to include?', ['Final Check', 'Verification'], true);
+  checks("Some important work isn't part of the bonus yet, like checking that items are in the right bin and clearing out stale inventory. How should we reward it?",
+    ['Standard minutes, like a production stage', 'A team goal for that work', 'Paid as normal, no bonus (like today)', 'Not sure'], true);
 
   // Section 4
   form.addPageBreakItem().setTitle('In your words');

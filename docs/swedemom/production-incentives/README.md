@@ -12,7 +12,7 @@ Staff-facing materials for the production bonus program (Hub project "Intake Met
 | `Swedemom-Production-Bonus-Proposal.pdf` | The rendered PDF, v2 (2026-10-07). |
 | `build.mjs` | Renders the PDF with headless Chrome, checks every page for clipped content, and with `--preview` writes `preview/preview-N.png`. |
 | `survey.html` | Source of the survey questions PDF for manager review (`Swedemom-Production-Bonus-Survey-Questions.pdf`, built by `build.mjs`). Keep it in sync with `survey-draft.md` and `create-survey-form.gs`. |
-| `survey-draft.md` | The anonymous survey, readable for manager review (16 questions). |
+| `survey-draft.md` | The anonymous survey, readable for manager review (15 questions). |
 | `create-survey-form.gs` | Google Apps Script that builds the same survey as a Google Form with email collection and sign-in off. Paste into script.google.com and run `createSurvey`. Not yet run. |
 | `assets/` | Swedemom logo and butterfly. |
 
