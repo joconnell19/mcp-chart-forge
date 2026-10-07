@@ -10,7 +10,7 @@ function createSurvey() {
   form.setDescription(
     "We're thinking about adding a production bonus on top of your hourly wage, and we want your honest take " +
     "before anything is decided. This survey is anonymous: it does not collect your name or email, and only " +
-    "overall results are shared. It takes about 5 to 7 minutes. Please read the proposal first (your manager has a copy).");
+    "overall results are shared. It takes about 5 to 7 minutes. Please read the proposal first (it's attached to the email with this survey).");
 
   // Anonymity: no email, no sign-in, no one-response limit (that needs sign-in).
   form.setCollectEmail(false);
@@ -72,7 +72,7 @@ function createSurvey() {
     ['In the Hub, with my production work', 'In Gusto, like now', 'No preference']);
   choice('How would you feel about tapping a timer in the Hub for other work (truck runs, wrapping glass, meetings)?',
     ['Easy, no problem', 'A little annoying', 'Very annoying', 'Not sure']);
-  checks('Which other roles should we work on including?', ['Final Check', 'Verification'], true);
+  checks('Which roles not covered in the guide should we find a way to include?', ['Final Check', 'Verification'], true);
 
   // Section 4
   form.addPageBreakItem().setTitle('In your words');

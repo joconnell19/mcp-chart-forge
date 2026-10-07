@@ -40,6 +40,15 @@ for (const r of report) {
 await page.pdf({ path: PDF, format: "letter", printBackground: true, preferCSSPageSize: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
 console.log("wrote " + PDF);
 
+// The survey questions as a flowing document for manager review.
+const SURVEY_PDF = path.join(dir, "Swedemom-Production-Bonus-Survey-Questions.pdf");
+const sp = await browser.newPage();
+await sp.goto(pathToFileURL(path.join(dir, "survey.html")).href, { waitUntil: "networkidle0", timeout: 60000 });
+await sp.evaluateHandle("document.fonts.ready");
+await sp.pdf({ path: SURVEY_PDF, format: "letter", printBackground: true, preferCSSPageSize: true });
+await sp.close();
+console.log("wrote " + SURVEY_PDF);
+
 if (process.argv.includes("--preview")) {
   const out = path.join(dir, "preview");
   fs.mkdirSync(out, { recursive: true });

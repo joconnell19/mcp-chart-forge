@@ -2,7 +2,7 @@
 
 Anonymous Google Form, English only, about 5 to 7 minutes, open Oct 12-16. Built by `create-survey-form.gs` (same questions as below). Only Jamie sees raw answers; results are shared as totals.
 
-**Form intro:** We're thinking about adding a production bonus on top of your hourly wage, and we want your honest take before anything is decided. This survey is anonymous: it does not collect your name or email, and only overall results are shared. It takes about 5 to 7 minutes. Please read the proposal first (your manager has a copy).
+**Form intro:** We're thinking about adding a production bonus on top of your hourly wage, and we want your honest take before anything is decided. This survey is anonymous: it does not collect your name or email, and only overall results are shared. It takes about 5 to 7 minutes. Please read the proposal first (it's attached to the email with this survey).
 
 ## Section 1: About your work (optional)
 
@@ -40,7 +40,7 @@ Anonymous Google Form, English only, about 5 to 7 minutes, open Oct 12-16. Built
     In the Hub, with my production work / In Gusto, like now / No preference
 12. **How would you feel about tapping a timer in the Hub for other work (truck runs, wrapping glass, meetings)?** (multiple choice)
     Easy, no problem / A little annoying / Very annoying / Not sure
-13. **Which other roles should we work on including?** (checkboxes, with Other)
+13. **Which roles not covered in the guide should we find a way to include?** (checkboxes, with Other)
     Final Check / Verification
 
 ## Section 4: In your words
