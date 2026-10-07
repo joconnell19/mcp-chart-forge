@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Production Bonus Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --head:#5E7F8E; --deep:#3F5A67; --purple:#8B6BAE; --plight:#B89FCC; --ptint:#F4EFF9;
+  --btint:#EAF1F5; --green:#5B8C3E; --gtint:#EEF5E9; --ink:#27323A; --muted:#6B7A84;
+  --line:#E3E0EA; --wage:#C9D3D9; --hero:linear-gradient(135deg,#C8DAE4,#D4C5E2,#E8D5F0);
+}
+@page{size:letter;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff}
+body{font-family:'Outfit',sans-serif;color:var(--ink);font-size:12.5pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact;counter-reset:pg}
+.page{width:8.5in;height:11in;padding:.62in .78in .42in;display:flex;flex-direction:column;overflow:hidden;page-break-after:always;break-after:page;position:relative;background:#fff;counter-increment:pg}
+.page>.content{flex:1 1 auto;min-height:0;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.page>.content.top{justify-content:flex-start}
+.hd{margin-bottom:6px}
+svg.illo{width:100%;height:auto;display:block;margin:0 auto}
+.page-footer{flex-shrink:0;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--plight);padding-top:9px;margin-top:14px;font-size:8.5pt;color:var(--muted);letter-spacing:.02em}
+.page-footer b{color:var(--deep);font-weight:600}
+.page-footer .pn::after{content:counter(pg)}
+.page-footer a{color:var(--purple);text-decoration:none;font-weight:600}
+
+.kicker{font-size:8.5pt;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);margin:0 0 6px}
+h1{font-size:34pt;line-height:1.05;font-weight:700;color:var(--head);margin:0 0 14px;letter-spacing:-.02em}
+h2{font-size:16pt;line-height:1.2;font-weight:600;color:var(--head);margin:0 0 7px}
+h3{font-size:13pt;font-weight:600;color:var(--ink);margin:0 0 4px}
+p{margin:0 0 10px}
+.lede{font-size:14.5pt;line-height:1.45;color:#3E4A52;font-weight:300;margin-bottom:0}
+.small{font-size:10.5pt;color:var(--muted)}
+.fict{font-size:9.5pt;color:var(--muted);font-style:italic}
+strong{font-weight:600}
+a{color:var(--purple)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.card{border-radius:18px;padding:20px 22px;background:#fff;border:1.5px solid var(--line)}
+.card.tint{background:var(--ptint);border-color:transparent}
+.card.blue{background:var(--btint);border-color:transparent}
+.card.green{background:var(--gtint);border-color:transparent}
+.card.tint .pill.p{background:#E4D6F0}
+.callout{border-radius:18px;padding:16px 20px;background:var(--btint);font-size:11.5pt}
+.callout b{color:var(--deep)}
+.pill{display:inline-block;border-radius:999px;padding:2px 11px;font-size:8.5pt;font-weight:600;letter-spacing:.04em}
+.pill.p{background:var(--ptint);color:var(--purple)}
+.pill.g{background:var(--gtint);color:var(--green)}
+.big{font-size:34pt;font-weight:700;color:var(--deep);line-height:1;letter-spacing:-.02em}
+ul.clean{list-style:none;padding:0;margin:0}
+ul.clean li{position:relative;padding-left:20px;margin-bottom:8px}
+ul.clean li::before{content:"";position:absolute;left:3px;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--plight)}
+.promise{display:flex;gap:14px;align-items:flex-start}
+.ico{flex:0 0 46px;height:46px;border-radius:14px;background:var(--ptint);display:flex;align-items:center;justify-content:center}
+.legend{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-size:9.5pt;color:var(--muted);margin-top:8px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:4px}
+
+/* cover: three planes (display type back, illustration middle, glass dock front) */
+.page.cover{padding:0;background:var(--hero)}
+.cover .inner{flex:1;display:flex;flex-direction:column;padding:.7in .8in .6in;position:relative;isolation:isolate}
+.cover .logo{width:2in}
+.cover .display{position:relative;z-index:1;font-size:124pt;line-height:.84;font-weight:800;letter-spacing:-.055em;color:#3F5A67;margin:1.15in 0 0}
+.cover .subject{position:relative;z-index:2;margin:-96px -1.05in 0 auto;width:7.2in}
+.cover .dock{position:relative;z-index:3;margin-top:-34px;background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.95);border-radius:60px;padding:26px 40px;backdrop-filter:blur(14px)}
+.cover .dock p{margin:0}
+.cover .foot{margin-top:auto;display:flex;justify-content:space-between;font-size:10pt;color:#4E5E68}
+
+/* contents */
+.toc a{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);padding:8px 14px;border-radius:999px}
+.toc a:nth-child(odd){background:#FAF8FC}
+.toc .n{flex:0 0 30px;font-weight:700;color:var(--purple);font-size:11pt}
+.toc .t{flex:1;font-weight:500}
+.toc .pg{color:var(--purple);font-weight:600;font-size:11pt}
+.stagechips{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.stagechips a{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;background:var(--ptint);border-radius:999px 999px 18px 18px;padding:16px 6px 12px;color:var(--deep);font-weight:600;font-size:10.5pt;text-align:center}
+.stagechips a span{color:var(--purple);font-size:9pt;font-weight:600}
+
+/* stage pages */
+.stagehead{display:flex;gap:22px;align-items:flex-start}
+.stagehead .badge{flex:0 0 108px;height:124px;border-radius:999px 999px 22px 22px;background:var(--ptint);display:flex;align-items:center;justify-content:center}
+.stagecards .card h2{font-size:14pt}
+.stagecards .card p,.stagecards .card li{font-size:11.5pt}
+
+/* tables */
+table.ex{width:100%;border-collapse:separate;border-spacing:0;font-size:11pt}
+table.ex th{text-align:left;font-weight:600;color:var(--muted);font-size:8.5pt;letter-spacing:.06em;text-transform:uppercase;padding:0 8px 6px;border-bottom:1.5px solid var(--line)}
+table.ex td{padding:8px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.ex td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.ex tr:last-child td{border-bottom:0}
+
+/* timeline */
+.tl{position:relative;padding-left:46px}
+.tl::before{content:"";position:absolute;left:17px;top:8px;bottom:8px;width:3px;border-radius:2px;background:linear-gradient(var(--plight),var(--head))}
+.tl .step{position:relative;margin-bottom:30px}
+.tl .step p{font-size:13pt}
+.tl .dot{position:absolute;left:-46px;top:0;width:37px;height:37px;border-radius:50%;background:#fff;border:3px solid var(--purple);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--purple);font-size:12pt}
+.tl .step.now .dot{background:var(--purple);color:#fff}
+
+/* build list */
+.build{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.build .card{display:flex;gap:14px;padding:16px 18px}
+.build .card p{margin:0;font-size:11pt}
+
+.faq{columns:2;column-gap:26px}
+.faq .q{break-inside:avoid;margin-bottom:18px}
+.faq h3{color:var(--head)}
+.faq p{font-size:11.5pt;margin:0}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page cover" id="cover">
+  <div class="inner">
+    <img class="logo" src="assets/logo.png" alt="Swedemom">
+    <div class="display">Share<br>the gains.</div>
+    <svg class="subject" viewBox="0 0 560 330" aria-hidden="true">
+      <defs>
+        <linearGradient id="cv1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9A7CBD"/><stop offset="1" stop-color="#7A5C9E"/></linearGradient>
+        <linearGradient id="cv2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D3C0E3"/><stop offset="1" stop-color="#B89FCC"/></linearGradient>
+        <filter id="ds" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#5E4A7A" flood-opacity=".22"/></filter>
+      </defs>
+      <g filter="url(#ds)" transform="rotate(-3 280 200)">
+        <rect x="70" y="190" width="86" height="120" rx="43" fill="#fff"/>
+        <rect x="190" y="190" width="86" height="120" rx="43" fill="#fff"/>
+        <rect x="190" y="150" width="86" height="34" rx="17" fill="url(#cv1)"/>
+        <rect x="310" y="190" width="86" height="120" rx="43" fill="#fff"/>
+        <rect x="310" y="150" width="86" height="34" rx="17" fill="url(#cv1)"/>
+        <rect x="310" y="120" width="86" height="24" rx="12" fill="url(#cv2)"/>
+        <rect x="430" y="190" width="86" height="120" rx="43" fill="#fff"/>
+        <rect x="430" y="118" width="86" height="66" rx="33" fill="url(#cv1)"/>
+        <rect x="430" y="76" width="86" height="36" rx="18" fill="url(#cv2)"/>
+        <g font-family="Outfit" font-size="13" font-weight="600" fill="#6B7A84" text-anchor="middle">
+          <text x="113" y="236">wage</text><text x="233" y="236">wage</text><text x="353" y="236">wage</text><text x="473" y="236">wage</text>
+        </g>
+      </g>
+      <image href="assets/butterfly.png" x="470" y="0" width="72" height="62"/>
+    </svg>
+    <div class="dock">
+      <p class="kicker" style="margin-bottom:4px">A proposal for your feedback · Draft, October 2026</p>
+      <p style="font-size:15pt;font-weight:300;color:#2F3B43;line-height:1.35">How a production bonus could work at Swedemom: your wage stays put, and good, efficient work on top of it pays you more.</p>
+    </div>
+    <div class="foot">
+      <div>Nothing here is final. The anonymous survey shapes it.</div>
+      <div>For everyone on the Swedemom team</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTENTS ============ -->
+<section class="page" id="contents">
+  <div class="content top">
+    <div class="hd"><p class="kicker">Contents</p>
+      <h1>Read what applies to you.</h1>
+      <p class="lede">Everyone should read the first part: how the bonus works for the whole team. Then jump to the page for the work you do. Tap any line to go there.</p></div>
+
+    <div class="toc" style="margin-top:22px">
+      <a href="#why"><span class="n">01</span><span class="t">Why we're doing this</span><span class="pg">3</span></a>
+      <a href="#two-ways"><span class="n">02</span><span class="t">Two ways to earn more</span><span class="pg">4</span></a>
+      <a href="#minutes"><span class="n">03</span><span class="t">Every item is worth minutes</span><span class="pg">5</span></a>
+      <a href="#keep-half"><span class="n">04</span><span class="t">Clear the bar, keep half</span><span class="pg">6</span></a>
+      <a href="#week"><span class="n">05</span><span class="t">A week, worked out</span><span class="pg">7</span></a>
+      <a href="#day"><span class="n">06</span><span class="t">A day, minute by minute</span><span class="pg">8</span></a>
+      <a href="#quality"><span class="n">07</span><span class="t">Only good work counts</span><span class="pg">9</span></a>
+      <a href="#team"><span class="n">08</span><span class="t">Team goals for each stage</span><span class="pg">10</span></a>
+      <a href="#bar"><span class="n">09</span><span class="t">How the bar rises</span><span class="pg">11</span></a>
+      <a href="#hours"><span class="n">10</span><span class="t">Hours, breaks and payday</span><span class="pg">12</span></a>
+      <a href="#building"><span class="n">11</span><span class="t">What we're building first</span><span class="pg">13</span></a>
+      <a href="#timeline"><span class="n">12</span><span class="t">What happens next</span><span class="pg">19</span></a>
+      <a href="#faq"><span class="n">13</span><span class="t">Questions you might have</span><span class="pg">20</span></a>
+    </div>
+
+    <h2 style="margin:26px 0 12px">Your stage</h2>
+    <div class="stagechips">
+      <a href="#sorting"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7v12h12V7M9 11h6"/></svg>Sorting<span>page 14</span></a>
+      <a href="#intake"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>Intake + description<span>page 15</span></a>
+      <a href="#imaging"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Imaging<span>page 16</span></a>
+      <a href="#putaway"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M10 4v16"/></svg>Put-away<span>page 17</span></a>
+      <a href="#fulfillment"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>Fulfillment<span>page 18</span></a>
+    </div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal</span><span class="pn"></span></div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="page" id="why">
+  <div class="content">
+    <div class="hd"><p class="kicker">01 · Why we're doing this</p>
+      <h1>Swedemom's future runs through production.</h1>
+      <p class="lede">For months we've been asking everyone to produce more, and more efficiently. That's not pressure for its own sake: Swedemom only becomes self-sustaining if the work of turning donations into listings gets faster without getting worse. Labor is our biggest limit, so how much good work we finish each hour decides how far the mission goes.</p></div>
+
+    <div class="card tint">
+      <h2 style="font-size:18pt">If we're asking for more, it should pay more.</h2>
+      <p style="margin:0">When someone works faster and well, they save Swedemom real money. It's only fair that they share in it, the way salespeople earn commission. So we're proposing a production bonus, and we want to build it with you, not hand it to you.</p>
+    </div>
+
+    <svg class="illo" viewBox="0 0 660 130" aria-hidden="true">
+      <g font-family="Outfit" text-anchor="middle">
+        <g transform="translate(10,10)"><rect width="130" height="78" rx="39" fill="#EAF1F5"/><rect x="45" y="30" width="40" height="28" rx="4" fill="#5E7F8E"/><path d="M45 30 l20 12 l20 -12" stroke="#fff" stroke-width="2" fill="none"/></g>
+        <g transform="translate(180,10)"><rect width="130" height="78" rx="39" fill="#F4EFF9"/><circle cx="65" cy="39" r="20" fill="#8B6BAE"/><path d="M55 39 l7 7 l13 -14" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <g transform="translate(350,10)"><rect width="130" height="78" rx="39" fill="#F4EFF9"/><rect x="42" y="22" width="46" height="34" rx="6" fill="#B89FCC"/><text x="65" y="45" font-size="15" font-weight="700" fill="#fff">$</text></g>
+        <g transform="translate(520,10)"><rect width="130" height="78" rx="39" fill="#EEF5E9"/><image href="assets/butterfly.png" x="43" y="18" width="44" height="38"/></g>
+        <g stroke="#B89FCC" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M146 49 h28 M168 43 l7 6 -7 6"/><path d="M316 49 h28 M338 43 l7 6 -7 6"/><path d="M486 49 h28 M508 43 l7 6 -7 6"/></g>
+        <g font-size="13" fill="#3F5A67" font-weight="600"><text x="75" y="114">Donations arrive</text><text x="245" y="114">You make them ready</text><text x="415" y="114">They sell</text><text x="585" y="114">The mission grows</text></g>
+      </g>
+    </svg>
+
+    <div>
+      <h2>What we promise from the start</h2>
+      <div class="grid2" style="margin-top:10px">
+        <div class="promise"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+          <div><h3>Your wage never goes down</h3><p class="small" style="margin:0">Bonuses only add. No penalties on pay, no clawbacks.</p></div></div>
+        <div class="promise"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 19c.8-3 2.8-4.5 5-4.5s4.2 1.5 5 4.5M11 19c.8-3 2.8-4.5 5-4.5s4.2 1.5 5 4.5"/></svg></div>
+          <div><h3>Everyone can win</h3><p class="small" style="margin:0">No curve and no ranking. You're measured against the bar, not each other.</p></div></div>
+        <div class="promise"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round"><path d="M4 18h16M7 18V9M12 18V5M17 18v-6"/></svg></div>
+          <div><h3>A bar that rises only with proof</h3><p class="small" style="margin:0">It goes up when better tools are proven to save time, never because you worked harder.</p></div></div>
+        <div class="promise"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8"/></svg></div>
+          <div><h3>You help shape it</h3><p class="small" style="margin:0">An anonymous survey first, then a practice run where nothing is paid.</p></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ TWO WAYS ============ -->
+<section class="page" id="two-ways">
+  <div class="content">
+    <div class="hd"><p class="kicker">02 · At a glance</p>
+      <h1>Two ways to earn more.</h1>
+      <p class="lede">Your paycheck would have up to three parts. The first never changes. The other two are new.</p></div>
+
+    <svg class="illo" viewBox="0 0 620 170" aria-hidden="true">
+      <text x="20" y="20" font-family="Outfit" font-size="11" font-weight="600" letter-spacing="2" fill="#8B6BAE">ONE PAYCHECK</text>
+      <rect x="20" y="34" width="360" height="56" rx="28" fill="#C9D3D9"/>
+      <text x="44" y="68" font-family="Outfit" font-size="15" font-weight="600" fill="#3F5A67">Your hourly wage</text>
+      <rect x="386" y="34" width="128" height="56" rx="28" fill="#8B6BAE"/>
+      <text x="450" y="68" text-anchor="middle" font-family="Outfit" font-size="14" font-weight="600" fill="#fff">Your bonus</text>
+      <rect x="520" y="34" width="80" height="56" rx="28" fill="#B89FCC"/>
+      <text x="560" y="68" text-anchor="middle" font-family="Outfit" font-size="14" font-weight="600" fill="#fff">Team</text>
+      <g font-family="Outfit" font-size="12.5" fill="#6B7A84" text-anchor="middle">
+        <path d="M200 98 v16" stroke="#C9D3D9" stroke-width="2"/><text x="200" y="132">never goes down</text>
+        <path d="M450 98 v16" stroke="#8B6BAE" stroke-width="2"/><text x="450" y="132">clear your bar,</text><text x="450" y="148">keep half</text>
+        <path d="M560 98 v16" stroke="#B89FCC" stroke-width="2"/><text x="560" y="132">your stage hits</text><text x="560" y="148">its weekly goal</text>
+      </g>
+    </svg>
+
+    <div class="grid2">
+      <div class="card tint">
+        <span class="pill p">1 · YOUR BONUS</span>
+        <h2 style="margin-top:10px">Clear the bar, keep half.</h2>
+        <p>Each item you finish earns "minutes" based on how long that kind of item normally takes. Earn more minutes than you worked, and you've saved Swedemom time.</p>
+        <p style="margin:0"><strong>You keep half of the time you save, paid at your wage.</strong> There's no set limit on how much you can earn.</p>
+      </div>
+      <div class="card" style="background:#F7F3FB;border-color:transparent">
+        <span class="pill p" style="background:#EBE1F4">2 · TEAM BONUS</span>
+        <h2 style="margin-top:10px">Hit the goal together.</h2>
+        <p>Each stage has a weekly goal. If your stage hits it, <strong>everyone in it earns +$0.50 for every hour worked</strong> that week.</p>
+        <p style="margin:0">Beat it by 10% and it doubles to <strong>+$1.00 an hour</strong>.</p>
+      </div>
+    </div>
+    <div class="callout"><b>Only good work counts.</b> Items sent back for fixes don't earn anything until they're right. The bonus is about doing more <em>good</em> work, not just more work (<a href="#quality">page 9</a>).</div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ MINUTES ============ -->
+<section class="page" id="minutes">
+  <div class="content">
+    <div class="hd"><p class="kicker">03 · Your bonus, part 1</p>
+      <h1>Every item is worth minutes.</h1>
+      <p class="lede">A paperback is quicker to image than a lamp. So instead of counting items, each item earns the minutes it normally takes at that stage. Harder items are worth more, so there's no reason to hunt for the easy bins.</p></div>
+
+    <div>
+      <svg class="illo" viewBox="0 0 640 180" aria-hidden="true">
+        <g font-family="Outfit">
+          <g transform="translate(20,10)"><rect width="135" height="160" rx="67" fill="#F4EFF9"/><rect x="44" y="30" width="46" height="60" rx="4" fill="#5E7F8E"/><rect x="50" y="30" width="4" height="60" fill="#3F5A67"/><rect x="60" y="44" width="22" height="4" rx="2" fill="#fff" opacity=".8"/><text x="67" y="114" text-anchor="middle" font-size="13" fill="#4E5E68">Paperback</text><rect x="33" y="124" width="68" height="22" rx="11" fill="#8B6BAE"/><text x="67" y="139" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">3.0 min</text></g>
+          <g transform="translate(175,10)"><rect width="135" height="160" rx="67" fill="#F4EFF9"/><rect x="44" y="38" width="40" height="50" rx="6" fill="#B89FCC"/><path d="M84 48 q16 0 16 14 q0 14 -16 14" stroke="#B89FCC" stroke-width="6" fill="none"/><text x="67" y="114" text-anchor="middle" font-size="13" fill="#4E5E68">Mug</text><rect x="33" y="124" width="68" height="22" rx="11" fill="#8B6BAE"/><text x="67" y="139" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">3.5 min</text></g>
+          <g transform="translate(330,10)"><rect width="135" height="160" rx="67" fill="#F4EFF9"/><path d="M45 34 L58 28 Q67 38 76 28 L89 34 L104 56 L92 64 L88 56 L88 92 L46 92 L46 56 L42 64 L30 56 Z" fill="#8B6BAE" opacity=".85"/><text x="67" y="114" text-anchor="middle" font-size="13" fill="#4E5E68">Sweater</text><rect x="33" y="124" width="68" height="22" rx="11" fill="#8B6BAE"/><text x="67" y="139" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">4.5 min</text></g>
+          <g transform="translate(485,10)"><rect width="135" height="160" rx="67" fill="#F4EFF9"/><path d="M48 56 L56 28 L80 28 L88 56 Z" fill="#5E7F8E"/><rect x="65" y="56" width="6" height="28" fill="#5E7F8E"/><rect x="50" y="84" width="36" height="8" rx="4" fill="#3F5A67"/><text x="67" y="114" text-anchor="middle" font-size="13" fill="#4E5E68">Table lamp</text><rect x="33" y="124" width="68" height="22" rx="11" fill="#8B6BAE"/><text x="67" y="139" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">5.5 min</text></g>
+        </g>
+      </svg>
+      <p class="small" style="text-align:center;margin:6px 0 0">Example imaging values, for illustration only. Real values come from Swedemom's own data and stay fixed once set.</p>
+    </div>
+
+    <div class="grid2">
+      <div>
+        <h2>Your pace</h2>
+        <p>Add up the minutes your items earned and compare them with the minutes you worked on production.</p>
+        <div class="card blue" style="text-align:center;padding:14px">
+          <div style="font-size:11pt;color:var(--head)">minutes earned ÷ minutes worked</div>
+          <div class="big" style="font-size:26pt;margin-top:6px;color:var(--purple)">= your pace</div>
+        </div>
+      </div>
+      <div>
+        <h2>Different jobs, one score</h2>
+        <p>An imaged item earns imaging minutes; an intake item earns intake minutes. If you help in several stages, it all adds up into one score, so jumping in where you're needed never costs you.</p>
+        <p class="small" style="margin:0">Breaks and other work (truck runs, wrapping glass, meetings) are paid and don't count against you (<a href="#hours">page 12</a>).</p>
+      </div>
+    </div>
+
+    <div class="card tint">
+      <p class="kicker">Example: John Doe helps in two stages</p>
+      <svg class="illo" viewBox="0 0 620 120" aria-hidden="true">
+        <g font-family="Outfit">
+          <text x="0" y="22" font-size="13" font-weight="600" fill="#3F5A67">Worked</text>
+          <rect x="110" y="6" width="440" height="26" rx="13" fill="#C9D3D9"/><text x="560" y="24" font-size="13" fill="#3F5A67">240 min</text>
+          <text x="0" y="72" font-size="13" font-weight="600" fill="#3F5A67">Earned</text>
+          <rect x="110" y="56" width="235" height="26" rx="13" fill="#8B6BAE"/><text x="228" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">32 imaged × 4.0 = 128</text>
+          <rect x="349" y="56" width="231" height="26" rx="13" fill="#5E7F8E"/><text x="464" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">18 intake × 7.0 = 126</text>
+          <path d="M550 50 v38" stroke="#3F5A67" stroke-width="2" stroke-dasharray="3 3"/>
+          <text x="110" y="112" font-size="13" fill="#4E5E68">254 earned in 240 worked: <tspan font-weight="700" fill="#8B6BAE">14 minutes saved</tspan>, about <tspan font-weight="700" fill="#5B8C3E">$1.87</tspan> for John at $16/hr.</text>
+        </g>
+      </svg>
+      <p class="fict" style="margin:4px 0 0">John Doe is a made-up team member used in every example in this guide.</p>
+    </div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ KEEP HALF ============ -->
+<section class="page" id="keep-half">
+  <div class="content">
+    <div class="hd"><p class="kicker">04 · Your bonus, part 2</p>
+      <h1>Clear the bar, keep half.</h1>
+      <p class="lede">The bar is set just below what our fastest people already do. Average work earns your normal wage, exactly like now. Above the bar, every minute you save is split: half to you, half to Swedemom. The faster you go while staying right, the more you earn, in a straight line.</p></div>
+
+    <svg class="illo" viewBox="0 0 640 230" aria-hidden="true">
+      <g font-family="Outfit">
+        <path d="M60 190 A 130 130 0 0 1 320 190" stroke="#E3E0EA" stroke-width="26" fill="none" stroke-linecap="round"/>
+        <path d="M60 190 A 130 130 0 0 1 254 77" stroke="#C9D3D9" stroke-width="26" fill="none" stroke-linecap="round"/>
+        <path d="M254 77 A 130 130 0 0 1 320 190" stroke="#8B6BAE" stroke-width="26" fill="none" stroke-linecap="round"/>
+        <line x1="254" y1="77" x2="270" y2="42" stroke="#3F5A67" stroke-width="3"/>
+        <text x="276" y="36" font-size="13" font-weight="700" fill="#3F5A67">THE BAR</text>
+        <text x="190" y="176" text-anchor="middle" font-size="13" fill="#6B7A84">normal wage zone</text>
+        <text x="190" y="196" text-anchor="middle" font-size="12" fill="#6B7A84">(no change from today)</text>
+        <text x="336" y="122" font-size="13" font-weight="700" fill="#8B6BAE">bonus zone,</text>
+        <text x="336" y="140" font-size="13" font-weight="700" fill="#8B6BAE">no ceiling</text>
+        <g transform="translate(500,110)">
+          <circle r="66" fill="#F4EFF9"/>
+          <path d="M0 -52 A52 52 0 0 1 0 52 Z" fill="#8B6BAE"/>
+          <path d="M0 -52 A52 52 0 0 0 0 52 Z" fill="#5E7F8E"/>
+          <text x="26" y="6" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">YOU</text>
+          <text x="-26" y="-2" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">SWEDE</text>
+          <text x="-26" y="10" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">MOM</text>
+          <text x="0" y="90" text-anchor="middle" font-size="12.5" fill="#6B7A84">every minute saved,</text>
+          <text x="0" y="106" text-anchor="middle" font-size="12.5" fill="#6B7A84">split down the middle</text>
+        </g>
+      </g>
+    </svg>
+
+    <div class="grid3">
+      <div class="card tint"><p class="kicker">Imaging bar</p><div class="big" style="font-size:24pt">~15<span style="font-size:12pt;font-weight:500"> items / hr</span></div><p class="small" style="margin:6px 0 0">for an average item (about 4 minutes each)</p></div>
+      <div class="card tint"><p class="kicker">Intake + description</p><div class="big" style="font-size:24pt">~8.6<span style="font-size:12pt;font-weight:500"> items / hr</span></div><p class="small" style="margin:6px 0 0">for an average item (about 7 minutes each)</p></div>
+      <div class="card green"><p class="kicker" style="color:var(--green)">What a minute is worth</p><div class="big" style="font-size:24pt;color:var(--green)">13¢</div><p class="small" style="margin:6px 0 0">your half of each minute saved, at $16/hr. One extra average imaged item is about 53¢.</p></div>
+    </div>
+
+    <div class="grid2">
+      <div class="callout"><b>These bars are today's estimates.</b> They come from Hub timestamps, not payroll hours. Before anyone is paid, we reset them on real clocked hours and share the final numbers. Other stages get their bars the same way.</div>
+      <div class="callout" style="background:var(--gtint)"><b style="color:var(--green)">Push as far as you can.</b> There's no set limit on the bonus. Very big weeks just get a quick check that the data is right before payout. We start at half, and if the pilot shows that isn't motivating enough, the share goes up.</div>
+    </div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ WEEK ============ -->
+<section class="page" id="week">
+  <div class="content">
+    <div class="hd"><p class="kicker">05 · A week, worked out</p>
+      <h1>Five possible weeks for John.</h1>
+      <p class="lede">John Doe images. He earns $16 an hour and works 30 hours a week, so $480. His bar is 450 average items for the week.</p></div>
+
+    <div>
+      <svg class="illo" viewBox="0 0 640 300" aria-hidden="true">
+        <g font-family="Outfit" font-size="12.5">
+          <g fill="#3F5A67" font-weight="600"><text x="0" y="34">No bonus yet</text><text x="0" y="92">Clears his bar</text><text x="0" y="150">+ team hits goal</text><text x="0" y="208">A great week</text><text x="0" y="266">A rushed week</text></g>
+          <g fill="#6B7A84" font-size="11"><text x="0" y="50">420 items</text><text x="0" y="108">495 good items</text><text x="0" y="166">same 495, team hits</text><text x="0" y="224">540 good, team beats by 10%</text><text x="0" y="282">585 done, 60 sent back</text></g>
+          <rect x="170" y="20" width="300" height="34" rx="17" fill="#C9D3D9"/>
+          <text x="560" y="43" text-anchor="end" font-weight="700" fill="#3F5A67" font-size="15">$480</text>
+          <rect x="170" y="78" width="300" height="34" rx="17" fill="#C9D3D9"/><rect x="474" y="78" width="15" height="34" rx="7" fill="#8B6BAE"/>
+          <text x="560" y="101" text-anchor="end" font-weight="700" fill="#3F5A67" font-size="15">$504</text><text x="632" y="101" text-anchor="end" fill="#5B8C3E" font-weight="600">+5%</text>
+          <rect x="170" y="136" width="300" height="34" rx="17" fill="#C9D3D9"/><rect x="474" y="136" width="15" height="34" rx="7" fill="#8B6BAE"/><rect x="493" y="136" width="9" height="34" rx="4" fill="#B89FCC"/>
+          <text x="560" y="159" text-anchor="end" font-weight="700" fill="#3F5A67" font-size="15">$519</text><text x="632" y="159" text-anchor="end" fill="#5B8C3E" font-weight="600">+8%</text>
+          <rect x="170" y="194" width="300" height="34" rx="17" fill="#C9D3D9"/><rect x="474" y="194" width="30" height="34" rx="12" fill="#8B6BAE"/><rect x="508" y="194" width="19" height="34" rx="8" fill="#B89FCC"/>
+          <text x="590" y="217" text-anchor="end" font-weight="700" fill="#3F5A67" font-size="15">$558</text><text x="632" y="217" text-anchor="end" fill="#5B8C3E" font-weight="600">+16%</text>
+          <rect x="170" y="252" width="300" height="34" rx="17" fill="#C9D3D9"/><rect x="474" y="252" width="25" height="34" rx="10" fill="#8B6BAE"/><rect x="503" y="252" width="20" height="34" rx="8" fill="none" stroke="#8B6BAE" stroke-width="1.5" stroke-dasharray="3 3"/><rect x="527" y="252" width="9" height="34" rx="4" fill="#B89FCC"/>
+          <text x="590" y="275" text-anchor="end" font-weight="700" fill="#3F5A67" font-size="15">$535</text><text x="632" y="275" text-anchor="end" fill="#5B8C3E" font-weight="600">+11%</text>
+        </g>
+      </svg>
+      <div class="legend">
+        <span><span class="sw" style="background:#C9D3D9"></span>wage</span>
+        <span><span class="sw" style="background:#8B6BAE"></span>his bonus</span>
+        <span><span class="sw" style="background:#B89FCC"></span>team bonus</span>
+        <span><span class="sw" style="border:1.5px dashed #8B6BAE"></span>bonus lost to send-backs</span>
+      </div>
+    </div>
+
+    <table class="ex">
+      <tr><th>The math, clear-the-bar week</th><th style="text-align:right">Amount</th></tr>
+      <tr><td>495 good items × 4 min earned, against 1,800 minutes worked</td><td class="num">180 min saved</td></tr>
+      <tr><td>180 minutes = 3 hours of labor at $16/hr</td><td class="num">$48 saved</td></tr>
+      <tr><td><strong>John keeps half</strong></td><td class="num"><strong style="color:var(--purple)">+$24</strong></td></tr>
+      <tr><td>His stage hits its team goal: 30 hours × $0.50</td><td class="num"><strong style="color:var(--purple)">+$15</strong></td></tr>
+    </table>
+    <div class="callout"><b>The rushed week.</b> John finished 585 items, but 60 came back for re-imaging, so only 525 count. He still makes $535, but the send-backs cost him $32 he'd have earned if the work had been right. Steady, consistent work pays best. His wage never moved.</div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ DAY ============ -->
+<section class="page" id="day">
+  <div class="content">
+    <div class="hd"><p class="kicker">06 · A day, minute by minute</p>
+      <h1>One day of intake, start to finish.</h1>
+      <p class="lede">Here's how a whole day turns into a bonus. John Doe (made up) does intake + description from 8:00 to 4:30, with a 30-minute unpaid lunch.</p></div>
+
+    <div>
+      <h2>1. His day in the Hub</h2>
+      <svg class="illo" viewBox="0 0 660 160" aria-hidden="true">
+        <defs><pattern id="ticks" width="7.9" height="12" patternUnits="userSpaceOnUse"><line x1="3" y1="0" x2="3" y2="12" stroke="#8B6BAE" stroke-width="1.6"/></pattern>
+        <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#C9D3D9" stroke-width="3"/></pattern></defs>
+        <g font-family="Outfit">
+          <text x="20" y="14" font-size="10.5" fill="#6B7A84">each tick = an item finished (Hub timestamp)</text>
+          <!-- item ticks over production segments -->
+          <rect x="20" y="24" width="146" height="12" fill="url(#ticks)"/>
+          <rect x="178" y="24" width="36" height="12" fill="url(#ticks)"/>
+          <rect x="251" y="24" width="61" height="12" fill="url(#ticks)"/>
+          <rect x="348" y="24" width="146" height="12" fill="url(#ticks)"/>
+          <rect x="506" y="24" width="134" height="12" fill="url(#ticks)"/>
+          <!-- segments -->
+          <rect x="20" y="42" width="146" height="34" rx="6" fill="#8B6BAE"/>
+          <rect x="166" y="42" width="12" height="34" fill="#E3E0EA"/>
+          <rect x="178" y="42" width="36" height="34" fill="#8B6BAE"/>
+          <rect x="214" y="42" width="37" height="34" fill="#5E7F8E"/>
+          <rect x="251" y="42" width="61" height="34" rx="0" fill="#8B6BAE"/>
+          <rect x="312" y="42" width="36" height="34" fill="url(#hatch)"/>
+          <rect x="348" y="42" width="146" height="34" fill="#8B6BAE"/>
+          <rect x="494" y="42" width="12" height="34" fill="#E3E0EA"/>
+          <rect x="506" y="42" width="134" height="34" rx="6" fill="#8B6BAE"/>
+          <!-- clock markers -->
+          <g stroke="#3F5A67" stroke-width="2"><path d="M20 38 v44"/><path d="M312 38 v44"/><path d="M348 38 v44"/><path d="M640 38 v44"/></g>
+          <g font-size="11.5" fill="#3F5A67">
+            <text x="20" y="100" font-weight="700">8:00 clock in</text>
+            <text x="330" y="100" text-anchor="middle" font-weight="700">12:00 to 12:30 lunch, clocked out</text>
+            <text x="640" y="100" text-anchor="end" font-weight="700">4:30 clock out</text>
+            <text x="172" y="120" text-anchor="middle" fill="#6B7A84">10:00 rest break</text>
+            <text x="500" y="120" text-anchor="middle" fill="#6B7A84">2:30 rest break</text>
+            <text x="232" y="140" text-anchor="middle" fill="#5E7F8E" font-weight="600">10:40 wrapping glass (timer)</text>
+          </g>
+        </g>
+      </svg>
+      <div class="legend"><span><span class="sw" style="background:#8B6BAE"></span>production (430 min)</span><span><span class="sw" style="background:#E3E0EA"></span>rest breaks, taken out automatically (20 min)</span><span><span class="sw" style="background:#5E7F8E"></span>other work on the timer (30 min)</span></div>
+    </div>
+
+    <div>
+      <h2>2. Where his minutes go</h2>
+      <svg class="illo" viewBox="0 0 660 360" aria-hidden="true">
+        <g font-family="Outfit">
+          <g font-size="10.5" font-weight="700" fill="#8B6BAE" letter-spacing="1.5"><text x="30" y="14">MINUTES EARNED</text><text x="300" y="14">WHAT THEY COVER</text><text x="520" y="14">THE SAVINGS</text></g>
+          <text x="30" y="30" font-size="11.5" fill="#6B7A84">66 good items = 470 min</text>
+          <!-- flows -->
+          <path d="M46 40 C 173 40, 173 40, 300 40 L300 298 C 173 298, 173 298, 46 298 Z" fill="#8B6BAE" opacity=".22"/>
+          <path d="M46 298 C 173 298, 173 310, 300 310 L300 334 C 173 334, 173 322, 46 322 Z" fill="#5B8C3E" opacity=".35"/>
+          <path d="M316 310 C 418 310, 418 266, 520 266 L520 278 C 418 278, 418 322, 316 322 Z" fill="#8B6BAE" opacity=".45"/>
+          <path d="M316 322 C 418 322, 418 330, 520 330 L520 342 C 418 342, 418 334, 316 334 Z" fill="#5E7F8E" opacity=".4"/>
+          <!-- nodes -->
+          <rect x="30" y="40" width="16" height="282" rx="4" fill="#3F5A67"/>
+          <rect x="300" y="40" width="16" height="258" rx="4" fill="#8B6BAE"/>
+          <rect x="300" y="310" width="16" height="24" rx="4" fill="#5B8C3E"/>
+          <rect x="520" y="266" width="16" height="12" rx="3" fill="#8B6BAE"/>
+          <rect x="520" y="330" width="16" height="12" rx="3" fill="#5E7F8E"/>
+          <!-- labels -->
+          <text x="173" y="160" text-anchor="middle" font-size="22" font-weight="700" fill="#5E4A7A">430 min</text>
+          <text x="173" y="182" text-anchor="middle" font-size="12" fill="#5E4A7A">matches the 430 minutes</text>
+          <text x="173" y="198" text-anchor="middle" font-size="12" fill="#5E4A7A">he worked on production</text>
+          <text x="326" y="356" font-size="12.5" font-weight="700" fill="#5B8C3E">40 min saved (109% pace)</text>
+          <text x="544" y="270" font-size="12.5" font-weight="700" fill="#8B6BAE">John: 20 min</text>
+          <text x="544" y="287" font-size="12.5" font-weight="700" fill="#5B8C3E">= $5.33</text>
+          <text x="544" y="340" font-size="12.5" font-weight="700" fill="#5E7F8E">Swedemom: 20 min</text>
+        </g>
+      </svg>
+    </div>
+    <div class="callout"><b>Paid time 480 min</b> (8:00 to 12:00 and 12:30 to 4:30). Minus 20 min of rest breaks and 30 min wrapping glass leaves <b>430 production minutes</b>. His items earned 470, so he saved 40 and keeps half: <b>$5.33 on top of his $128 wage</b> that day.</div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ QUALITY ============ -->
+<section class="page" id="quality">
+  <div class="content">
+    <div class="hd"><p class="kicker">07 · Quality</p>
+      <h1>Only good work counts.</h1>
+      <p class="lede">Programs that pay for "more" can backfire if quality slips. Ours only counts items that pass. A send-back lowers that week's bonus, never your wage, and the item comes back to you quickly so you can fix it and learn from it.</p></div>
+
+    <svg class="illo" viewBox="0 0 640 190" aria-hidden="true">
+      <g font-family="Outfit">
+        <rect x="20" y="96" width="600" height="10" rx="5" fill="#E3E0EA"/>
+        <g fill="#F4EFF9" stroke="#B89FCC" stroke-width="2"><rect x="40" y="56" width="44" height="40" rx="12"/><rect x="100" y="56" width="44" height="40" rx="12"/><rect x="160" y="56" width="44" height="40" rx="12"/></g>
+        <rect x="262" y="24" width="96" height="82" rx="41" fill="#5E7F8E"/>
+        <text x="310" y="60" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">QUALITY</text>
+        <text x="310" y="76" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">CHECK</text>
+        <g transform="translate(410,56)"><rect width="44" height="40" rx="12" fill="#EEF5E9" stroke="#5B8C3E" stroke-width="2"/><path d="M13 21 l7 7 l12 -14" stroke="#5B8C3E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <g transform="translate(470,56)"><rect width="44" height="40" rx="12" fill="#EEF5E9" stroke="#5B8C3E" stroke-width="2"/><path d="M13 21 l7 7 l12 -14" stroke="#5B8C3E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <text x="560" y="72" font-size="13" font-weight="600" fill="#5B8C3E">counts</text>
+        <path d="M310 110 C 310 170, 150 170, 120 120" stroke="#8B6BAE" stroke-width="2.5" fill="none" stroke-dasharray="5 5"/>
+        <path d="M114 128 L120 118 L128 126" stroke="#8B6BAE" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <text x="215" y="182" text-anchor="middle" font-size="12.5" fill="#8B6BAE">sent back: fix it, then it counts</text>
+      </g>
+    </svg>
+
+    <div class="grid2">
+      <div class="card tint">
+        <h2>Big-ticket items get a second look</h2>
+        <p style="margin:0">Items worth $50 or more (about 1 in 70) are checked by a person before they count. Take the time to get them right: thorough work on valuable items is exactly what we want, and it's what pays.</p>
+      </div>
+      <div class="card">
+        <h2>Feedback that comes fast</h2>
+        <p style="margin:0">We're building instant checks so problems are caught while the item is still in front of you, not days later (<a href="#building">page 13</a>). Your stage page shows what "good" means for your work.</p>
+      </div>
+    </div>
+    <div class="callout"><b>Disagree with a send-back?</b> Tell your manager. Send-backs are reviewed, and a mistaken one is reversed before bonuses are paid.</div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="page" id="team">
+  <div class="content">
+    <div class="hd"><p class="kicker">08 · The team bonus</p>
+      <h1>Each stage, one weekly goal.</h1>
+      <p class="lede">Managers set a weekly goal for each stage before the week starts. When a stage hits it, everyone who worked in it shares the reward, so helping a teammate pays too.</p></div>
+
+    <div>
+      <svg class="illo" viewBox="0 0 640 200" aria-hidden="true">
+        <g font-family="Outfit">
+          <g transform="translate(10,10)"><rect width="190" height="170" rx="24" fill="#F4EFF9"/><text x="20" y="34" font-size="14" font-weight="600" fill="#3F5A67">Intake + description</text><rect x="20" y="58" width="150" height="16" rx="8" fill="#E3E0EA"/><rect x="20" y="58" width="156" height="16" rx="8" fill="#8B6BAE"/><text x="20" y="100" font-size="12" fill="#6B7A84">goal 1,500 · did 1,560</text><rect x="20" y="118" width="100" height="26" rx="13" fill="#B89FCC"/><text x="70" y="136" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">+$0.50/hr</text></g>
+          <g transform="translate(225,10)"><rect width="190" height="170" rx="24" fill="#F4EFF9"/><text x="20" y="34" font-size="14" font-weight="600" fill="#3F5A67">Imaging</text><rect x="20" y="58" width="150" height="16" rx="8" fill="#8B6BAE"/><path d="M170 52 v28" stroke="#3F5A67" stroke-width="2"/><text x="20" y="100" font-size="12" fill="#6B7A84">goal 1,625 · did 1,800</text><rect x="20" y="118" width="100" height="26" rx="13" fill="#8B6BAE"/><text x="70" y="136" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">+$1.00/hr</text><text x="128" y="136" font-size="11" fill="#8B6BAE">beat 10%!</text></g>
+          <g transform="translate(440,10)"><rect width="190" height="170" rx="24" fill="#F7F7F9"/><text x="20" y="34" font-size="14" font-weight="600" fill="#3F5A67">Put-away</text><rect x="20" y="58" width="150" height="16" rx="8" fill="#E3E0EA"/><rect x="20" y="58" width="126" height="16" rx="8" fill="#C9D3D9"/><text x="20" y="100" font-size="12" fill="#6B7A84">goal 1,400 · did 1,180</text><text x="20" y="136" font-size="12.5" fill="#6B7A84">not this week</text></g>
+        </g>
+      </svg>
+      <p class="small" style="text-align:center;margin:4px 0 0">Example numbers only. Sorting and fulfillment have goals too.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card blue">
+        <h2>Work in more than one stage?</h2>
+        <p>Your team bonus follows your work. If 60% of your minutes this week came from imaging and 40% from intake, 60% of your team bonus follows imaging's result and 40% follows intake's.</p>
+        <svg width="260" height="40" viewBox="0 0 260 40" aria-hidden="true"><rect x="0" y="8" width="156" height="24" rx="12" fill="#8B6BAE"/><rect x="152" y="8" width="108" height="24" rx="12" fill="#5E7F8E"/><text x="78" y="25" text-anchor="middle" font-family="Outfit" font-size="12" font-weight="600" fill="#fff">60% imaging</text><text x="208" y="25" text-anchor="middle" font-family="Outfit" font-size="12" font-weight="600" fill="#fff">40% intake</text></svg>
+        <p class="small" style="margin:6px 0 0">Worked out automatically. Nothing to log.</p>
+      </div>
+      <div class="card">
+        <h2>How goals work</h2>
+        <ul class="clean">
+          <li>Set before the week starts, the way weekly goals are set today.</li>
+          <li>Counted in good items, so you can follow them during the week.</li>
+          <li>Volunteer items count toward the goals. Volunteers don't earn bonuses.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ BAR ============ -->
+<section class="page" id="bar">
+  <div class="content">
+    <div class="hd"><p class="kicker">09 · How the bar rises</p>
+      <h1>The bar rises only with proof.</h1>
+      <p class="lede">The bar will go up over time. That's how Swedemom grows. But it only goes up for a proven reason, like a new tool that makes the work faster. It never rises just because you got faster. Studies of that trap found output 20 to 40% lower, so the rules are written down before we start.</p></div>
+
+    <svg class="illo" viewBox="0 0 640 200" aria-hidden="true">
+      <g font-family="Outfit">
+        <rect x="20" y="20" width="600" height="160" rx="24" fill="#F7F7F9"/>
+        <text x="50" y="50" font-size="12.5" fill="#6B7A84" font-weight="700">YOU GET FASTER</text>
+        <text x="50" y="68" font-size="12" fill="#6B7A84">bar stays put, your bonus grows</text>
+        <text x="400" y="50" font-size="12.5" fill="#6B7A84" font-weight="700">A NEW TOOL IS PROVEN</text>
+        <text x="400" y="68" font-size="12" fill="#6B7A84">measured 20% faster</text>
+        <path d="M380 40 V165" stroke="#E3E0EA" stroke-width="2" stroke-dasharray="4 4"/>
+        <path d="M50 158 C 150 156, 250 120, 350 96" stroke="#8B6BAE" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+        <circle cx="350" cy="96" r="7" fill="#8B6BAE"/><text x="322" y="88" font-size="12.5" fill="#8B6BAE" font-weight="700">you</text>
+        <path d="M50 135 H460 V118 H600" stroke="#5E7F8E" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="60" y="128" font-size="12" fill="#5E7F8E" font-weight="700">the bar</text>
+        <text x="470" y="110" font-size="12" fill="#5E7F8E" font-weight="700">bar +10%</text>
+        <text x="470" y="154" font-size="12" fill="#8B6BAE" font-weight="700">other 10%:</text>
+        <text x="470" y="170" font-size="12" fill="#8B6BAE" font-weight="700">easier bonus</text>
+      </g>
+    </svg>
+
+    <div class="grid3">
+      <div class="card tint"><span class="pill p">PROVEN</span><h3 style="margin-top:8px">Only after a measured change</h3><p class="small" style="margin:0">The bar moves only when a new tool or process is measured before and after, on our own floor.</p></div>
+      <div class="card tint"><span class="pill p">SHARED</span><h3 style="margin-top:8px">By half the gain</h3><p class="small" style="margin:0">If a tool makes the work 20% faster, the bar rises 10%. The other half is easier bonus for you.</p></div>
+      <div class="card tint"><span class="pill p">ANNOUNCED</span><h3 style="margin-top:8px">Two weeks ahead</h3><p class="small" style="margin:0">Posted two weeks in advance, at most twice a quarter, with the before-and-after numbers.</p></div>
+    </div>
+    <div class="callout"><b>What you'll see.</b> Just like Production Metrics today: your own numbers, your stage's totals and the team averages. No public leaderboard.</div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ HOURS ============ -->
+<section class="page" id="hours">
+  <div class="content">
+    <div class="hd"><p class="kicker">10 · Hours, breaks and payday</p>
+      <h1>Simple to track, clear on your paycheck.</h1></div>
+
+    <div class="grid2">
+      <div>
+        <h2>Your hours</h2>
+        <ul class="clean">
+          <li><strong>Clock in and out</strong> like you do now. We're testing clocking in right in the Hub, so everything lives in one place.</li>
+          <li><strong>Rest breaks come out automatically.</strong> Nothing to log, and they never hurt your pace. Take them.</li>
+          <li><strong>Other work goes on a one-tap timer.</strong> Truck runs, wrapping glass, meetings, training, equipment that's down: paid as always, and left out of your pace.</li>
+          <li><strong>Bonus minutes start at your scheduled start time.</strong> Attendance itself stays a normal conversation with your manager, not a bonus penalty.</li>
+          <li>Managers look over the time log weekly. Normal ups and downs are fine. It's reviewed, not policed.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Your paycheck</h2>
+        <svg width="300" height="190" viewBox="0 0 300 190" aria-hidden="true" style="display:block;margin:4px 0 10px">
+          <g font-family="Outfit">
+            <rect x="6" y="6" width="288" height="176" rx="18" fill="#fff" stroke="#E3E0EA" stroke-width="1.5"/>
+            <text x="24" y="36" font-size="11" font-weight="600" letter-spacing="1.5" fill="#8B6BAE">PAY STUB (EXAMPLE)</text>
+            <g font-size="12.5" fill="#27323A"><text x="24" y="70">Regular hours</text><text x="276" y="70" text-anchor="end">$480.00</text><text x="24" y="98">Production bonus</text><text x="276" y="98" text-anchor="end" fill="#8B6BAE" font-weight="600">$24.00</text><text x="24" y="126">Team bonus</text><text x="276" y="126" text-anchor="end" fill="#8B6BAE" font-weight="600">$15.00</text></g>
+            <line x1="24" y1="142" x2="276" y2="142" stroke="#E3E0EA"/>
+            <text x="24" y="166" font-size="13" font-weight="700" fill="#3F5A67">Gross</text><text x="276" y="166" text-anchor="end" font-size="13" font-weight="700" fill="#3F5A67">$519.00</text>
+          </g>
+        </svg>
+        <ul class="clean">
+          <li>Bonuses appear as their own lines on your normal paycheck.</li>
+          <li>The Hub shows the math behind them: items, minutes, the bar and the result.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card blue" style="display:flex;gap:18px;align-items:center">
+      <svg width="200" height="70" viewBox="0 0 200 70" aria-hidden="true" style="flex:0 0 200px"><g font-family="Outfit" font-size="11" fill="#3F5A67"><rect x="4" y="20" width="84" height="30" rx="15" fill="#fff"/><text x="46" y="39" text-anchor="middle" font-weight="600">You work</text><path d="M92 35 H108" stroke="#5E7F8E" stroke-width="2"/><path d="M104 30 l6 5 -6 5" stroke="#5E7F8E" stroke-width="2" fill="none"/><rect x="112" y="20" width="84" height="30" rx="15" fill="#8B6BAE"/><text x="154" y="39" text-anchor="middle" font-weight="600" fill="#fff">Next paycheck</text></g></svg>
+      <p style="margin:0"><strong>Bonuses are paid one paycheck later.</strong> That gives send-backs, quality checks and shipped orders time to settle, so the number you get is right the first time. If you leave Swedemom, any bonus you've earned is paid in your final check.</p>
+    </div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ BUILDING ============ -->
+<section class="page" id="building">
+  <div class="content">
+    <div class="hd"><p class="kicker">11 · What we're building first</p>
+      <h1>Better tools come before any bonus.</h1>
+      <p class="lede">A bonus is only fair if the numbers are right and you get feedback while it still helps. So before anything is paid, we're improving the Hub. Here's what's coming.</p></div>
+
+    <div class="build">
+      <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><div><h3>Instant imaging feedback</h3><p>Photos are checked as they upload, so a blurry or missing shot is fixed while the item is still on your table.</p></div></div>
+      <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><div><h3>Faster Final Check</h3><p>Problems are flagged sooner and sent straight back to the person who can fix them.</p></div></div>
+      <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></div><div><h3>Fixes go to the right person</h3><p>Re-imaging is traced to whoever imaged the item first, and credit follows whoever fixes it.</p></div></div>
+      <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div><div><h3>Clock-in and a one-tap timer</h3><p>Hours, breaks and other work in one place, so your pace counts only production time.</p></div></div>
+      <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round"><path d="M4 18h16M7 18V9M12 18V5M17 18v-6"/></svg></div><div><h3>Live progress</h3><p>Your minutes, your pace and your stage's goal, during the day, right in the Hub.</p></div></div>
+      <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><div><h3>Better Production Metrics</h3><p>Real clocked hours, no work dropped from the numbers, and sorting included.</p></div></div>
+      <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7v12h12V7M9 11h6"/></svg></div><div><h3>A faster Sort tool</h3><p>Quicker to use, and it's how sorting gets credited (<a href="#sorting">page 14</a>).</p></div></div>
+      <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div><div><h3>A statement every payday</h3><p>Exactly how your bonus was worked out, item by item.</p></div></div>
+    </div>
+    <div class="callout"><b>Got an idea?</b> The survey asks what slows you down most. The answers will shape what we build next.</div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ STAGE: SORTING ============ -->
+<section class="page" id="sorting">
+  <div class="content">
+    <div class="stagehead">
+      <div class="hd" style="flex:1"><p class="kicker">Stage guide · Sorting</p>
+        <h1>Sorting decides what's worth it.</h1>
+        <p class="lede">Sorters choose what goes into production, so sorting is credited on the <strong>value</strong> of what you send in, not just how much you handle.</p></div>
+      <div class="badge"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7v12h12V7M9 11h6"/></svg></div>
+    </div>
+
+    <div class="card tint">
+      <h2 style="font-size:18pt">Why we're asking everyone to sort in the Sort tool</h2>
+      <p>We know: eyeballing a box can feel faster than scanning it. But what you decide at sorting shapes everything after it, and the Sort tool is the only way that decision gets recorded.</p>
+      <ul class="clean" style="margin:0">
+        <li><strong>It's how sorting gets credited.</strong> Work done outside the tool can't count toward your bonus or your team's goal.</li>
+        <li><strong>It sends the right things to eBay.</strong> Price estimates help route each item to where it earns the most.</li>
+        <li><strong>It teaches us what sells.</strong> Every scan improves pricing and shows which donations are worth the most.</li>
+        <li><strong>We'll keep making it faster.</strong> Tell us what slows you down in it.</li>
+      </ul>
+    </div>
+
+    <div class="grid3 stagecards">
+      <div class="card"><h2>What earns credit</h2><p style="margin:0">The estimated value of items you send into production through the Sort tool, using the system's estimate.</p></div>
+      <div class="card"><h2>What counts as good</h2><p style="margin:0">Items that move forward. Things rejected later at intake don't count, so send in what's worth listing.</p></div>
+      <div class="card"><h2>Your team goal</h2><p style="margin:0">A weekly goal for items sorted into production through the Sort tool, set by managers.</p></div>
+    </div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ STAGE: INTAKE ============ -->
+<section class="page" id="intake">
+  <div class="content">
+    <div class="stagehead">
+      <div class="hd" style="flex:1"><p class="kicker">Stage guide · Intake + description</p>
+        <h1>Intake + description.</h1>
+        <p class="lede">Every item you intake and describe earns its standard minutes. The bar starts around 8.6 average items an hour (about 7 minutes each) and is reset on real hours before pay.</p></div>
+      <div class="badge"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+    </div>
+    <div class="grid3 stagecards">
+      <div class="card"><h2>What earns minutes</h2><p style="margin:0">Each item, by category. Harder categories (jewelry lots, coins, detailed collectibles) earn more minutes than quick ones.</p></div>
+      <div class="card"><h2>What counts as good</h2><p style="margin:0">Items that pass Final Check: right details, measurements and condition. Flagged items count once they're fixed.</p></div>
+      <div class="card"><h2>Your team goal</h2><p style="margin:0">Items intaken and described in the week, set by managers before the week starts.</p></div>
+    </div>
+    <div class="card tint"><h2>Take your time on the valuable ones</h2><p style="margin:0">Items worth $50 or more get a second look before they count. Getting the details and price right on those matters far more than speed.</p></div>
+    <div class="callout"><b>See it worked out.</b> The full-day example on <a href="#day">page 8</a> follows an intake day from clock-in to bonus.</div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ STAGE: IMAGING ============ -->
+<section class="page" id="imaging">
+  <div class="content">
+    <div class="stagehead">
+      <div class="hd" style="flex:1"><p class="kicker">Stage guide · Imaging</p>
+        <h1>Imaging.</h1>
+        <p class="lede">Every item you image earns its standard minutes. The bar starts around 15 average items an hour (about 4 minutes each) and is reset on real hours before pay.</p></div>
+      <div class="badge"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+    </div>
+    <div class="grid3 stagecards">
+      <div class="card"><h2>What earns minutes</h2><p style="margin:0">Each item, by category. A paperback earns less than a lamp or a piece of glassware that needs careful shots.</p></div>
+      <div class="card"><h2>What counts as good</h2><p style="margin:0">Images that pass the quality check. Items sent back for re-imaging count once they're redone.</p></div>
+      <div class="card"><h2>Your team goal</h2><p style="margin:0">Items imaged in the week, set by managers before the week starts.</p></div>
+    </div>
+    <div class="card tint"><h2>Feedback while the item is in front of you</h2><p style="margin:0">We're building a check that runs as photos upload, so problems are caught right away instead of days later. Re-imaging comes back to whoever imaged the item first, so you get the chance to fix your own work.</p></div>
+    <div class="callout"><b>See it worked out.</b> John Doe's five example weeks on <a href="#week">page 7</a> are an imager's weeks.</div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ STAGE: PUT-AWAY ============ -->
+<section class="page" id="putaway">
+  <div class="content">
+    <div class="stagehead">
+      <div class="hd" style="flex:1"><p class="kicker">Stage guide · Put-away</p>
+        <h1>Put-away.</h1>
+        <p class="lede">An item can't go live without a bin, so put-away is what turns finished work into listings. Shelving earns minutes like any other stage.</p></div>
+      <div class="badge"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M10 4v16"/></svg></div>
+    </div>
+    <div class="grid3 stagecards">
+      <div class="card"><h2>What earns minutes</h2><p style="margin:0">Each item shelved, with its standard minutes.</p></div>
+      <div class="card"><h2>What counts as good</h2><p style="margin:0">The item is in the bin the Hub says it's in, so it can be found and shipped when it sells.</p></div>
+      <div class="card"><h2>Your team goal</h2><p style="margin:0">Items put away in the week, sized to the people we have on put-away.</p></div>
+    </div>
+    <div class="card tint"><h2>More hands on put-away</h2><p style="margin:0">Put-away depends on very few people today. We'll train more people on it, and anyone who helps shelve earns put-away minutes, so jumping in when carts pile up pays.</p></div>
+    <div class="callout"><b>Why it matters to everyone.</b> Finished items waiting on a cart can't sell. Same-day put-away is one of the fastest ways to grow sales.</div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ STAGE: FULFILLMENT ============ -->
+<section class="page" id="fulfillment">
+  <div class="content">
+    <div class="stagehead">
+      <div class="hd" style="flex:1"><p class="kicker">Stage guide · Fulfillment</p>
+        <h1>Fulfillment.</h1>
+        <p class="lede">Orders earn minutes just like items do, by type of order. Pack orders well and quickly, and the time you free up for production earns minutes too.</p></div>
+      <div class="badge"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
+    </div>
+    <div class="grid3 stagecards">
+      <div class="card"><h2>What earns minutes</h2><p style="margin:0">Each order, by type: a single small item, several items, or a large or fragile piece.</p></div>
+      <div class="card"><h2>What counts as good</h2><p style="margin:0">Orders that arrive safely, correct and on time. That's checked after delivery, one reason bonuses come a paycheck later.</p></div>
+      <div class="card"><h2>Your team goal</h2><p style="margin:0">Every order shipped on time and right, every day of the week.</p></div>
+    </div>
+    <div class="card tint"><h2>Finish strong, then help produce</h2><p style="margin:0">Order volume depends on what sells, so fulfillment is measured on how well and how efficiently orders go out. Wrap up the day's orders, then jump into production: those minutes count toward the same score.</p></div>
+    <div class="callout"><b>Not listed here?</b> Final Check, verification and other roles: we're working out the fairest way to include you. Tell us your ideas in the survey.</div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section class="page" id="timeline">
+  <div class="content top">
+    <div class="hd"><p class="kicker">12 · What happens next</p>
+      <h1>We try it before we commit.</h1>
+      <p class="lede">Nobody gets paid on a plan they haven't seen work. Here are the steps, in order. Dates after the survey are set once the Hub tools are ready.</p></div>
+    <div class="tl" style="margin-top:28px">
+      <div class="step now"><div class="dot">1</div><h2>Tell us what you think</h2><p><span class="pill p">OCT 12 TO 16</span> A short anonymous survey, about 5 to 7 minutes. Only the overall results are shared, never individual answers.</p></div>
+      <div class="step"><div class="dot">2</div><h2>We share what we heard</h2><p>The survey results and the updated plan, including anything you changed.</p></div>
+      <div class="step"><div class="dot">3</div><h2>We build the tools</h2><p>Everything on <a href="#building">page 13</a>: feedback, clock-in and timer, live progress, better metrics.</p></div>
+      <div class="step"><div class="dot">4</div><h2>Practice mode: two weeks, nothing paid</h2><p>You see your minutes and what you <em>would</em> have earned, so we can check the numbers feel fair before money is involved.</p></div>
+      <div class="step"><div class="dot">5</div><h2>Paid pilot: two weeks</h2><p>Real bonuses for every stage in this guide: sorting, intake + description, imaging, put-away and fulfillment, plus the team goals.</p></div>
+      <div class="step"><div class="dot">6</div><h2>Decide together</h2><p>Keep it, change it or stop it, based on what the pilot shows and what you tell us.</p></div>
+    </div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="page" id="faq">
+  <div class="content top">
+    <div class="hd"><p class="kicker">13 · Questions you might have</p>
+      <h1 style="margin-bottom:18px">Frequently asked.</h1></div>
+    <div class="faq">
+      <div class="q"><h3>Could my pay ever go down?</h3><p>No. Your hourly wage never changes because of this program. Bonuses only add.</p></div>
+      <div class="q"><h3>Is this a competition with my coworkers?</h3><p>No. Everyone is measured against the bar, not each other, so everyone can earn at the same time.</p></div>
+      <div class="q"><h3>I'm below the bar. What changes for me?</h3><p>Your pay stays exactly what it is today, and you can still earn the team bonus. Better tools and training will help everyone get closer.</p></div>
+      <div class="q"><h3>Is there a limit to what I can earn?</h3><p>No set limit. Unusually big weeks get a quick check that the data is right before payout.</p></div>
+      <div class="q"><h3>Do I have to rush?</h3><p>No. Steady, consistent work pays best. Send-backs cost you bonus, and breaks never count against you.</p></div>
+      <div class="q"><h3>What about valuable items?</h3><p>Take your time. Items worth $50 or more get a second look before they count, so getting them right is what pays.</p></div>
+      <div class="q"><h3>What if equipment breaks or the Hub is down?</h3><p>Tap the timer for that time. It's paid and doesn't count against your pace.</p></div>
+      <div class="q"><h3>I'm new. Is that fair to me?</h3><p>New team members get time to learn first. We'll set a fair ramp-up for the first few weeks.</p></div>
+      <div class="q"><h3>Will the bar go up?</h3><p>Yes, over time, but only after a new tool or process is proven to save time, by half the gain, with two weeks' notice, at most twice a quarter.</p></div>
+      <div class="q"><h3>Who sees my numbers?</h3><p>You see your own numbers, plus team totals and averages, the same as Production Metrics today. Managers see individual numbers so they can help.</p></div>
+      <div class="q"><h3>Why is the bonus a paycheck later?</h3><p>So quality checks and shipped orders can settle and your number is right the first time.</p></div>
+      <div class="q"><h3>What about volunteers?</h3><p>Volunteer items count toward team goals. Volunteers themselves don't earn bonuses.</p></div>
+      <div class="q"><h3>Who can I talk to?</h3><p>Your manager, anytime. Or put it in the survey, where it's anonymous.</p></div>
+    </div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
+<!-- ============ BACK COVER ============ -->
+<section class="page cover" id="back">
+  <div class="inner" style="justify-content:center;text-align:center;align-items:center">
+    <img src="assets/butterfly.png" alt="" style="width:1.2in;margin-bottom:26px">
+    <div class="display" style="font-size:64pt;margin:0 0 20px">Tell us what<br>you think.</div>
+    <p style="font-size:15pt;font-weight:300;color:#3E4A52;max-width:5.4in;margin:0 auto 30px">The survey is anonymous, takes about 5 to 7 minutes, and is open October 12 to 16. What you say shapes the plan, from where the bar sits to how team goals work.</p>
+    <div class="dock" style="margin:0;min-width:4.4in">
+      <p class="kicker" style="margin-bottom:6px">Survey link</p>
+      <p style="font-size:15pt;font-weight:600;color:#3F5A67">Shared by your manager on October 12</p>
+    </div>
+    <div style="height:.7in"></div>
+    <p style="font-size:12pt;color:#4E5E68;max-width:5in">Thank you for everything you do. Every item you touch helps change the world by redeeming people, places, &amp; things.</p>
+    <img src="assets/logo.png" alt="Swedemom" style="width:1.8in;margin-top:24px">
+  </div>
+</section>
+
+</body>
+</html>
