@@ -51,6 +51,7 @@ function createSurvey() {
     'My wage never goes down',
     'Being measured against the bar, not coworkers',
     'Seeing my progress live in the Hub',
+    'Fast feedback on my work, with photos when something goes wrong',
     'Better tools before anything is paid',
     'A practice run before real money'], true);
 
