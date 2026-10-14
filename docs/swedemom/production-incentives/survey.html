@@ -23,6 +23,8 @@ h1{font-size:28pt;line-height:1.05;letter-spacing:-.02em;color:var(--head);margi
 .intro{background:var(--ptint);border-radius:14px;padding:12px 16px;margin:0 0 6px}
 .intro b{color:var(--deep)}
 h2{font-size:13pt;color:var(--deep);margin:20px 0 6px;padding-bottom:5px;border-bottom:1.5px solid var(--plight);break-after:avoid}
+h2 small{font-size:9pt;font-weight:500;color:var(--purple);letter-spacing:.04em;margin-left:8px}
+.sec{font-size:9.5pt;color:var(--muted);margin:-2px 0 4px;font-style:italic}
 .q{display:grid;grid-template-columns:28px 1fr;gap:0 8px;padding:9px 0;border-bottom:1px solid var(--line);break-inside:avoid}
 .n{font-weight:700;color:var(--purple);font-size:11pt}
 .qt{font-weight:600;color:var(--ink)}
@@ -35,63 +37,117 @@ h2{font-size:13pt;color:var(--deep);margin:20px 0 6px;padding-bottom:5px;border-
 .scale{display:flex;align-items:center;gap:8px;margin-top:5px;font-size:9.5pt;color:var(--muted)}
 .scale i{font-style:normal;width:22px;height:22px;border:1.5px solid var(--plight);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9pt;color:var(--deep)}
 .lines{margin-top:8px;height:34px;background:repeating-linear-gradient(transparent 0 15px,var(--line) 15px 16px)}
+.route{margin-top:6px;font-size:9pt;color:var(--purple);font-weight:500}
+.route b{color:var(--deep)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:4px 0 6px}
+.flow div{background:var(--btint);border-radius:10px;padding:8px 10px;font-size:9pt;color:var(--deep);line-height:1.3}
+.flow b{display:block;font-size:9.5pt;color:var(--purple)}
 .notes{background:var(--btint);border-radius:14px;padding:12px 16px;margin-top:18px;break-inside:avoid}
 .notes h3{margin:0 0 4px;color:var(--deep);font-size:11.5pt}
 .notes ul{margin:0;padding-left:18px}
 .notes li{margin:3px 0}
-.thanks{margin-top:14px;font-size:10pt;color:var(--muted);break-inside:avoid}
 </style>
 </head>
 <body>
 <div class="top"><img src="assets/logo.png" alt="Swedemom"><span class="draft">Draft for manager review</span></div>
 <p class="kicker">Production bonus · anonymous survey</p>
 <h1>The questions we'd ask.</h1>
-<p class="lede">These are the 15 questions we propose sending to everyone with the production bonus proposal. Please read them as a staff member would and tell us what to change, add or cut.</p>
-<div class="facts"><span>Anonymous: no name or email collected</span><span>About 5 to 7 minutes</span><span>Open October 12 to 16</span><span>Only 3 questions required</span></div>
-<div class="intro"><b>What staff see first:</b> We're thinking about adding a production bonus on top of your hourly wage, and we want your honest take before anything is decided. This survey is anonymous: it does not collect your name or email, and only overall results are shared. It takes about 5 to 7 minutes. Please read the proposal first (it's attached to the email with this survey).</div>
+<p class="lede">The survey we propose sending to everyone with the production bonus proposal. It branches: each person answers questions about their own main job, and a few short follow-ups appear only when someone answers "rarely" or negatively, so we learn why. Please read it as a staff member would and tell us what to change, add or cut.</p>
+<div class="facts"><span>Anonymous: no name or email collected</span><span>About 8 to 10 minutes</span><span>Open for one week</span><span>Each person sees only their stage's questions</span></div>
+<div class="intro"><b>What staff see first:</b> We're thinking about adding a production bonus on top of your hourly wage, and we want your honest take before anything is decided, including criticism. This survey is anonymous: it does not collect your name or email, and only overall results are shared. It takes about 8 to 10 minutes. Please read the proposal first (it's attached to the email with this survey).</div>
 
-<h2>About your work</h2>
-<div class="q"><span class="n">1</span><div><span class="qt">Which best describes most of your work?</span><span class="meta">Pick one · optional</span>
-<div class="opts"><span><i class="r"></i>Intake, description or imaging</span><span><i class="r"></i>Sorting</span><span><i class="r"></i>Put-away or fulfillment</span><span><i class="r"></i>A mix of several jobs</span><span><i class="r"></i>Prefer not to say</span></div></div></div>
+<h2>How the survey flows</h2>
+<div class="flow">
+<div><b>1. Your work</b>Kinds of work you do, and your main job</div>
+<div><b>2. Your stage</b>Sorting, intake, imaging, put-away and fulfillment, or other work</div>
+<div><b>3. The plan</b>Overall feeling, how it should work, tracking time</div>
+<div><b>4. In your words</b>Three open questions</div>
+</div>
 
-<h2>Overall</h2>
-<div class="q"><span class="n">2</span><div><span class="qt">Overall, how do you feel about a production bonus like the one in the proposal?</span><span class="meta req">Required</span>
-<div class="scale">Very negative <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Very positive</div></div></div>
-<div class="q"><span class="n">3</span><div><span class="qt">How clear was the proposal?</span><span class="meta req">Required</span>
+<h2>1 · Your work</h2>
+<div class="q"><span class="n">1</span><div><span class="qt">Which kinds of work do you do? Select all that apply.</span><span class="meta">Pick any · optional</span>
+<div class="opts"><span><i class="c"></i>Sorting</span><span><i class="c"></i>Intake + description</span><span><i class="c"></i>Imaging</span><span><i class="c"></i>Put-away</span><span><i class="c"></i>Fulfillment (pulling, packing, shipping)</span><span><i class="c"></i>Other work (store, truck, office, inventory checks)</span><span><i class="c"></i>Prefer not to say</span></div></div></div>
+<div class="q"><span class="n">2</span><div><span class="qt">Which one is your main job?</span><span class="meta req">Required</span>
+<div class="opts"><span><i class="r"></i>Sorting</span><span><i class="r"></i>Intake + description</span><span><i class="r"></i>Imaging</span><span><i class="r"></i>Put-away</span><span><i class="r"></i>Fulfillment</span><span><i class="r"></i>Other work</span><span><i class="r"></i>Prefer not to say</span></div>
+<div class="route">→ Sends each person to the page for their main job (2a to 2e). "Prefer not to say" skips to section 3.</div></div></div>
+
+<h2>2a · Sorting <small>main job: sorting</small></h2>
+<div class="q"><span class="n">3</span><div><span class="qt">What slows sorting down the most?</span><span class="meta">Pick any</span>
+<div class="opts"><span><i class="c"></i>Deciding what is worth listing</span><span><i class="c"></i>The Sort tool is slow or awkward</span><span><i class="c"></i>Not enough space or carts</span><span><i class="c"></i>Too many low-value items</span><span><i class="c"></i>Clothing and textiles are hard to judge</span><span><i class="c"></i>Nothing much</span><span><i class="c"></i>Other: ________</span></div></div></div>
+<div class="q"><span class="n">4</span><div><span class="qt">How often do you use the Sort tool when you sort?</span><span class="meta req">Required</span>
+<div class="opts"><span><i class="r"></i>On almost every item</span><span><i class="r"></i>Sometimes</span><span><i class="r"></i>Rarely</span><span><i class="r"></i>Never</span></div>
+<div class="route">→ Sometimes, Rarely or Never: <b>follow-up</b> (what keeps you from using it, checkboxes; and why, in your own words, required).</div></div></div>
+
+<h2>2b · Intake + description <small>main job: intake</small></h2>
+<div class="q"><span class="n">5</span><div><span class="qt">Which ways do you start an item? Select all you use.</span><span class="meta req">Required</span>
+<div class="opts"><span><i class="c"></i>Camera intake with a phone</span><span><i class="c"></i>Camera intake with a webcam</span><span><i class="c"></i>Barcode scan</span><span><i class="c"></i>Exact match</span><span><i class="c"></i>Keyword search</span><span><i class="c"></i>Typing it in by hand</span><span><i class="c"></i>Other: ________</span></div></div></div>
+<div class="q"><span class="n">6</span><div><span class="qt">Which one do you use most?</span><span class="meta req">Required</span><div class="opts"><span><i class="r"></i>Same six choices</span></div></div></div>
+<div class="q"><span class="n">7</span><div><span class="qt">What's missing or not working at your intake station?</span><span class="meta">Pick any</span>
+<div class="opts"><span><i class="c"></i>A dedicated phone or camera</span><span><i class="c"></i>A faster computer</span><span><i class="c"></i>Barcode scanner</span><span><i class="c"></i>Label printer or labels</span><span><i class="c"></i>A scale</span><span><i class="c"></i>Ruler or measuring tape</span><span><i class="c"></i>Good lighting or a clean background</span><span><i class="c"></i>Nothing, my station is set up well</span></div></div></div>
+<div class="q"><span class="n">8</span><div><span class="qt">How often do you use camera intake (phone or webcam) to start an item?</span><span class="meta req">Required</span>
+<div class="opts"><span><i class="r"></i>On almost every item</span><span><i class="r"></i>Sometimes</span><span><i class="r"></i>Rarely</span><span><i class="r"></i>Never</span></div>
+<div class="route">→ Sometimes, Rarely or Never: <b>follow-up</b> (what gets in the way, checkboxes, required; why you use the method you use most, required; what would get you to use the camera on most items, optional).</div></div></div>
+
+<h2>2c · Imaging <small>main job: imaging</small></h2>
+<div class="q"><span class="n">9</span><div><span class="qt">What slows imaging down the most?</span><span class="meta">Pick any</span>
+<div class="opts"><span><i class="c"></i>Getting items to and from my station</span><span><i class="c"></i>Lighting or backgrounds</span><span><i class="c"></i>Camera or phone problems</span><span><i class="c"></i>Uploading or the Hub is slow</span><span><i class="c"></i>Items that need cleaning or unpacking first</span><span><i class="c"></i>Re-imaging items that came back</span><span><i class="c"></i>Nothing much</span></div></div></div>
+<div class="q"><span class="n">10</span><div><span class="qt">When one of your items is sent back for re-imaging, do you find out?</span>
+<div class="opts"><span><i class="r"></i>Yes, usually</span><span><i class="r"></i>Sometimes</span><span><i class="r"></i>Rarely or never</span><span><i class="r"></i>Not sure</span></div></div></div>
+<div class="q"><span class="n">11</span><div><span class="qt">Anything about your imaging setup we should fix?</span><span class="meta">Written answer · optional</span><div class="lines"></div></div></div>
+
+<h2>2d · Put-away and fulfillment <small>main job: put-away or fulfillment</small></h2>
+<div class="q"><span class="n">12</span><div><span class="qt">What slows this work down the most?</span><span class="meta">Pick any</span>
+<div class="opts"><span><i class="c"></i>Finding the right bin or item</span><span><i class="c"></i>Items in the wrong bin</span><span><i class="c"></i>Carts or space</span><span><i class="c"></i>Packing supplies</span><span><i class="c"></i>Fragile or oddly shaped items</span><span><i class="c"></i>Printing labels or the Hub is slow</span><span><i class="c"></i>Nothing much</span></div></div></div>
+<div class="q"><span class="n">13</span><div><span class="qt">Would a one-tap "fragile risk" flag (sends an item to a lead before it ships) help you?</span>
+<div class="opts"><span><i class="r"></i>Yes</span><span><i class="r"></i>Maybe</span><span><i class="r"></i>No</span><span><i class="r"></i>Not sure</span></div></div></div>
+<div class="q"><span class="n">14</span><div><span class="qt">Anything about put-away or fulfillment we should fix?</span><span class="meta">Written answer · optional</span><div class="lines"></div></div></div>
+
+<h2>2e · Other work <small>main job: other</small></h2>
+<div class="q"><span class="n">15</span><div><span class="qt">What work do you do that the bonus plan doesn't cover yet?</span><span class="meta">Written answer · optional</span><div class="lines"></div></div></div>
+<div class="q"><span class="n">16</span><div><span class="qt">Some important work isn't part of the bonus yet, like checking that items are in the right bin and clearing out stale inventory. How should we reward it?</span><span class="meta">Pick any</span>
+<div class="opts"><span><i class="c"></i>Standard minutes, like a production stage</span><span><i class="c"></i>A team goal for that work</span><span><i class="c"></i>Paid as normal, no bonus (like today)</span><span><i class="c"></i>Not sure</span></div></div></div>
+
+<h2>3 · The plan <small>everyone</small></h2>
+<div class="q"><span class="n">17</span><div><span class="qt">How clear was the proposal?</span><span class="meta req">Required</span>
 <div class="scale">Very confusing <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Very clear</div></div></div>
-<div class="q"><span class="n">4</span><div><span class="qt">Which parts of the idea appeal to you most?</span><span class="meta">Pick any · optional</span>
-<div class="opts"><span><i class="c"></i>Earning more when I clear the bar</span><span><i class="c"></i>The weekly team goal</span><span><i class="c"></i>My wage never goes down</span><span><i class="c"></i>Being measured against the bar, not coworkers</span><span><i class="c"></i>Seeing my progress live in the Hub</span><span><i class="c"></i>Fast feedback on my work, with photos when something goes wrong</span><span><i class="c"></i>Better tools before anything is paid</span><span><i class="c"></i>A practice run before real money</span><span><i class="c"></i>Other: ________</span></div></div></div>
-
-<h2>How it should work</h2>
-<div class="q"><span class="n">5</span><div><span class="qt">If we had a set amount to spend on bonuses, how should it be split?</span><span class="meta req">Required</span>
+<div class="q"><span class="n">18</span><div><span class="qt">Which parts of the idea appeal to you most?</span><span class="meta">Pick any</span>
+<div class="opts"><span><i class="c"></i>Earning more when I clear the bar</span><span><i class="c"></i>The weekly team goal</span><span><i class="c"></i>My wage never goes down</span><span><i class="c"></i>Being measured against the bar, not coworkers</span><span><i class="c"></i>Seeing my progress live in the Hub</span><span><i class="c"></i>Fast feedback, with photos when something goes wrong</span><span><i class="c"></i>Better tools and equipment before anything is paid</span><span><i class="c"></i>A practice run before real money</span></div></div></div>
+<div class="q"><span class="n">19</span><div><span class="qt">Overall, how do you feel about a production bonus like the one in the proposal?</span><span class="meta req">Required</span>
+<div class="opts"><span><i class="r"></i>Very positive</span><span><i class="r"></i>Somewhat positive</span><span><i class="r"></i>Neutral</span><span><i class="r"></i>Somewhat negative</span><span><i class="r"></i>Very negative</span></div>
+<div class="route">→ Somewhat or Very negative: <b>follow-up</b> "What would need to change for this to feel good to you?" (required).</div></div></div>
+<div class="q"><span class="n">20</span><div><span class="qt">If we had a set amount to spend on bonuses, how should it be split?</span><span class="meta req">Required</span>
 <div class="opts"><span><i class="r"></i>Mostly individual bonuses</span><span><i class="r"></i>About half individual, half team</span><span><i class="r"></i>Mostly team bonuses</span><span><i class="r"></i>Not sure</span></div></div></div>
-<div class="q"><span class="n">6</span><div><span class="qt">Above the bar, you keep half of the time you save and Swedemom keeps half. How does that feel?</span><span class="meta">Pick one</span>
-<div class="opts"><span><i class="r"></i>Fair</span><span><i class="r"></i>Too little for us</span><span><i class="r"></i>Not sure</span></div></div></div>
-<div class="q"><span class="n">7</span><div><span class="qt">How motivating would a weekly team goal for your stage be?</span>
+<div class="q"><span class="n">21</span><div><span class="qt">How should we start?</span>
+<div class="opts"><span><i class="r"></i>Team goals and individual bonuses together</span><span><i class="r"></i>Team goals first, individual bonuses later</span><span><i class="r"></i>Not sure</span></div></div></div>
+<div class="q"><span class="n">22</span><div><span class="qt">How motivating would a weekly team goal for your stage be?</span>
 <div class="scale">Not at all <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Very</div></div></div>
-<div class="q"><span class="n">8</span><div><span class="qt">If you work in more than one stage, your team bonus would follow your mix of work (for example 60% imaging, 40% intake). Does that seem fair?</span>
+<div class="q"><span class="n">23</span><div><span class="qt">If you work in more than one stage, your team bonus would follow your mix of work (for example 60% imaging, 40% intake). Does that seem fair?</span>
 <div class="opts"><span><i class="r"></i>Yes</span><span><i class="r"></i>No</span><span><i class="r"></i>Not sure</span><span><i class="r"></i>Doesn't apply to me</span></div></div></div>
-<div class="q"><span class="n">9</span><div><span class="qt">How often would you like to see your progress?</span>
+<div class="q"><span class="n">24</span><div><span class="qt">How often would you like to see your progress?</span>
 <div class="opts"><span><i class="r"></i>Live in the Hub during the day</span><span><i class="r"></i>Once a day</span><span><i class="r"></i>Once a week</span><span><i class="r"></i>Only on payday</span></div></div></div>
-<div class="q"><span class="n">10</span><div><span class="qt">Where would you rather clock in and out?</span>
+<div class="q"><span class="n">25</span><div><span class="qt">Above the bar, you keep half of the time you save and Swedemom keeps half. How does that feel?</span><span class="meta req">Required</span>
+<div class="opts"><span><i class="r"></i>Fair</span><span><i class="r"></i>Too little for us</span><span><i class="r"></i>Not sure</span></div>
+<div class="route">→ Too little: <b>follow-up</b> "What share would feel fair to you, and why?" (required).</div></div></div>
+<div class="intro" style="margin-top:10px"><b>Tracking time (page intro staff see):</b> To pay a bonus fairly, we need accurate production hours. That means clocking in and out, and a quick way to mark time spent on other work (truck runs, wrapping glass, meetings) so it never counts against your pace. Breaks are handled automatically. We want this to be as painless as possible.</div>
+<div class="q"><span class="n">26</span><div><span class="qt">Where would clocking in and out be easiest for you?</span>
 <div class="opts"><span><i class="r"></i>In the Hub, with my production work</span><span><i class="r"></i>In Gusto, like now</span><span><i class="r"></i>No preference</span></div></div></div>
-<div class="q"><span class="n">11</span><div><span class="qt">How would you feel about tapping a timer in the Hub for other work (truck runs, wrapping glass, meetings)?</span>
-<div class="opts"><span><i class="r"></i>Easy, no problem</span><span><i class="r"></i>A little annoying</span><span><i class="r"></i>Very annoying</span><span><i class="r"></i>Not sure</span></div></div></div>
-<div class="q"><span class="n">12</span><div><span class="qt">Some important work isn't part of the bonus yet, like checking that items are in the right bin and clearing out stale inventory. How should we reward it?</span><span class="meta">Pick any</span>
-<div class="opts"><span><i class="c"></i>Standard minutes, like a production stage</span><span><i class="c"></i>A team goal for that work</span><span><i class="c"></i>Paid as normal, no bonus (like today)</span><span><i class="c"></i>Not sure</span><span><i class="c"></i>Other: ________</span></div></div></div></div>
+<div class="q"><span class="n">27</span><div><span class="qt">How would a one-tap timer in the Hub for other work feel?</span><span class="meta req">Required</span>
+<div class="opts"><span><i class="r"></i>Easy, no problem</span><span><i class="r"></i>A little annoying</span><span><i class="r"></i>Very annoying</span><span><i class="r"></i>Not sure</span></div>
+<div class="route">→ A little or Very annoying: <b>follow-up</b> "We do need some way to track time spent on other work. What would make it less annoying, or how else could we track that time fairly?" (required).</div></div></div>
 
-<h2>In your words</h2>
-<div class="q"><span class="n">13</span><div><span class="qt">What would make a bonus like this feel fair to you?</span><span class="meta">Written answer · optional</span><div class="lines"></div></div></div>
-<div class="q"><span class="n">14</span><div><span class="qt">What slows you down most at work that we could fix?</span><span class="meta">Written answer · optional</span><div class="lines"></div></div></div>
-<div class="q"><span class="n">15</span><div><span class="qt">Anything else you want us to know?</span><span class="meta">Written answer · optional</span><div class="lines"></div></div></div>
+<h2>4 · In your words <small>everyone</small></h2>
+<div class="q"><span class="n">28</span><div><span class="qt">What would make a bonus like this feel fair to you?</span><span class="meta">Written answer · optional</span><div class="lines"></div></div></div>
+<div class="q"><span class="n">29</span><div><span class="qt">What slows you down most at work that we could fix?</span><span class="meta">Written answer · optional</span><div class="lines"></div></div></div>
+<div class="q"><span class="n">30</span><div><span class="qt">Anything else you want us to know?</span><span class="meta">Written answer · optional</span><div class="lines"></div></div></div>
 
 <div class="intro" style="margin-top:14px"><b>After they submit:</b> Thank you! Your answers are anonymous. We'll share what we heard, and the updated plan, before anything changes.</div>
 
 <div class="notes"><h3>Notes for managers</h3><ul>
-<li>Question 10 helps us decide between clocking in the Hub and in Gusto. Question 12 asks how to reward inventory checks and stale-inventory cleanup. Question 14 doubles as a list of tool fixes to prioritize.</li>
-<li>Only questions 2, 3 and 5 are required, so nobody is pushed into an answer they're unsure of.</li>
-<li>With about 20 people, question 1 is the only one about who you are, and it's optional. Results for any group smaller than 5 people are never shown separately.</li>
-<li>Only Jamie sees the raw answers. Everyone gets the overall results.</li>
+<li>Nobody answers all 30. A typical person sees about 17 to 20: the two opening questions, one stage page, the shared plan questions, and a follow-up only when they answer "rarely" or negatively.</li>
+<li><b>Criticism always gets a "why".</b> Negative feelings about the plan, a low share, an annoying timer, or rarely using the Sort tool or camera intake each lead to a short required follow-up, framed as "what would make it better".</li>
+<li><b>Necessary parts are explained, not put to a vote.</b> Tracking hours is required for a fair bonus, so the survey explains why and asks how to make it painless, rather than whether to do it.</li>
+<li>The intake page asks which methods people use and why, including keyword search versus camera intake, and what's missing at their station. That feeds the station equipment plan (dedicated phones, faster computers).</li>
+<li>The main job question routes people, so it is required, with "Prefer not to say". Results for any group smaller than 5 people are never shown separately, and only Jamie sees the raw answers. Everyone gets the overall results.</li>
 </ul></div>
 </body>
 </html>
