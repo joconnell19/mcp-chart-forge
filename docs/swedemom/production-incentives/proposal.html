@@ -108,6 +108,17 @@ table.ex tr:last-child td{border-bottom:0}
 .faq .q{break-inside:avoid;margin-bottom:11px}
 .faq h3{color:var(--head)}
 .faq p{font-size:11pt;margin:0}
+.tldr{display:flex;flex-direction:column;gap:8px;margin-top:2px}
+.tl1{display:grid;grid-template-columns:44px 1fr;gap:0 14px;align-items:start;background:#fff;border:1px solid var(--line, #E3E0EA);border-radius:16px;padding:9px 16px}
+.tl1 .num{width:36px;height:36px;border-radius:50%;background:var(--purple);color:#fff;font-weight:700;font-size:15pt;display:flex;align-items:center;justify-content:center}
+.tl1 h2{margin:2px 0 2px;font-size:15pt}
+.tl1 p{margin:0;font-size:11.5pt}
+.jd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.jd div{background:#fff;border-radius:12px;padding:10px 12px;text-align:center}
+.jd b{display:block;font-size:20pt;color:var(--deep, #3F5A67);line-height:1.1}
+.jd span{font-size:10pt;color:var(--muted, #6B7A84)}
+.jd .best{outline:2px solid #5B8C3E}
+.jd .best b{color:#5B8C3E}
 </style>
 </head>
 <body>
@@ -150,6 +161,36 @@ table.ex tr:last-child td{border-bottom:0}
   </div>
 </section>
 
+<!-- ============ TLDR ============ -->
+<section class="page" id="tldr">
+  <div class="content top">
+    <div class="hd"><p class="kicker">The short version</p>
+      <h1>The one-page summary.</h1>
+      <p class="lede">Short on time? This page covers the whole idea. The rest has the details.</p></div>
+
+    <div class="tldr">
+      <div class="tl1"><span class="num">1</span><div><h2>Your wage never goes down.</h2><p>Everything here is extra, on top of your hourly pay.</p></div></div>
+      <div class="tl1"><span class="num">2</span><div><h2>Clear your bar, keep half.</h2><p>Each item earns the minutes its category normally takes. The bar sits just below what our fastest people already do. Above it, you keep half of the time you save, paid at your wage, with no set limit.</p></div></div>
+      <div class="tl1"><span class="num">3</span><div><h2>Hit the team goal, everyone earns.</h2><p>If your stage hits its weekly goal, everyone in it gets <strong>+$0.50 for every hour worked</strong>. Beat it by 10% and it's <strong>+$1.00 an hour</strong>.</p></div></div>
+      <div class="tl1"><span class="num">4</span><div><h2>Only good work counts.</h2><p>Items sent back for fixes count once they're right. Mistakes can lower a bonus, never your wage.</p></div></div>
+      <div class="tl1"><span class="num">5</span><div><h2>Better tools come first.</h2><p>Equipped stations, instant feedback, clock-in and a one-tap timer, and live progress in the Hub, before anything is paid.</p></div></div>
+    </div>
+
+    <div class="card tint" style="margin-top:14px">
+      <p class="kicker" style="margin-bottom:8px">John Doe, a made-up imager at $16/hr, 30 hours a week</p>
+      <div class="jd">
+        <div><b>$480</b><span>Today</span></div>
+        <div><b>$504</b><span>Clears his bar</span></div>
+        <div><b>$519</b><span>+ team goal</span></div>
+        <div class="best"><b>$558</b><span>A great week, +16%</span></div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:14px"><b>Nothing changes yet.</b> First, an anonymous 8 to 10 minute survey. Then practice mode, where you see what you <em>would</em> earn, then a two-week paid pilot, then we decide together. Every number here is a draft.</div>
+  </div>
+  <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · Draft, numbers are estimates · <a href="#contents">Contents</a></span><span class="pn"></span></div>
+</section>
+
 <!-- ============ CONTENTS ============ -->
 <section class="page" id="contents">
   <div class="content top">
@@ -158,28 +199,28 @@ table.ex tr:last-child td{border-bottom:0}
       <p class="lede">Everyone should read the first part: how the bonus works for the whole team. Then jump to the page for the work you do. Tap any line to go there.</p></div>
 
     <div class="toc" style="margin-top:22px">
-      <a href="#why"><span class="n">01</span><span class="t">Why we're doing this</span><span class="pg">3</span></a>
-      <a href="#two-ways"><span class="n">02</span><span class="t">Two ways to earn more</span><span class="pg">4</span></a>
-      <a href="#minutes"><span class="n">03</span><span class="t">Every item is worth minutes</span><span class="pg">5</span></a>
-      <a href="#keep-half"><span class="n">04</span><span class="t">Clear the bar, keep half</span><span class="pg">6</span></a>
-      <a href="#week"><span class="n">05</span><span class="t">A week, worked out</span><span class="pg">7</span></a>
-      <a href="#day"><span class="n">06</span><span class="t">A day, minute by minute</span><span class="pg">8</span></a>
-      <a href="#quality"><span class="n">07</span><span class="t">Only good work counts</span><span class="pg">9</span></a>
-      <a href="#team"><span class="n">08</span><span class="t">Team goals for each stage</span><span class="pg">10</span></a>
-      <a href="#bar"><span class="n">09</span><span class="t">How the bar rises</span><span class="pg">11</span></a>
-      <a href="#hours"><span class="n">10</span><span class="t">Hours, breaks and payday</span><span class="pg">12</span></a>
-      <a href="#building"><span class="n">11</span><span class="t">What we're building first</span><span class="pg">13</span></a>
-      <a href="#timeline"><span class="n">12</span><span class="t">What happens next</span><span class="pg">19</span></a>
-      <a href="#faq"><span class="n">13</span><span class="t">Questions you might have</span><span class="pg">20</span></a>
+      <a href="#why"><span class="n">01</span><span class="t">Why we're doing this</span><span class="pg">4</span></a>
+      <a href="#two-ways"><span class="n">02</span><span class="t">Two ways to earn more</span><span class="pg">5</span></a>
+      <a href="#minutes"><span class="n">03</span><span class="t">Every item is worth minutes</span><span class="pg">6</span></a>
+      <a href="#keep-half"><span class="n">04</span><span class="t">Clear the bar, keep half</span><span class="pg">7</span></a>
+      <a href="#week"><span class="n">05</span><span class="t">A week, worked out</span><span class="pg">8</span></a>
+      <a href="#day"><span class="n">06</span><span class="t">A day, minute by minute</span><span class="pg">9</span></a>
+      <a href="#quality"><span class="n">07</span><span class="t">Only good work counts</span><span class="pg">10</span></a>
+      <a href="#team"><span class="n">08</span><span class="t">Team goals for each stage</span><span class="pg">11</span></a>
+      <a href="#bar"><span class="n">09</span><span class="t">How the bar rises</span><span class="pg">12</span></a>
+      <a href="#hours"><span class="n">10</span><span class="t">Hours, breaks and payday</span><span class="pg">13</span></a>
+      <a href="#building"><span class="n">11</span><span class="t">What we're building first</span><span class="pg">14</span></a>
+      <a href="#timeline"><span class="n">12</span><span class="t">What happens next</span><span class="pg">20</span></a>
+      <a href="#faq"><span class="n">13</span><span class="t">Questions you might have</span><span class="pg">21</span></a>
     </div>
 
     <h2 style="margin:26px 0 12px">Your stage</h2>
     <div class="stagechips">
-      <a href="#sorting"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7v12h12V7M9 11h6"/></svg>Sorting<span>page 14</span></a>
-      <a href="#intake"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>Intake + description<span>page 15</span></a>
-      <a href="#imaging"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Imaging<span>page 16</span></a>
-      <a href="#putaway"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M10 4v16"/></svg>Put-away<span>page 17</span></a>
-      <a href="#fulfillment"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>Fulfillment<span>page 18</span></a>
+      <a href="#sorting"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7v12h12V7M9 11h6"/></svg>Sorting<span>page 15</span></a>
+      <a href="#intake"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>Intake + description<span>page 16</span></a>
+      <a href="#imaging"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Imaging<span>page 17</span></a>
+      <a href="#putaway"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M10 4v16"/></svg>Put-away<span>page 18</span></a>
+      <a href="#fulfillment"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>Fulfillment<span>page 19</span></a>
     </div>
   </div>
   <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal</span><span class="pn"></span></div>
@@ -261,7 +302,7 @@ table.ex tr:last-child td{border-bottom:0}
         <p style="margin:0">Beat it by 10% and it doubles to <strong>+$1.00 an hour</strong>.</p>
       </div>
     </div>
-    <div class="callout"><b>Only good work counts.</b> Items sent back for fixes don't earn anything until they're right. The bonus is about doing more <em>good</em> work, not just more work (<a href="#quality">page 9</a>).</div>
+    <div class="callout"><b>Only good work counts.</b> Items sent back for fixes don't earn anything until they're right. The bonus is about doing more <em>good</em> work, not just more work (<a href="#quality">page 10</a>).</div>
   </div>
   <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · Draft, numbers are estimates · <a href="#contents">Contents</a></span><span class="pn"></span></div>
 </section>
@@ -297,7 +338,7 @@ table.ex tr:last-child td{border-bottom:0}
       <div>
         <h2>Different jobs, one score</h2>
         <p>An imaged item earns imaging minutes; an intake item earns intake minutes. If you help in several stages, it all adds up into one score, so jumping in where you're needed never costs you.</p>
-        <p class="small" style="margin:0">Breaks and other work (truck runs, wrapping glass, meetings) are paid and don't count against you (<a href="#hours">page 12</a>).</p>
+        <p class="small" style="margin:0">Breaks and other work (truck runs, wrapping glass, meetings) are paid and don't count against you (<a href="#hours">page 13</a>).</p>
       </div>
     </div>
 
@@ -517,7 +558,7 @@ table.ex tr:last-child td{border-bottom:0}
       </div>
       <div class="card">
         <h2>Feedback that comes fast</h2>
-        <p style="margin:0">We're building instant checks so problems are caught while the item is still in front of you, not days later (<a href="#building">page 13</a>). Your stage page shows what "good" means for your work.</p>
+        <p style="margin:0">We're building instant checks so problems are caught while the item is still in front of you, not days later (<a href="#building">page 14</a>). Your stage page shows what "good" means for your work.</p>
       </div>
     </div>
     <div class="callout"><b>Disagree with a send-back?</b> Dispute it in a tap in the Hub. A lead for your area reviews it, and a mistaken one is reversed before bonuses are paid.</div>
@@ -655,7 +696,7 @@ table.ex tr:last-child td{border-bottom:0}
       <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div><div><h3>Clock-in and a one-tap timer</h3><p>Hours, breaks and other work in one place, so your pace counts only production time.</p></div></div>
       <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round"><path d="M4 18h16M7 18V9M12 18V5M17 18v-6"/></svg></div><div><h3>Live progress</h3><p>Your minutes, your pace and your stage's goal, during the day, right in the Hub.</p></div></div>
       <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><div><h3>Better Production Metrics</h3><p>Real clocked hours, no work dropped, sorting included, and detailed Hub data to find the slow steps.</p></div></div>
-      <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7v12h12V7M9 11h6"/></svg></div><div><h3>A faster Sort tool</h3><p>Quicker to use, and it's how sorting gets credited (<a href="#sorting">page 14</a>).</p></div></div>
+      <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7v12h12V7M9 11h6"/></svg></div><div><h3>A faster Sort tool</h3><p>Quicker to use, and it's how sorting gets credited (<a href="#sorting">page 15</a>).</p></div></div>
       <div class="card"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B6BAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div><div><h3>A statement every payday</h3><p>Exactly how your bonus was worked out, item by item.</p></div></div>
     </div>
     <div class="callout"><b>Got an idea?</b> The survey asks what slows you down most. The answers will shape what we build next.</div>
@@ -708,7 +749,7 @@ table.ex tr:last-child td{border-bottom:0}
       <div class="card"><h2>Your team goal</h2><p style="margin:0">Items intaken and described in the week, set by managers before the week starts.</p></div>
     </div>
     <div class="card tint"><h2>Take the next item</h2><p style="margin:0">Every category is weighted by its average time, so no kind of item is a better deal than another. Take what's next and get its details right the first time, so it doesn't come back to you.</p></div>
-    <div class="callout"><b>See it worked out.</b> The full-day example on <a href="#day">page 8</a> follows an intake day from clock-in to bonus.</div>
+    <div class="callout"><b>See it worked out.</b> The full-day example on <a href="#day">page 9</a> follows an intake day from clock-in to bonus.</div>
   </div>
   <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · Draft, numbers are estimates · <a href="#contents">Contents</a></span><span class="pn"></span></div>
 </section>
@@ -728,7 +769,7 @@ table.ex tr:last-child td{border-bottom:0}
       <div class="card"><h2>Your team goal</h2><p style="margin:0">Items imaged in the week, set by managers before the week starts.</p></div>
     </div>
     <div class="card tint"><h2>Feedback while the item is in front of you</h2><p style="margin:0">We're building a check that runs as photos upload, so problems are caught right away instead of days later. Re-imaging comes back to whoever imaged the item first, so you get the chance to fix your own work.</p></div>
-    <div class="callout"><b>See it worked out.</b> John Doe's five example weeks on <a href="#week">page 7</a> are an imager's weeks.</div>
+    <div class="callout"><b>See it worked out.</b> John Doe's five example weeks on <a href="#week">page 8</a> are an imager's weeks.</div>
   </div>
   <div class="page-footer"><span><b>Swedemom</b> · Production bonus proposal · Draft, numbers are estimates · <a href="#contents">Contents</a></span><span class="pn"></span></div>
 </section>
@@ -783,7 +824,7 @@ table.ex tr:last-child td{border-bottom:0}
     <div class="tl" style="margin-top:16px">
       <div class="step now"><div class="dot">1</div><h2>Tell us what you think</h2><p><span class="pill p">ONE WEEK</span> An anonymous survey, about 8 to 10 minutes. Only totals are shared.</p></div>
       <div class="step"><div class="dot">2</div><h2>We share what we heard</h2><p>The survey results and the updated plan, including anything you changed.</p></div>
-      <div class="step"><div class="dot">3</div><h2>We build the tools</h2><p>Everything on <a href="#building">page 13</a>: stations, feedback, clock-in, timer, live progress, metrics.</p></div>
+      <div class="step"><div class="dot">3</div><h2>We build the tools</h2><p>Everything on <a href="#building">page 14</a>: stations, feedback, clock-in, timer, live progress, metrics.</p></div>
       <div class="step"><div class="dot">4</div><h2>Practice mode: two weeks, nothing paid</h2><p>You see your minutes and what you <em>would</em> have earned, so we can check the numbers feel fair before money is involved.</p></div>
       <div class="step"><div class="dot">5</div><h2>Paid pilot: two weeks</h2><p>Real bonuses for every stage in this guide: sorting, intake + description, imaging, put-away and fulfillment, plus the team goals.</p></div>
       <div class="step"><div class="dot">6</div><h2>Decide together</h2><p>Keep it, change it or stop it, based on what the pilot shows and what you tell us.</p></div>
@@ -805,7 +846,7 @@ table.ex tr:last-child td{border-bottom:0}
       <div class="q"><h3>I'm below the bar. What changes for me?</h3><p>Your pay stays exactly what it is today, and you can still earn the team bonus. And you can get there: ask a teammate or your lead what works for them, and use the newest tools, like camera intake, which are built to make your work faster.</p></div>
       <div class="q"><h3>Is there a limit to what I can earn?</h3><p>No set limit. Unusually big weeks get a quick check that the data is right before payout.</p></div>
       <div class="q"><h3>But aren't some items faster to produce?</h3><p>Yes, so each item earns its category's average time. Quick items earn fewer minutes and slow ones earn more, so they even out. Just take the next item and get it right.</p></div>
-      <div class="q"><h3>I do more than one job. How does that work?</h3><p>Minutes from every stage add up into one score (<a href="#minutes">page 5</a>), and your team bonus follows your mix of work (<a href="#team">page 10</a>).</p></div>
+      <div class="q"><h3>I do more than one job. How does that work?</h3><p>Minutes from every stage add up into one score (<a href="#minutes">page 6</a>), and your team bonus follows your mix of work (<a href="#team">page 11</a>).</p></div>
       <div class="q"><h3>What if equipment breaks or the Hub is down?</h3><p>If equipment breaks, tap the timer: it's paid and doesn't count against your pace. If the Hub is down, we'll have backup plans.</p></div>
       <div class="q"><h3>Will the bar go up?</h3><p>Yes, over time, but only after a new tool or process is proven to save time, by half the gain, with two weeks' notice, at most twice a quarter.</p></div>
       <div class="q"><h3>Who sees my numbers?</h3><p>Most people see only their own numbers, plus team totals and averages, like today. Managers can see everyone's individual and team numbers.</p></div>
